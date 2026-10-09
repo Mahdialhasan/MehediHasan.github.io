@@ -3,13 +3,23 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-
-    <title>Mehedi Hasan | Applied Geoinformatics</title>
-
-    <meta name="description"
-          content="Academic and research portfolio of Mehedi Hasan, Master Student in Applied Geoinformatics at Paris Lodron Universität Salzburg.">
+    <title>Mehedi Hasan | Academic Portfolio</title>
+    <meta name="description" content="Academic Portfolio of Mehedi Hasan - Master's Student in Applied Geoinformatics">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
 
     <style>
+        /* Modern Reset & Variables */
+        :root {
+            --primary-color: #1a365d;
+            --accent-color: #2b6cb0;
+            --text-dark: #2d3748;
+            --text-muted: #4a5568;
+            --bg-light: #f7fafc;
+            --card-bg: #ffffff;
+            --border-color: #e2e8f0;
+            --sidebar-width: 320px;
+        }
+
         * {
             margin: 0;
             padding: 0;
@@ -21,564 +31,401 @@
         }
 
         body {
-            font-family: Arial, Helvetica, sans-serif;
-            line-height: 1.7;
-            color: #222;
-
-            background-image:
-                linear-gradient(
-                    rgba(255, 255, 255, 0.80),
-                    rgba(255, 255, 255, 0.80)
-                ),
-                url("Env_Pic.png");
-
-            background-size: cover;
-            background-position: center;
-            background-attachment: fixed;
-            background-repeat: no-repeat;
+            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+            background-color: var(--bg-light);
+            color: var(--text-dark);
+            line-height: 1.6;
+            display: flex;
+            min-height: 100vh;
         }
 
-        a {
-            color: inherit;
-            text-decoration: none;
+        /* Layout Container */
+        .portfolio-container {
+            display: flex;
+            width: 100%;
+            max-width: 1300px;
+            margin: 0 auto;
         }
 
-        /* Navigation */
-        nav {
+        /* Sticky Left Sidebar */
+        .sidebar {
+            width: var(--sidebar-width);
+            background-color: var(--card-bg);
+            border-right: 1px solid var(--border-color);
+            padding: 40px 30px;
             position: sticky;
             top: 0;
-            z-index: 1000;
-            background: rgba(255, 255, 255, 0.96);
-            border-bottom: 1px solid #e5e5e5;
-        }
-
-        .nav-container {
-            max-width: 1100px;
-            margin: auto;
-            padding: 18px 25px;
+            height: 100vh;
             display: flex;
+            flex-direction: column;
             justify-content: space-between;
-            align-items: center;
+            overflow-y: auto;
         }
 
-        .logo {
-            font-size: 20px;
-            font-weight: 700;
-            letter-spacing: 0.5px;
+        .profile-container {
+            text-align: center;
         }
 
-        .nav-links {
-            display: flex;
-            gap: 25px;
-            list-style: none;
-            font-size: 14px;
-        }
-
-        .nav-links a:hover {
-            color: #1769aa;
-        }
-
-        /* Hero */
-        .hero {
-            max-width: 1200px;
-            margin: auto;
-            padding: 55px 25px 65px;
-            display: grid;
-            grid-template-columns: 280px minmax(0, 1fr);
-            gap: 45px;
-            align-items: start;
-        }
-
-        .profile-sidebar {
-            width: 100%;
-        }
-
-        .profile-orbit {
-            width: 235px;
-            height: 235px;
-            position: relative;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            margin: 0 0 20px 0; /* Align perfectly to the left */
-        }
-
-        .profile-photo {
-            width: 185px;
-            height: 185px;
+        .profile-img {
+            width: 150px;
+            height: 150px;
+            border-radius: 50%;
             object-fit: cover;
-            object-position: center;
-            border-radius: 50%;
-            border: 4px solid #ffffff;
-            outline: 2px solid #384b5e;
-            box-shadow: 0 5px 18px rgba(0, 0, 0, 0.30);
-            position: relative;
-            z-index: 2;
-        }
-
-        .orbit {
-            position: absolute;
-            width: 225px;
-            height: 85px;
-            border: 1.5px solid rgba(35, 53, 75, 0.75);
-            border-radius: 50%;
-            top: 50%;
-            left: 50%;
-            pointer-events: none;
-        }
-
-        .orbit-one {
-            transform: translate(-50%, -50%) rotate(-35deg);
-        }
-
-        .orbit-two {
-            transform: translate(-50%, -50%) rotate(35deg);
-            border-color: rgba(70, 90, 115, 0.65);
-        }
-
-        .profile-details h2 {
-            font-size: 25px;
-            margin-bottom: 5px;
-            color: #222;
-        }
-
-        .profile-role {
-            font-size: 15px;
-            font-weight: 600;
-            color: #1769aa;
-            margin-bottom: 12px;
-        }
-
-        .profile-details p {
-            font-size: 13px;
-            line-height: 1.8;
-            color: #555;
-        }
-
-        .profile-divider {
-            border: 0;
-            border-top: 1px solid #dfe3e8;
-            margin: 18px 0;
-        }
-
-        .profile-links p {
-            font-size: 13px;
-            margin-bottom: 7px;
-            color: #1769aa;
-        }
-
-        .hero h1 {
-            font-size: 52px;
-            line-height: 1.15;
-            margin-bottom: 15px;
-        }
-
-        .hero h2 {
-            font-size: 23px;
-            font-weight: 400;
-            color: #555;
+            border: 3px solid var(--accent-color);
+            box-shadow: 0 4px 12px rgba(0,0,0,0.08);
             margin-bottom: 20px;
         }
 
-        .hero p {
-            max-width: 680px;
-            color: #555;
-            font-size: 17px;
+        .profile-name {
+            font-size: 24px;
+            font-weight: 700;
+            color: var(--primary-color);
+            margin-bottom: 5px;
         }
 
-        .buttons {
-            margin-top: 30px;
-            display: flex;
-            gap: 12px;
-            flex-wrap: wrap;
-        }
-
-        .button {
-            padding: 11px 20px;
-            border: 1px solid #1769aa;
-            border-radius: 5px;
-            color: #1769aa;
+        .profile-title {
             font-size: 14px;
+            font-weight: 600;
+            color: var(--accent-color);
+            margin-bottom: 12px;
         }
 
-        .button.primary {
-            background: #1769aa;
-            color: white;
+        .profile-institution {
+            font-size: 13px;
+            color: var(--text-muted);
+            margin-bottom: 20px;
+            line-height: 1.4;
         }
 
-        .button:hover {
-            opacity: 0.85;
+        /* Navigation Links */
+        .nav-menu {
+            list-style: none;
+            width: 100%;
+            margin: 20px 0;
         }
 
-        /* Sections */
+        .nav-menu li {
+            margin-bottom: 10px;
+        }
+
+        .nav-menu a {
+            text-decoration: none;
+            color: var(--text-muted);
+            font-weight: 500;
+            font-size: 15px;
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            padding: 8px 12px;
+            border-radius: 6px;
+            transition: all 0.2s ease;
+        }
+
+        .nav-menu a:hover,
+        .nav-menu a.active {
+            color: var(--accent-color);
+            background-color: #ebf8ff;
+        }
+
+        /* Social / Contact Links */
+        .social-links {
+            display: flex;
+            justify-content: center;
+            gap: 15px;
+            margin-top: 20px;
+        }
+
+        .social-links a {
+            color: var(--text-muted);
+            font-size: 18px;
+            transition: color 0.2s;
+        }
+
+        .social-links a:hover {
+            color: var(--accent-color);
+        }
+
+        /* Main Right Content Area */
+        .main-content {
+            flex: 1;
+            padding: 50px 60px;
+            max-width: 980px;
+        }
+
         section {
-            border-top: 1px solid #eeeeee;
-            background: rgba(255, 255, 255, 0.94);
-        }
-
-        .section-container {
-            max-width: 1100px;
-            margin: auto;
-            padding: 75px 25px;
+            margin-bottom: 60px;
         }
 
         .section-title {
-            font-size: 30px;
-            margin-bottom: 35px;
+            font-size: 22px;
+            font-weight: 700;
+            color: var(--primary-color);
+            border-bottom: 2px solid var(--border-color);
+            padding-bottom: 8px;
+            margin-bottom: 25px;
+            display: flex;
+            align-items: center;
+            gap: 10px;
         }
 
-        .about-text {
-            max-width: 850px;
-            color: #555;
-            font-size: 16px;
+        /* Card Component */
+        .card {
+            background-color: var(--card-bg);
+            border: 1px solid var(--border-color);
+            border-radius: 8px;
+            padding: 24px;
+            margin-bottom: 20px;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.02);
+            transition: transform 0.2s, box-shadow 0.2s;
+        }
+
+        .card:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 4px 12px rgba(0,0,0,0.06);
+        }
+
+        .card-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: baseline;
+            margin-bottom: 8px;
+        }
+
+        .card-title {
+            font-size: 18px;
+            font-weight: 600;
+            color: var(--primary-color);
+        }
+
+        .card-subtitle {
+            font-size: 14px;
+            color: var(--accent-color);
+            font-weight: 500;
+            margin-bottom: 10px;
+        }
+
+        .card-date {
+            font-size: 13px;
+            color: var(--text-muted);
+            font-weight: 500;
+        }
+
+        .card-body {
+            font-size: 15px;
+            color: var(--text-muted);
         }
 
         /* Research Grid */
-        .research-grid {
+        .grid-2 {
             display: grid;
             grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
             gap: 20px;
         }
 
-        .research-card {
-            background: rgba(255, 255, 255, 0.97);
-            border: 1px solid #e5e5e5;
-            padding: 25px;
-            border-radius: 7px;
-        }
-
-        .research-card h3 {
-            margin-bottom: 10px;
-            font-size: 18px;
-        }
-
-        .research-card p {
-            color: #666;
-            font-size: 14px;
-        }
-
-        /* Projects */
-        .project {
-            border-left: 3px solid #1769aa;
-            padding: 5px 0 5px 22px;
-            margin-bottom: 30px;
-        }
-
-        .project h3 {
-            font-size: 20px;
-            margin-bottom: 6px;
-        }
-
-        .project p {
-            color: #666;
-            max-width: 850px;
-        }
-
-        /* Publications */
-        .publication {
-            margin-bottom: 28px;
-        }
-
-        .publication h3 {
-            font-size: 18px;
-            margin-bottom: 5px;
-        }
-
-        .publication p {
-            color: #666;
-        }
-
-        /* Skills */
-        .skills {
+        /* Skills Pills */
+        .skills-container {
             display: flex;
             flex-wrap: wrap;
             gap: 10px;
         }
 
-        .skill {
-            padding: 8px 13px;
-            background: #f4f6f8;
-            border-radius: 4px;
+        .skill-tag {
+            background-color: #edf2f7;
+            color: var(--text-dark);
+            padding: 6px 14px;
+            border-radius: 20px;
             font-size: 14px;
+            font-weight: 500;
         }
 
-        /* Contact */
-        .contact p {
-            margin-bottom: 8px;
-            color: #555;
-        }
-
-        /* Footer */
-        footer {
-            border-top: 1px solid #eee;
-            text-align: center;
-            padding: 30px 20px;
-            color: #777;
+        /* Publication Badge */
+        .doi-link {
+            display: inline-block;
+            margin-top: 10px;
             font-size: 13px;
+            color: var(--accent-color);
+            text-decoration: none;
+            font-weight: 500;
         }
 
-        /* Mobile Responsive */
-        @media (max-width: 800px) {
-            .hero {
-                grid-template-columns: 1fr;
-                padding-top: 40px;
-                text-align: center;
-            }
+        .doi-link:hover {
+            text-decoration: underline;
+        }
 
-            .profile-orbit {
-                margin: 0 auto 20px auto;
-            }
-
-            .hero p {
-                margin: auto;
-            }
-
-            .buttons {
-                justify-content: center;
-            }
-
-            .nav-container {
+        /* Responsive Design */
+        @media (max-width: 900px) {
+            body {
                 flex-direction: column;
-                gap: 12px;
             }
 
-            .nav-links {
-                gap: 14px;
-                flex-wrap: wrap;
-                justify-content: center;
+            .portfolio-container {
+                flex-direction: column;
             }
 
-            .hero h1 {
-                font-size: 40px;
+            .sidebar {
+                width: 100%;
+                height: auto;
+                position: relative;
+                border-right: none;
+                border-bottom: 1px solid var(--border-color);
+                padding: 30px 20px;
+            }
+
+            .main-content {
+                padding: 30px 20px;
             }
         }
     </style>
 </head>
-
 <body>
 
-<!-- Navigation -->
-<nav>
-    <div class="nav-container">
-        <div class="logo">
-            Mehedi Hasan
+<div class="portfolio-container">
+
+    <!-- Sticky Left Sidebar -->
+    <aside class="sidebar">
+        <div class="profile-container">
+            <img class="profile-img" src="M_pic.jpeg" alt="Mehedi Hasan">
+            <h1 class="profile-name">Mehedi Hasan</h1>
+            <div class="profile-title">Master's Student & Researcher</div>
+            <div class="profile-institution">
+                Department of Geoinformatics - Z_GIS<br>
+                Paris Lodron University of Salzburg<br>
+                Austria
+            </div>
+
+            <!-- Navigation Links -->
+            <ul class="nav-menu">
+                <li><a href="#about"><i class="fa-solid fa-user"></i> About</a></li>
+                <li><a href="#research"><i class="fa-solid fa-microscope"></i> Research</a></li>
+                <li><a href="#projects"><i class="fa-solid fa-diagram-project"></i> Projects</a></li>
+                <li><a href="#publications"><i class="fa-solid fa-book"></i> Publications</a></li>
+                <li><a href="#skills"><i class="fa-solid fa-gears"></i> Skills</a></li>
+            </ul>
         </div>
 
-        <ul class="nav-links">
-            <li><a href="#about">About</a></li>
-            <li><a href="#research">Research</a></li>
-            <li><a href="#projects">Projects</a></li>
-            <li><a href="#publications">Publications</a></li>
-            <li><a href="#skills">Skills</a></li>
-            <li><a href="#contact">Contact</a></li>
-        </ul>
-    </div>
-</nav>
-
-
-<!-- Hero Section -->
-<header class="hero">
-
-    <!-- Left Column: Profile Picture and Info Card -->
-    <div class="profile-sidebar">
-        
-        <div class="profile-orbit">
-            <span class="orbit orbit-one"></span>
-            <span class="orbit orbit-two"></span>
-            <img class="profile-photo" src="M_pic.jpeg" alt="Mehedi Hasan">
-        </div>
-
-        <div class="profile-details">
-            <h2>Mehedi Hasan</h2>
-            <p class="profile-role">MSc Candidate &amp; Researcher</p>
-            <p>Applied Geoinformatics</p>
-            <p>Paris Lodron University of Salzburg</p>
-            <p>Department of Z_GIS</p>
-            <p>Salzburg-5020 · Austria</p>
-
-            <hr class="profile-divider">
-
-            <div class="profile-links">
-                <p><a href="#">Personal Website</a></p>
-                <p><a href="#">Email</a></p>
-                <p><a href="#">LinkedIn</a></p>
-                <p><a href="#">Google Scholar</a></p>
-                <p><a href="#">View Full CV</a></p>
+        <!-- Social & Academic Links -->
+        <div>
+            <div class="social-links">
+                <a href="mailto:your-email@example.com" title="Email"><i class="fa-solid fa-envelope"></i></a>
+                <a href="https://github.com/Mahdialhasan" target="_blank" title="GitHub"><i class="fa-brands fa-github"></i></a>
+                <a href="#" target="_blank" title="LinkedIn"><i class="fa-brands fa-linkedin"></i></a>
+                <a href="#" target="_blank" title="Google Scholar"><i class="fa-solid fa-graduation-cap"></i></a>
+            </div>
+            <div style="text-align: center; font-size: 12px; color: var(--text-muted); margin-top: 15px;">
+                © 2026 Mehedi Hasan
             </div>
         </div>
+    </aside>
 
-    </div>
+    <!-- Main Content Area -->
+    <main class="main-content">
 
-    <!-- Right Column: Main Introduction Text -->
-    <div class="hero-content">
-        <h1>Mehedi Hasan</h1>
+        <!-- About Section -->
+        <section id="about">
+            <h2 class="section-title"><i class="fa-solid fa-user"></i> About Me</h2>
+            <div class="card">
+                <p class="card-body">
+                    I am currently pursuing a Master's degree in Applied Geoinformatics at Paris Lodron Universität Salzburg, Austria. My research interests focus on applying geospatial technologies, remote sensing, and GeoAI to assess environmental and disaster risks.
+                </p>
+                <p class="card-body" style="margin-top: 12px;">
+                    My academic work combines GIS-based spatial modeling, machine learning algorithms, and satellite remote sensing to solve complex spatial problems and support risk-informed decision-making.
+                </p>
+            </div>
+        </section>
 
-        <h2>Master Student in Applied Geoinformatics</h2>
+        <!-- Research Interests Section -->
+        <section id="research">
+            <h2 class="section-title"><i class="fa-solid fa-microscope"></i> Research Interests</h2>
+            <div class="grid-2">
+                <div class="card">
+                    <h3 class="card-title">GIS & Remote Sensing</h3>
+                    <p class="card-body">Geospatial data analysis, satellite remote sensing, spatial modeling, and environmental mapping.</p>
+                </div>
+                <div class="card">
+                    <h3 class="card-title">GeoAI & Machine Learning</h3>
+                    <p class="card-body">Machine learning and deep learning approaches for geospatial applications and spatial predictions.</p>
+                </div>
+                <div class="card">
+                    <h3 class="card-title">Environmental Risk</h3>
+                    <p class="card-body">Spatial assessment of climate hazards, natural disaster vulnerability, and environmental resilience.</p>
+                </div>
+            </div>
+        </section>
 
-        <p>Paris Lodron Universität Salzburg, Austria</p>
-
-        <p style="margin-top: 18px;">
-            I am a geospatial researcher interested in GIS, remote sensing,
-            spatial analysis, GeoAI, machine learning, and environmental
-            risk assessment.
-        </p>
-
-        <div class="buttons">
-            <a class="button primary" href="#research">Research</a>
-            <a class="button" href="#contact">Contact</a>
-        </div>
-    </div>
-
-</header>
-
-
-<!-- About -->
-<section id="about">
-    <div class="section-container">
-        <h2 class="section-title">About Me</h2>
-
-        <p class="about-text">
-            I am currently pursuing a Master's degree in Applied
-            Geoinformatics at Paris Lodron Universität Salzburg.
-            My academic and professional interests focus on applying
-            geospatial technologies and data-driven methods to understand
-            environmental and disaster-related challenges.
-        </p>
-
-        <p class="about-text" style="margin-top: 18px;">
-            My work combines GIS, remote sensing, spatial analysis,
-            machine learning, and geospatial modelling to support
-            environmental assessment and risk-informed decision making.
-        </p>
-    </div>
-</section>
-
-
-<!-- Research -->
-<section id="research">
-    <div class="section-container">
-        <h2 class="section-title">Research Interests</h2>
-
-        <div class="research-grid">
-            <div class="research-card">
-                <h3>GIS & Remote Sensing</h3>
-                <p>
-                    Geospatial data analysis, satellite remote sensing,
-                    spatial modelling and environmental mapping.
+        <!-- Selected Projects Section -->
+        <section id="projects">
+            <h2 class="section-title"><i class="fa-solid fa-diagram-project"></i> Selected Projects</h2>
+            
+            <div class="card">
+                <div class="card-header">
+                    <h3 class="card-title">Coastal Multi-Hazard Risk Assessment</h3>
+                    <span class="card-date">GIS / Spatial Modeling</span>
+                </div>
+                <p class="card-body">
+                    GIS-based assessment of flood, cyclone, salinity, and erosion risks with vulnerability analysis and multi-criteria decision-making frameworks.
                 </p>
             </div>
 
-            <div class="research-card">
-                <h3>GeoAI & Machine Learning</h3>
-                <p>
-                    Machine learning and deep learning approaches for
-                    geospatial and environmental applications.
+            <div class="card">
+                <div class="card-header">
+                    <h3 class="card-title">Urban Thermal Environment Analysis</h3>
+                    <span class="card-date">Remote Sensing / Python</span>
+                </div>
+                <p class="card-body">
+                    Analysis of land surface temperature, urban environmental changes, and thermal conditions using multi-spectral remote sensing datasets.
                 </p>
             </div>
 
-            <div class="research-card">
-                <h3>Environmental Risk</h3>
-                <p>
-                    Spatial assessment of climate, disaster and
-                    environmental risks using GIS-based methods.
+            <div class="card">
+                <div class="card-header">
+                    <h3 class="card-title">Earthquake Risk Assessment</h3>
+                    <span class="card-date">AHP / Spatial Analysis</span>
+                </div>
+                <p class="card-body">
+                    Spatial assessment of seismic risk and vulnerability using GIS, Analytical Hierarchy Process (AHP), and geospatial hazard modeling.
                 </p>
             </div>
-        </div>
-    </div>
-</section>
+        </section>
 
+        <!-- Publications Section -->
+        <section id="publications">
+            <h2 class="section-title"><i class="fa-solid fa-book"></i> Publications</h2>
+            
+            <div class="card">
+                <h3 class="card-title">Mapping seismic risk in Rangpur Division, Bangladesh</h3>
+                <div class="card-subtitle">Spatial Information Research (2025)</div>
+                <p class="card-body">
+                    A comprehensive spatial evaluation using GIS and decision-making models to identify high-risk seismic zones in northern Bangladesh.
+                </p>
+                <a href="https://doi.org/10.1007/s41324-025-00643-y" target="_blank" class="doi-link">
+                    <i class="fa-solid fa-link"></i> DOI: 10.1007/s41324-025-00643-y
+                </a>
+            </div>
+        </section>
 
-<!-- Projects -->
-<section id="projects">
-    <div class="section-container">
-        <h2 class="section-title">Selected Research Projects</h2>
+        <!-- Technical Skills Section -->
+        <section id="skills">
+            <h2 class="section-title"><i class="fa-solid fa-gears"></i> Technical Skills</h2>
+            <div class="card">
+                <div class="skills-container">
+                    <span class="skill-tag">ArcGIS Pro</span>
+                    <span class="skill-tag">QGIS</span>
+                    <span class="skill-tag">Google Earth Engine</span>
+                    <span class="skill-tag">Python</span>
+                    <span class="skill-tag">MATLAB</span>
+                    <span class="skill-tag">SQL</span>
+                    <span class="skill-tag">Power BI</span>
+                    <span class="skill-tag">HEC-RAS</span>
+                    <span class="skill-tag">Machine Learning</span>
+                    <span class="skill-tag">Remote Sensing</span>
+                    <span class="skill-tag">Spatial Analysis</span>
+                </div>
+            </div>
+        </section>
 
-        <div class="project">
-            <h3>Coastal Multi-Hazard Risk Assessment</h3>
-            <p>
-                GIS-based assessment of flood, cyclone, salinity and
-                erosion risks with vulnerability analysis and
-                multi-criteria decision-making.
-            </p>
-        </div>
+    </main>
 
-        <div class="project">
-            <h3>Urban Thermal Environment</h3>
-            <p>
-                Analysis of land surface temperature, urban environmental
-                change and thermal conditions using remote sensing and
-                data-driven approaches.
-            </p>
-        </div>
-
-        <div class="project">
-            <h3>Earthquake Risk Assessment</h3>
-            <p>
-                Spatial assessment of seismic risk and vulnerability
-                using GIS, AHP and geospatial modelling.
-            </p>
-        </div>
-    </div>
-</section>
-
-
-<!-- Publications -->
-<section id="publications">
-    <div class="section-container">
-        <h2 class="section-title">Publications</h2>
-
-        <div class="publication">
-            <h3>Mapping seismic risk in Rangpur Division, Bangladesh</h3>
-            <p>Spatial Information Research, 2025.</p>
-            <p>DOI: 10.1007/s41324-025-00643-y</p>
-        </div>
-
-        <p style="color:#777;">
-            More publications and research outputs will be added here.
-        </p>
-    </div>
-</section>
-
-
-<!-- Skills -->
-<section id="skills">
-    <div class="section-container">
-        <h2 class="section-title">Technical Skills</h2>
-
-        <div class="skills">
-            <span class="skill">ArcGIS Pro</span>
-            <span class="skill">QGIS</span>
-            <span class="skill">Google Earth Engine</span>
-            <span class="skill">Python</span>
-            <span class="skill">MATLAB</span>
-            <span class="skill">SQL</span>
-            <span class="skill">Power BI</span>
-            <span class="skill">HEC-RAS</span>
-            <span class="skill">Machine Learning</span>
-            <span class="skill">Remote Sensing</span>
-            <span class="skill">Spatial Analysis</span>
-        </div>
-    </div>
-</section>
-
-
-<!-- Contact -->
-<section id="contact">
-    <div class="section-container contact">
-        <h2 class="section-title">Contact</h2>
-
-        <p><strong>Email:</strong> your-email@example.com</p>
-        <p><strong>GitHub:</strong> github.com/Mahdialhasan</p>
-        <p><strong>LinkedIn:</strong> Add your LinkedIn profile</p>
-        <p><strong>Google Scholar:</strong> Add your Google Scholar profile</p>
-    </div>
-</section>
-
-
-<!-- Footer -->
-<footer>
-    © 2026 Mehedi Hasan. All rights reserved.
-</footer>
+</div>
 
 </body>
 </html>
