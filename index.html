@@ -135,20 +135,52 @@
        .profile-box {
     text-align: center;
     width: 100%;
-    margin-top: -15px;
+    margin-top: -35px;
+    position: relative;
+    left: -12px;
+}
+
+.profile-orbit {
+    width: 235px;
+    height: 235px;
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 0 auto 20px;
 }
 
 .profile-photo {
-    width: 205px;
-    height: 205px;
+    width: 185px;
+    height: 185px;
     object-fit: cover;
     object-position: center;
     border-radius: 50%;
-    border: 5px solid #ffffff;
-    outline: 2px solid #d9e3ec;
-    box-shadow: 0 5px 18px rgba(0, 0, 0, 0.14);
-    display: block;
-    margin: 0 auto 20px;
+    border: 4px solid #ffffff;
+    outline: 2px solid #384b5e;
+    box-shadow: 0 5px 18px rgba(0, 0, 0, 0.30);
+    position: relative;
+    z-index: 2;
+}
+
+.orbit {
+    position: absolute;
+    width: 225px;
+    height: 85px;
+    border: 1.5px solid rgba(35, 53, 75, 0.75);
+    border-radius: 50%;
+    top: 50%;
+    left: 50%;
+    pointer-events: none;
+}
+
+.orbit-one {
+    transform: translate(-50%, -50%) rotate(-35deg);
+}
+
+.orbit-two {
+    transform: translate(-50%, -50%) rotate(35deg);
+    border-color: rgba(70, 90, 115, 0.65);
 }
 
 .profile-banner {
