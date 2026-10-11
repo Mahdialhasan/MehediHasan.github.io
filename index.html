@@ -108,7 +108,83 @@
             gap: 40px;
             align-items: start;
         }
+/* Conference Carousel / Horizontal Blocks Styling */
+    .conf-grid {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+        gap: 20px;
+        margin-top: 15px;
+    }
 
+    .conf-card {
+        background: var(--card-bg);
+        border: 1px solid var(--border-color);
+        border-radius: 12px;
+        overflow: hidden;
+        text-decoration: none !important;
+        color: inherit !important;
+        display: flex;
+        flex-direction: column;
+        transition: transform 0.25s ease, box-shadow 0.25s ease;
+        box-shadow: 0 3px 10px rgba(0,0,0,0.02);
+        position: relative;
+    }
+
+    .conf-card:hover {
+        transform: translateY(-5px);
+        box-shadow: 0 8px 20px rgba(0,0,0,0.08);
+    }
+
+    /* Auto Shuffle Image Slider Container */
+    .conf-slider {
+        position: relative;
+        width: 100%;
+        height: 190px;
+        overflow: hidden;
+        background: #e2e8f0;
+    }
+
+    .conf-slide-img {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+        opacity: 0;
+        transition: opacity 0.8s ease-in-out;
+    }
+
+    .conf-slide-img.active {
+        opacity: 1;
+    }
+
+    .conf-body {
+        padding: 20px;
+        display: flex;
+        flex-direction: column;
+        flex-grow: 1;
+    }
+
+    .conf-title {
+        font-size: 16.5px;
+        font-weight: 600;
+        color: var(--primary-color);
+        margin-bottom: 8px;
+    }
+
+    .conf-meta {
+        font-size: 13px;
+        color: var(--accent-color);
+        margin-bottom: 10px;
+        font-weight: 500;
+    }
+
+    .conf-desc {
+        font-size: 13.5px;
+        color: var(--text-muted);
+        line-height: 1.5;
+    }
         /* Left Sidebar Profile Box (Fit & Sticky scroll fixed) */
         .sidebar-card {
             background: var(--card-bg);
@@ -757,19 +833,38 @@
         </section>
 
         <!-- Conferences and Seminars Section -->
+        <!-- Conferences and Seminars Section -->
         <section id="conferences">
             <h2 class="section-title">Conferences and Seminars</h2>
 
-            <div class="item-card">
-                <div class="item-title">International Conference on Life, Earth and Science for Sustainable Development (ICLESSD-2025)</div>
-                <div class="item-meta">Jagannath University, Dhaka, Bangladesh | Dec 18, 2025 – Dec 19, 2025</div>
-                <div class="item-desc">Presented my research, “Predicting Thermal Comfort Impacts of Urban Water Shrinkage in Dhaka Using Artificial Learning Models,” at ICLESSD-2025. The study used time-series analysis to examine changes in urban water bodies and temperature in Dhaka and investigate their relationship with urban thermal comfort using machine learning models.</div>
-            </div>
+            <div class="conf-grid">
+                <!-- Conference Block 1 -->
+                <a href="icle ssd-details.html" class="conf-card">
+                    <div class="conf-slider" id="slider1">
+                        <img src="conf1_img1.jpg" class="conf-slide-img active" alt="Slide 1">
+                        <img src="conf1_img2.jpg" class="conf-slide-img" alt="Slide 2">
+                        <img src="conf1_img3.jpg" class="conf-slide-img" alt="Slide 3">
+                    </div>
+                    <div class="conf-body">
+                        <div class="conf-title">International Conference on Life, Earth and Science for Sustainable Development (ICLESSD-2025)</div>
+                        <div class="conf-meta">Jagannath University, Dhaka | Dec 18 – Dec 19, 2025</div>
+                        <div class="conf-desc">Presented research on predicting thermal comfort impacts of urban water shrinkage in Dhaka using artificial learning models. Click to view abstract, PPT, and full details.</div>
+                    </div>
+                </a>
 
-            <div class="item-card">
-                <div class="item-title">International Workshop on Technologies for Adaptation to Climate Change (IWTACC-2025)</div>
-                <div class="item-meta">Asian Institute of Technology (AIT), Bangkok, Thailand | Nov 21, 2025 – Nov 22, 2025</div>
-                <div class="item-desc">Presented the research paper “Assessing Climate Change Adaptive Capacity using Geospatial Techniques: Application to a Coastal Upazila in Bangladesh” at the International Workshop on Technologies for Adaptation to Climate Change (TACC 2025). The study used geospatial techniques to assess climate change adaptive capacity and identify spatial variations in the adaptive capacity of coastal communities in Bangladesh.</div>
+                <!-- Conference Block 2 -->
+                <a href="iwtacc-details.html" class="conf-card">
+                    <div class="conf-slider" id="slider2">
+                        <img src="conf2_img1.jpg" class="conf-slide-img active" alt="Slide 1">
+                        <img src="conf2_img2.jpg" class="conf-slide-img" alt="Slide 2">
+                        <img src="conf2_img3.jpg" class="conf-slide-img" alt="Slide 3">
+                    </div>
+                    <div class="conf-body">
+                        <div class="conf-title">International Workshop on Technologies for Adaptation to Climate Change (IWTACC-2025)</div>
+                        <div class="conf-meta">AIT, Bangkok, Thailand | Nov 21 – Nov 22, 2025</div>
+                        <div class="conf-desc">Presented assessing climate change adaptive capacity using geospatial techniques in coastal Bangladesh. Click to view abstract, PPT, and full details.</div>
+                    </div>
+                </a>
             </div>
         </section>
 
@@ -894,6 +989,50 @@
         }
     }
 </script>
+<!-- Footer-er porer ongsho -->
+<footer>
+    <p>&copy; 2026 Mehedi Hasan. All rights reserved. Built with passion for Applied Geoinformatics.</p>
+</footer>
 
+<!-- Modern Modal JavaScript + Conference Slider JavaScript -->
+<script>
+    function openModal() {
+        document.getElementById('contactModal').style.display = 'flex';
+    }
+
+    function closeModal() {
+        document.getElementById('contactModal').style.display = 'none';
+    }
+
+    window.onclick = function(event) {
+        const modal = document.getElementById('contactModal');
+        if (event.target === modal) {
+            modal.style.display = 'none';
+        }
+    }
+
+    // Auto Shuffle Image Sliders for Conferences (EI CODE-TI EKHANE ADD KORBEN)
+    function setupSlider(sliderId, intervalTime = 3000) {
+        const slider = document.getElementById(sliderId);
+        if (!slider) return;
+        const slides = slider.querySelectorAll('.conf-slide-img');
+        if (slides.length === 0) return;
+        let current = 0;
+
+        setInterval(() => {
+            slides[current].classList.remove('active');
+            current = (current + 1) % slides.length;
+            slides[current].classList.add('active');
+        }, intervalTime);
+    }
+
+    window.addEventListener('DOMContentLoaded', () => {
+        setupSlider('slider1', 3500); // 3.5 seconds interval
+        setupSlider('slider2', 4000); // 4 seconds interval
+    });
+</script>
+
+</body>
+</html>
 </body>
 </html>
