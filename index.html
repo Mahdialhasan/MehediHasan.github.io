@@ -109,7 +109,7 @@
             align-items: start;
         }
 
-        /* Conference Carousel / Horizontal Blocks Styling */
+        /* Conference Cards */
         .conf-grid {
             display: grid;
             grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
@@ -136,13 +136,13 @@
             box-shadow: 0 8px 20px rgba(0,0,0,0.08);
         }
 
-        /* Auto Shuffle Image Slider Container (gradient acts as fallback if images missing) */
+        /* Auto Shuffle Image Slider */
         .conf-slider {
             position: relative;
             width: 100%;
             height: 190px;
             overflow: hidden;
-            background: linear-gradient(135deg, #dbeafe 0%, #e0f2fe 50%, #cffafe 100%);
+            background: #e2e8f0;
         }
 
         .conf-slide-img {
@@ -187,7 +187,7 @@
             line-height: 1.5;
         }
 
-        /* Left Sidebar Profile Box (Fit & Sticky scroll fixed) */
+        /* Left Sidebar Profile Box */
         .sidebar-card {
             background: var(--card-bg);
             border: 1px solid var(--border-color);
@@ -198,9 +198,8 @@
             top: 80px;
             max-height: calc(100vh - 100px);
             overflow-y: auto;
-            /* Hide scrollbar for IE, Edge and Firefox */
-            -ms-overflow-style: none;
-            scrollbar-width: none;
+            -ms-overflow-style: none;  /* IE and Edge */
+            scrollbar-width: none;     /* Firefox */
         }
 
         /* Hide scrollbar for Chrome, Safari and Opera */
@@ -208,7 +207,6 @@
             display: none;
         }
 
-        /* Cover Photo Styling */
         .cover-photo-container {
             width: 100%;
             height: 100px;
@@ -375,7 +373,7 @@
             color: var(--text-muted);
         }
 
-        /* Research Themes Cards Grid */
+        /* Research Themes */
         .themes-grid {
             display: grid;
             grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
@@ -484,7 +482,7 @@
             font-weight: 500;
         }
 
-        /* Modal / Popup Styling */
+        /* Modal / Popup */
         .modal-overlay {
             position: fixed;
             top: 0;
@@ -597,13 +595,13 @@
 <!-- Top Navigation Bar -->
 <nav>
     <div class="nav-container">
-        <a href="#about" class="nav-logo">Mehedi Hasan</a>
+        <div class="nav-logo">Mehedi Hasan</div>
         <ul class="nav-links">
             <li><a href="#about">About me</a></li>
             <li><a href="#experience">Experience</a></li>
             <li><a href="#projects">Projects</a></li>
             <li><a href="#publications">Publications</a></li>
-            <li><a href="#conferences">Conferences & Seminars</a></li>
+            <li><a href="#conferences">Conferences &amp; Seminars</a></li>
             <li><a href="#certifications">Certifications</a></li>
             <li><a href="#skills">Skills</a></li>
             <li><a href="#mentorship">Mentorship</a></li>
@@ -616,23 +614,21 @@
 
     <!-- Left Sticky Sidebar Profile Card -->
     <aside class="sidebar-card">
-        <!-- Cover Photo (Salzburg.png) -->
         <div class="cover-photo-container">
             <img class="cover-photo" src="Salzburg.png" alt="Salzburg Banner">
         </div>
 
         <div class="sidebar-body">
-            <!-- Profile Photo (M_pic.jpeg) -->
             <div class="profile-img-box">
                 <img class="profile-photo" src="M_pic.jpeg" alt="Mehedi Hasan">
             </div>
 
             <h1 class="profile-name">Mehedi Hasan</h1>
-            <div class="profile-role">MSc Student & Researcher</div>
+            <div class="profile-role">MSc Student &amp; Researcher</div>
 
             <div class="profile-dept">
                 Applied Geoinformatics, Department of Z_GIS<br>
-                <a href="https://www.plus.ac.at/geoinformatik/" target="_blank">Paris Lodron University of Salzburg</a><br>
+                <a href="https://www.plus.ac.at/geoinformatik/" target="_blank" rel="noopener">Paris Lodron University of Salzburg</a><br>
                 Salzburg-5020 · Austria
             </div>
 
@@ -640,13 +636,13 @@
                 <a href="mailto:mehedi.hasan@stud.plus.ac.at">
                     <span><i class="fa-solid fa-envelope"></i> Email</span> ↗
                 </a>
-                <a href="https://www.linkedin.com/in/mehedi-hasan-97a2b3217/" target="_blank">
+                <a href="https://www.linkedin.com/in/mehedi-hasan-97a2b3217/" target="_blank" rel="noopener">
                     <span><i class="fa-brands fa-linkedin"></i> LinkedIn</span> ↗
                 </a>
-                <a href="https://github.com/Mahdialhasan" target="_blank">
+                <a href="https://github.com/Mahdialhasan" target="_blank" rel="noopener">
                     <span><i class="fa-brands fa-github"></i> GitHub</span> ↗
                 </a>
-                <a href="https://mahdialhasan.github.io/MehediHasan.github.io/" target="_blank">
+                <a href="https://mahdialhasan.github.io/MehediHasan.github.io/" target="_blank" rel="noopener">
                     <span><i class="fa-solid fa-file-pdf"></i> View Full CV</span> ↗
                 </a>
             </div>
@@ -666,7 +662,7 @@
                 I leverage high-resolution satellite imagery, spatial statistics, machine learning models, and hydro-climatic data to understand environmental risk dynamics, flood susceptibility, and seismic vulnerability to support resilient communities.
             </p>
             <p class="about-text">
-                I have authored and co-authored peer-reviewed research papers in Taylor & Francis, Elsevier, and Springer Nature journals focusing on multi-hazard mapping, wetland dynamics, and flash flood prediction. I also bring hands-on professional industry experience as a GIS Analyst at the Institute of Water Modelling (IWM).
+                I have authored and co-authored peer-reviewed research papers in Taylor &amp; Francis, Elsevier, and Springer Nature journals focusing on multi-hazard mapping, wetland dynamics, and flash flood prediction. I also bring hands-on professional industry experience as a GIS Analyst at the Institute of Water Modelling (IWM).
             </p>
 
             <!-- Interests Box -->
@@ -675,13 +671,13 @@
                 <ul class="interests-list">
                     <li>Flood Risk Assessment</li>
                     <li>Disaster Resilience</li>
-                    <li>GIS & Remote Sensing</li>
+                    <li>GIS &amp; Remote Sensing</li>
                     <li>Geospatial Analysis</li>
                     <li>Machine Learning (ML)</li>
                     <li>Deep Learning (DL)</li>
                     <li>Hydrological Modeling</li>
                     <li>Climate Change Impact</li>
-                    <li>Urban & Regional Planning</li>
+                    <li>Urban &amp; Regional Planning</li>
                 </ul>
             </div>
 
@@ -719,12 +715,12 @@
                 <h3 style="font-size: 19px; color: var(--primary-color); margin-bottom: 14px;">Research Themes</h3>
                 <div class="themes-grid">
                     <div class="theme-card">
-                        <div class="theme-title">Flood & Hazard Risk</div>
+                        <div class="theme-title">Flood &amp; Hazard Risk</div>
                         <div class="theme-desc">Multi-hazard risk assessment and spatial susceptibility modeling in coastal and riverine frontiers.</div>
                     </div>
                     <div class="theme-card">
-                        <div class="theme-title">GeoAI & Machine Learning</div>
-                        <div class="theme-desc">Applying ensemble ML and deep learning framework for environmental vulnerability and groundwater zoning.</div>
+                        <div class="theme-title">GeoAI &amp; Machine Learning</div>
+                        <div class="theme-desc">Applying ensemble ML and deep learning frameworks for environmental vulnerability and groundwater zoning.</div>
                     </div>
                     <div class="theme-card">
                         <div class="theme-title">Climate Resilience</div>
@@ -745,7 +741,7 @@
             <div class="item-card">
                 <div class="item-title">GIS Analyst</div>
                 <div class="item-meta">Institute of Water Modelling (IWM), Dhaka, Bangladesh | Apr 2024 – Sep 2026</div>
-                <div class="item-desc">Worked in ICT, GIS & Remote Sensing Division on water modeling and environmental spatial analysis.</div>
+                <div class="item-desc">Worked in ICT, GIS &amp; Remote Sensing Division on water modeling and environmental spatial analysis.</div>
             </div>
 
             <div class="item-card">
@@ -782,7 +778,7 @@
             </div>
 
             <div class="item-card">
-                <div class="item-title">Earthquake Vulnerability & Risk Assessment</div>
+                <div class="item-title">Earthquake Vulnerability &amp; Risk Assessment</div>
                 <div class="item-desc">Spatial evaluation of seismic risk and preparedness using Analytical Hierarchy Process (AHP) and geospatial integration.</div>
             </div>
         </section>
@@ -793,32 +789,32 @@
 
             <div class="item-card">
                 <div class="item-title">Multi-hazard risk mapping using geospatial techniques in coastal Bangladesh: implications for resilience</div>
-                <div class="item-meta">Geomatics, Natural Hazards and Risk, Taylor & Francis (2026)</div>
-                <a href="https://doi.org/10.1080/19475705.2026.2729590" target="_blank">DOI: 10.1080/19475705.2026.2729590 ↗</a>
+                <div class="item-meta">Geomatics, Natural Hazards and Risk, Taylor &amp; Francis (2026)</div>
+                <a href="https://doi.org/10.1080/19475705.2026.2729590" target="_blank" rel="noopener">DOI: 10.1080/19475705.2026.2729590 ↗</a>
             </div>
 
             <div class="item-card">
                 <div class="item-title">Machine learning-driven flood susceptibility mapping in the coastal frontier of Feni District, Bangladesh</div>
-                <div class="item-meta">Geomatics, Natural Hazards and Risk, Taylor & Francis (2026)</div>
-                <a href="https://doi.org/10.1080/19475705.2026.2717863" target="_blank">DOI: 10.1080/19475705.2026.2717863 ↗</a>
+                <div class="item-meta">Geomatics, Natural Hazards and Risk, Taylor &amp; Francis (2026)</div>
+                <a href="https://doi.org/10.1080/19475705.2026.2717863" target="_blank" rel="noopener">DOI: 10.1080/19475705.2026.2717863 ↗</a>
             </div>
 
             <div class="item-card">
                 <div class="item-title">Wetland change and its impacts on livelihood using machine learning algorithms in Chanda Beel, Gopalganj, Bangladesh</div>
                 <div class="item-meta">Next Research, Elsevier (2025)</div>
-                <a href="https://doi.org/10.1016/j.nexres.2026.101556" target="_blank">DOI: 10.1016/j.nexres.2026.101556 ↗</a>
+                <a href="https://doi.org/10.1016/j.nexres.2026.101556" target="_blank" rel="noopener">DOI: 10.1016/j.nexres.2026.101556 ↗</a>
             </div>
 
             <div class="item-card">
                 <div class="item-title">A Comparative Study of Spatial MCDM Techniques for Flash Flood Risk Mapping in Northeastern Bangladesh</div>
                 <div class="item-meta">Earth Systems and Environment, Springer Nature (2025)</div>
-                <a href="https://link.springer.com/article/10.1007/s41748-025-00942-2" target="_blank">Springer Link ↗</a>
+                <a href="https://link.springer.com/article/10.1007/s41748-025-00942-2" target="_blank" rel="noopener">Springer Link ↗</a>
             </div>
 
             <div class="item-card">
                 <div class="item-title">Mapping seismic risk in Rangpur Division, Bangladesh: An integrated geospatial approach</div>
                 <div class="item-meta">Spatial Information Research, Springer Nature (2025)</div>
-                <a href="https://link.springer.com/article/10.1007/s41324-025-00643-y" target="_blank">Springer Link ↗</a>
+                <a href="https://link.springer.com/article/10.1007/s41324-025-00643-y" target="_blank" rel="noopener">Springer Link ↗</a>
             </div>
 
             <div class="item-card">
@@ -836,23 +832,23 @@
                 <!-- Conference Block 1 -->
                 <a href="iclessd-details.html" class="conf-card">
                     <div class="conf-slider" id="slider1">
-                        <img src="conf1_img1.jpg" class="conf-slide-img active" alt="ICLESSD Conference Slide 1" loading="lazy" onerror="this.style.display='none'">
-                        <img src="conf1_img2.jpg" class="conf-slide-img" alt="ICLESSD Conference Slide 2" loading="lazy" onerror="this.style.display='none'">
-                        <img src="conf1_img3.jpg" class="conf-slide-img" alt="ICLESSD Conference Slide 3" loading="lazy" onerror="this.style.display='none'">
+                        <img src="conf1_img1.jpg" class="conf-slide-img active" alt="ICLESSD-2025 photo 1" loading="lazy">
+                        <img src="conf1_img2.jpg" class="conf-slide-img" alt="ICLESSD-2025 photo 2" loading="lazy">
+                        <img src="conf1_img3.jpg" class="conf-slide-img" alt="ICLESSD-2025 photo 3" loading="lazy">
                     </div>
                     <div class="conf-body">
                         <div class="conf-title">International Conference on Life, Earth and Science for Sustainable Development (ICLESSD-2025)</div>
                         <div class="conf-meta">Jagannath University, Dhaka | Dec 18 – Dec 19, 2025</div>
-                        <div class="conf-desc">Presented research on predicting thermal comfort impacts of urban water shrinkage in Dhaka using machine learning models. Click to view abstract, PPT, and full details.</div>
+                        <div class="conf-desc">Presented research on predicting thermal comfort impacts of urban water shrinkage in Dhaka using artificial learning models. Click to view abstract, PPT, and full details.</div>
                     </div>
                 </a>
 
                 <!-- Conference Block 2 -->
                 <a href="iwtacc-details.html" class="conf-card">
                     <div class="conf-slider" id="slider2">
-                        <img src="conf2_img1.jpg" class="conf-slide-img active" alt="IWTACC Conference Slide 1" loading="lazy" onerror="this.style.display='none'">
-                        <img src="conf2_img2.jpg" class="conf-slide-img" alt="IWTACC Conference Slide 2" loading="lazy" onerror="this.style.display='none'">
-                        <img src="conf2_img3.jpg" class="conf-slide-img" alt="IWTACC Conference Slide 3" loading="lazy" onerror="this.style.display='none'">
+                        <img src="conf2_img1.jpg" class="conf-slide-img active" alt="IWTACC-2025 photo 1" loading="lazy">
+                        <img src="conf2_img2.jpg" class="conf-slide-img" alt="IWTACC-2025 photo 2" loading="lazy">
+                        <img src="conf2_img3.jpg" class="conf-slide-img" alt="IWTACC-2025 photo 3" loading="lazy">
                     </div>
                     <div class="conf-body">
                         <div class="conf-title">International Workshop on Technologies for Adaptation to Climate Change (IWTACC-2025)</div>
@@ -868,8 +864,8 @@
             <h2 class="section-title">Certifications</h2>
 
             <div class="item-card">
-                <div class="item-title">Practical GIS & Remote Sensing with Python and ArcPy: Step-by-Step Learning</div>
-                <div class="item-meta">KIM's GIS | 5 Jun 2025</div>
+                <div class="item-title">Practical GIS &amp; Remote Sensing with Python and ArcPy: Step-by-Step Learning</div>
+                <div class="item-meta">KIM’s GIS | 5 Jun 2025</div>
                 <div class="item-desc">Mode of learning: Online</div>
             </div>
 
@@ -877,28 +873,28 @@
                 <div class="item-title">Machine Learning and Data Science</div>
                 <div class="item-meta">National Academy for Computer Training and Research (NACTAR) | 1 Jan 2025</div>
                 <div class="item-desc">Mode of learning: Online</div>
-                <a href="https://nactar.gov.bd" target="_blank">Link ↗</a>
+                <a href="https://nactar.gov.bd" target="_blank" rel="noopener">Link ↗</a>
             </div>
 
             <div class="item-card">
                 <div class="item-title">Computer Training Program</div>
                 <div class="item-meta">Youth Development Program | 21 Jul 2022</div>
-                <div class="item-desc">Mode of learning: Presential</div>
-                <a href="https://dyd.gov.bd/" target="_blank">Link ↗</a>
+                <div class="item-desc">Mode of learning: In-person</div>
+                <a href="https://dyd.gov.bd/" target="_blank" rel="noopener">Link ↗</a>
             </div>
 
             <div class="item-card">
                 <div class="item-title">Google Earth Engine (GEE)</div>
-                <div class="item-meta">Institute of GIS, AI & RS | 30 Jun 2022</div>
+                <div class="item-meta">Institute of GIS, AI &amp; RS | 30 Jun 2022</div>
                 <div class="item-desc">Mode of learning: Online</div>
-                <a href="https://www.studyhacksgeospatial.com/" target="_blank">Link ↗</a>
+                <a href="https://www.studyhacksgeospatial.com/" target="_blank" rel="noopener">Link ↗</a>
             </div>
 
             <div class="item-card">
                 <div class="item-title">Application of GIS</div>
                 <div class="item-meta">Group Mappers | 10 Feb 2022</div>
-                <div class="item-desc">Mode of learning: Presential</div>
-                <a href="https://groupmappers.com" target="_blank">Link ↗</a>
+                <div class="item-desc">Mode of learning: In-person</div>
+                <a href="https://groupmappers.com" target="_blank" rel="noopener">Link ↗</a>
             </div>
         </section>
 
@@ -932,7 +928,7 @@
                     Having started my academic journey in Bangladesh, I understand how challenging it can be to navigate geospatial research with limited access to resources. As a way of giving back, I dedicate time to support students facing academic or research challenges in GIScience and Remote Sensing.
                 </p>
                 <div style="margin-top: 15px;">
-                    <button class="btn-conversation" onclick="openModal()">Schedule a conversation ↗</button>
+                    <button type="button" class="btn-conversation" onclick="openModal()">Schedule a conversation ↗</button>
                 </div>
             </div>
         </section>
@@ -944,18 +940,18 @@
 <!-- Modal / Pop-up Window for Schedule Conversation -->
 <div class="modal-overlay" id="contactModal" role="dialog" aria-modal="true" aria-labelledby="modalTitle">
     <div class="modal-card">
-        <button class="modal-close" onclick="closeModal()" aria-label="Close">&times;</button>
+        <button type="button" class="modal-close" onclick="closeModal()" aria-label="Close">&times;</button>
         <div class="modal-title" id="modalTitle">Get in Touch</div>
         <p style="font-size: 13.5px; color: var(--text-muted);">Select your preferred platform to reach out:</p>
 
         <div class="modal-options">
-            <a href="https://wa.me/436765979947" target="_blank" class="modal-option-btn btn-whatsapp">
+            <a href="https://wa.me/436765979947" target="_blank" rel="noopener" class="modal-option-btn btn-whatsapp">
                 <i class="fa-brands fa-whatsapp" style="font-size: 18px;"></i> WhatsApp
             </a>
             <a href="mailto:mehedi.hasan@stud.plus.ac.at" class="modal-option-btn btn-email">
                 <i class="fa-solid fa-envelope" style="font-size: 16px;"></i> Send Email
             </a>
-            <a href="https://www.linkedin.com/in/mehedi-hasan-97a2b3217/" target="_blank" class="modal-option-btn btn-linkedin">
+            <a href="https://www.linkedin.com/in/mehedi-hasan-97a2b3217/" target="_blank" rel="noopener" class="modal-option-btn btn-linkedin">
                 <i class="fa-brands fa-linkedin" style="font-size: 18px;"></i> LinkedIn Direct Message
             </a>
         </div>
@@ -964,71 +960,49 @@
 
 <!-- Footer -->
 <footer>
-    © 2026 Mehedi Hasan. All rights reserved. Built with passion for Applied Geoinformatics.
+    <p>&copy; 2026 Mehedi Hasan. All rights reserved. Built with passion for Applied Geoinformatics.</p>
 </footer>
 
-<!-- Modal JavaScript + Conference Slider JavaScript -->
 <script>
-    /* ---------- Modal ---------- */
-    const modal = document.getElementById('contactModal');
+    // ----- Contact modal -----
+    const contactModal = document.getElementById('contactModal');
 
     function openModal() {
-        modal.style.display = 'flex';
+        contactModal.style.display = 'flex';
     }
 
     function closeModal() {
-        modal.style.display = 'none';
+        contactModal.style.display = 'none';
     }
 
-    // Close modal when clicking outside the modal box
-    modal.addEventListener('click', function (event) {
-        if (event.target === modal) {
-            modal.style.display = 'none';
-        }
+    // Close when clicking the dark overlay (outside the box)
+    contactModal.addEventListener('click', function (event) {
+        if (event.target === contactModal) closeModal();
     });
 
-    // Close modal with the ESC key
+    // Close with Escape key
     document.addEventListener('keydown', function (event) {
-        if (event.key === 'Escape') {
-            modal.style.display = 'none';
-        }
+        if (event.key === 'Escape') closeModal();
     });
 
-    /* ---------- Auto Shuffle Image Sliders for Conferences ---------- */
-    function setupSlider(sliderId, intervalTime = 3000) {
+    // ----- Auto-shuffle image sliders for conferences -----
+    function setupSlider(sliderId, intervalTime) {
         const slider = document.getElementById(sliderId);
         if (!slider) return;
-
-        const slides = slider.querySelectorAll('.conf-slide-img:not([style*="display: none"])');
+        const slides = slider.querySelectorAll('.conf-slide-img');
         if (slides.length === 0) return;
-
         let current = 0;
-        let timer;
 
-        function nextSlide() {
+        setInterval(function () {
             slides[current].classList.remove('active');
             current = (current + 1) % slides.length;
             slides[current].classList.add('active');
-        }
-
-        function start() {
-            timer = setInterval(nextSlide, intervalTime);
-        }
-
-        function stop() {
-            clearInterval(timer);
-        }
-
-        start();
-
-        // Pause auto-shuffle on hover for better readability
-        slider.addEventListener('mouseenter', stop);
-        slider.addEventListener('mouseleave', start);
+        }, intervalTime);
     }
 
-    window.addEventListener('DOMContentLoaded', () => {
-        setupSlider('slider1', 3500); // 3.5 seconds interval
-        setupSlider('slider2', 4000); // 4 seconds interval
+    window.addEventListener('DOMContentLoaded', function () {
+        setupSlider('slider1', 3500); // 3.5 seconds
+        setupSlider('slider2', 4000); // 4 seconds
     });
 </script>
 
