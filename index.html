@@ -118,6 +118,24 @@ h3{font-size:15px;font-weight:600;color:var(--ink);margin-bottom:10px}
 .ed .rb{padding:20px}
 }
 
+
+/* ===== PROJECT CARDS ===== */
+.pjs{display:grid;gap:18px}
+.pj .rm{width:360px;min-height:260px}
+.pj .rb{padding:24px 28px}
+.pj h4{font-size:17px;line-height:1.45;margin:8px 0 12px;padding-right:0}
+.pj .pt{display:flex;gap:8px;flex-wrap:wrap}
+.tag.bl{background:#dbeafe;color:#1e40af}
+.tag.ok{background:#dcfce7;color:#166534}
+.tag.gr{background:#e2e8f0;color:#334155}
+.kv{display:grid;grid-template-columns:max-content 1fr;gap:7px 16px;font-size:13px;margin:0 0 12px;padding:12px 0;border-top:1px solid var(--line);border-bottom:1px solid var(--line)}
+.kv dt{color:var(--mut);font-weight:600}
+.kv dd{color:var(--ink);font-weight:500}
+.kv dd.mu{color:var(--mut);font-weight:500;font-style:italic}
+.b2{display:inline-flex;gap:8px;align-items:center;margin-top:12px;padding:9px 18px;border-radius:999px;background:var(--ink);color:#fff;font-weight:600;font-size:13px;transition:transform .3s var(--ease),background .3s}
+.b2:hover{background:var(--acc);transform:translateY(-2px);text-decoration:none;color:#fff}
+@media(max-width:760px){.pj .rm{width:100%;min-height:0;height:200px}.pj .rb{padding:20px}.kv{grid-template-columns:1fr;gap:2px}.kv dd{margin-bottom:8px}}
+
 .grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(240px,1fr));gap:16px}
 .ico{width:46px;height:46px;border-radius:14px;display:grid;place-items:center;font-size:19px;margin-bottom:14px;background:#eaf2fa;color:var(--acc)}
 .card h4{font-size:15px;font-weight:600;color:var(--ink);margin-bottom:5px;line-height:1.4;transition:color .25s}
@@ -294,10 +312,35 @@ html{scroll-behavior:auto}
 
 <section class="sec rv" id="projects">
 <h2>Projects</h2>
-<div class="grid">
-<div class="card hv"><div class="ico"><i class="fa-solid fa-water"></i></div><h4>Coastal Multi-Hazard Risk Assessment</h4><p class="d">GIS-based assessment of flood, cyclone, salinity, and erosion risks with vulnerability analysis in coastal Bangladesh.</p></div>
-<div class="card hv"><div class="ico"><i class="fa-solid fa-brain"></i></div><h4>Machine Learning-Driven Flood Susceptibility Mapping</h4><p class="d">Predictive flood susceptibility modeling using hydro-climatic extremes, land cover dynamics, and ensemble ML models.</p></div>
-<div class="card hv"><div class="ico"><i class="fa-solid fa-house-crack"></i></div><h4>Earthquake Vulnerability &amp; Risk Assessment</h4><p class="d">Spatial evaluation of seismic risk and preparedness using Analytical Hierarchy Process (AHP) and geospatial integration.</p></div>
+<div class="pjs">
+<article class="card hv ed pj">
+<div class="rm" data-imgs="Land_1.jpg|Land_2.jpg|Land__3.jpg|Land__4.jpg|Land__5.jpg|Land__6.jpg"></div>
+<div class="rb">
+<div class="pt"><span class="tag bl">Institutional Project</span></div>
+<h4>Mouza and Plot-Based Digital Cadastral Mapping and Land Zoning Project</h4>
+<dl class="kv">
+<dt>Funded by</dt><dd>Ministry of Land, Government of Bangladesh</dd>
+<dt>Organization</dt><dd><a href="https://www.iwmbd.org/" target="_blank" rel="noopener">Institute of Water Modelling (IWM)</a></dd>
+<dt>My role</dt><dd>GIS Analyst, ICT, GIS &amp; Remote Sensing Division</dd>
+</dl>
+<p class="d">Mouza- and plot-level digital cadastral mapping and land zoning at national scale, with the project available online through its public web portal.</p>
+<a class="b2" href="https://map.land.gov.bd/" target="_blank" rel="noopener"><i class="fa-solid fa-globe"></i>Visit project website ↗</a>
+</div>
+</article>
+<article class="card hv ed pj">
+<div class="rm" data-imgs="Pirojpur_Road_Network_Map.jpg|Pirojpur_Drainage_Pits_Waterbody_Boundary.jpg|Pirojpur_Integrated_Drainage_and_Urban_Features.jpg|Pirojpur_Road_and_Roadside_Drainage.jpg"></div>
+<div class="rb">
+<div class="pt"><span class="tag ok">Completed</span><span class="tag gr">Freelance</span></div>
+<h4>Integrated Drainage Infrastructure Planning for Groundwater Recharge and Stormwater Management in Pirojpur Pourashava</h4>
+<dl class="kv">
+<dt>Funded by</dt><dd>Government of Bangladesh</dd>
+<dt>Responsible institution</dt><dd>Urban Development Directorate (UDD), Bangladesh</dd>
+<dt>My role</dt><dd>Freelancer</dd>
+<dt>Web</dt><dd class="mu">Not yet published online</dd>
+</dl>
+<p class="d">Integrated drainage planning for Pirojpur Pourashava, covering the road network, roadside drainage, drainage pits and waterbody boundaries to support groundwater recharge and stormwater management.</p>
+</div>
+</article>
 </div>
 </section>
 
@@ -360,9 +403,32 @@ html{scroll-behavior:auto}
 
 <script>
 (function(){
-var slides=document.querySelectorAll("#pl img"),idx=0;
+/* Hero cover: every site image except the profile photo, shuffled + cross-dissolve */
+var HERO_POOL=["Background_Pic.png", "coverpic.jpg", "JnU_Conference.jpg", "Thailand_Conference_1.jpg", "Flood_Hazard.jpg", "LS_Hazard.webp", "Cyclone_Hazard.jpg", "Drought_Hazard.jfif", "Earthquake_Hazard.jpg", "GeoAI & Machine Learning_1.jfif", "GeoAI & Machine Learning_2.jfif", "GeoAI & Machine Learning_3.jfif", "GeoAI & Machine Learning_4.jfif", "GeoAI & Machine Learning_5.jfif", "GeoAI & Machine Learning_6.jfif", "Climate Resilience_1.png", "Climate Resilience_2.jfif", "Climate Resilience_3.jfif", "Climate Resilience_4.jfif", "Climate Resilience_5.jfif", "Hydrological Modeling_1.jfif", "Hydrological Modeling_2.jfif", "Hydrological Modeling_3.jfif", "Hydrological Modeling_4.jfif", "PLUS_7.jpg", "Plus_1.jpg", "PLUS_2.jpg", "PLUS_3.jpg", "PLUS_4.jpg", "PLUS_5.jpg", "PLUS_6.jpg", "JnU_1.jpg", "JnU_2.jpg", "Land_1.jpg", "Land_2.jpg", "Land__3.jpg", "Land__4.jpg", "Land__5.jpg", "Land__6.jpg", "Pirojpur_Road_Network_Map.jpg", "Pirojpur_Drainage_Pits_Waterbody_Boundary.jpg", "Pirojpur_Integrated_Drainage_and_Urban_Features.jpg", "Pirojpur_Road_and_Roadside_Drainage.jpg"];
+var plEl=document.getElementById("pl"),slides=[plEl.querySelector("img")],idx=0,qi=0;
+var heroReduce=window.matchMedia&&matchMedia("(prefers-reduced-motion:reduce)").matches;
 requestAnimationFrame(function(){requestAnimationFrame(function(){slides[0]&&slides[0].classList.add("on")})});
-if(slides.length>1)setInterval(function(){slides[idx].classList.remove("on");idx=(idx+1)%slides.length;slides[idx].classList.add("on")},7000);
+(function(a){for(var i=a.length-1;i>0;i--){var j=Math.floor(Math.random()*(i+1)),t=a[i];a[i]=a[j];a[j]=t}})(HERO_POOL);
+function heroLoad(){
+ if(qi>=HERO_POOL.length)return;
+ var im=new Image();im.alt="";im.decoding="async";
+ im.onload=function(){plEl.appendChild(im);slides.push(im);setTimeout(heroLoad,450)};
+ im.onerror=function(){heroLoad()};
+ im.src=encodeURI(HERO_POOL[qi++]);
+}
+setTimeout(heroLoad,1200);
+if(!heroReduce)setInterval(function(){
+ if(slides.length<2)return;
+ var n;do{n=Math.floor(Math.random()*slides.length)}while(n===idx);
+ slides[idx].classList.remove("on");idx=n;slides[idx].classList.add("on");
+},6000);
+document.querySelectorAll(".fp").forEach(function(f){
+ f.addEventListener("animationiteration",function(){
+  if(slides.length<2)return;
+  var src=slides[Math.floor(Math.random()*slides.length)].src;
+  if(src!==f.src)f.src=src;
+ });
+});
 
 var pl=document.getElementById("pl"),prog=document.getElementById("prog"),tick=false;
 function onScroll(){
