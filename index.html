@@ -31,14 +31,20 @@ nav{position:sticky;top:12px;z-index:100;max-width:1100px;margin:12px auto 0;pad
 .lk:hover{background:#eaf0f7;color:var(--ink);text-decoration:none}
 .lk.act{background:var(--ink);color:#fff}
 .wrap{max-width:1100px;margin:0 auto;padding:0 16px}
-.head{margin-top:16px;background:#fff;border:1px solid var(--line);border-radius:22px;overflow:hidden}
-.cover{height:230px;position:relative;overflow:hidden;background:#cbd5e1}
+.head{margin-top:16px;background:rgba(255,255,255,.72);-webkit-backdrop-filter:blur(14px);backdrop-filter:blur(14px);border:1px solid var(--line);border-radius:22px;overflow:hidden}
+.cover{height:230px;position:relative;overflow:hidden;background:linear-gradient(120deg,rgba(23,105,170,.28),rgba(190,208,226,.5))}
 .pl{position:absolute;inset:-30px 0;will-change:transform}
 .pl img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;opacity:0;transform:scale(1.1);transition:opacity 1.6s var(--ease),transform 9s linear}
-.pl img.on{opacity:1;transform:scale(1)}
+.pl img.on{opacity:.38;transform:scale(1)}
+.float{position:absolute;inset:0;pointer-events:none;overflow:hidden}
+.fp{position:absolute;width:19%;aspect-ratio:4/3;object-fit:cover;border:3px solid rgba(255,255,255,.92);border-radius:8px;box-shadow:0 10px 26px -10px rgba(15,23,42,.45);opacity:0;animation:fl 10s ease-in-out infinite;will-change:transform,opacity}
+.fq{position:absolute;background:rgba(23,105,170,.55);border-radius:4px;opacity:0;animation:fl 8s ease-in-out infinite}
+.p1{left:15%;top:8%;animation-delay:-1s}.p2{left:36%;top:46%;width:21%;animation-delay:-3.5s}.p3{left:56%;top:8%;width:12%;aspect-ratio:1;animation-delay:-6s}.p4{left:70%;top:46%;width:17%;animation-delay:-8s}.p5{left:86%;top:10%;width:12%;animation-delay:-4.5s}
+.q1{width:6%;aspect-ratio:1;left:30%;top:14%;animation-delay:-2s}.q2{width:5%;aspect-ratio:1;left:92%;top:62%;animation-delay:-5s}
+@keyframes fl{0%{opacity:0;transform:scale(.5)}14%{opacity:.92;transform:scale(1)}55%{opacity:.92;transform:scale(1.1)}86%{opacity:.85;transform:scale(1.16)}100%{opacity:0;transform:scale(1.28)}}
 .hin{padding:0 30px 26px;display:flex;flex-wrap:wrap;gap:16px 26px;align-items:flex-end;justify-content:space-between}
 .who{display:flex;gap:24px;align-items:flex-end;flex:1;min-width:280px}
-.photo{width:128px;height:128px;border-radius:50%;object-fit:cover;margin-top:-64px;border:5px solid #fff;box-shadow:0 10px 26px -6px rgba(15,23,42,.35);background:#cbd5e1;flex:none}
+.photo{width:128px;height:128px;border-radius:50%;object-fit:cover;margin-top:-64px;border:5px solid #fff;box-shadow:0 10px 26px -6px rgba(15,23,42,.35);background:#cbd5e1;flex:none;position:relative;z-index:3}
 .who h1{font-size:28px;line-height:1.2;font-weight:700;color:var(--ink);letter-spacing:-.02em}
 .role{color:var(--acc);font-weight:600;margin:2px 0 6px}
 .dept{font-size:13px;color:var(--mut);line-height:1.55}
@@ -100,6 +106,7 @@ footer{text-align:center;padding:36px 16px 40px;font-size:13px;color:var(--mut)}
 .cover{height:150px}.photo{width:104px;height:104px;margin-top:-52px}
 .hin{padding:0 18px 20px}.who{gap:16px;flex-wrap:wrap}.who h1{font-size:23px}
 .card{padding:20px}
+.fp{width:28%}.p2,.p4{width:30%}.p3,.p5,.q2{display:none}
 .brand{display:none}.sec{margin-top:44px}
 .pub{grid-template-columns:1fr;gap:8px}.yr{width:58px}
 .mentor{padding:28px 24px}
@@ -107,7 +114,7 @@ footer{text-align:center;padding:36px 16px 40px;font-size:13px;color:var(--mut)}
 @media(prefers-reduced-motion:reduce){
 html{scroll-behavior:auto}
 *,*::before,*::after{transition-duration:.01ms!important;animation:none!important}
-.js .rv{opacity:1;transform:none}.pl img{transform:none}
+.js .rv{opacity:1;transform:none}.pl img{transform:none}.fp,.fq{opacity:.85}
 }
 </style>
 </head>
@@ -123,6 +130,14 @@ html{scroll-behavior:auto}
 <div class="cover"><div class="pl" id="pl">
 <img src="Cover_Pic.png" alt="">
 <!-- Aro cover chhobi dile auto smooth cross-dissolve hobe: <img src="Cover_2.png" alt=""> -->
+</div>
+<div class="float" aria-hidden="true">
+<img class="fp p1" src="JnU_Conference.jpg" alt="">
+<img class="fp p2" src="Thailand_Conference_1.jpg" alt="">
+<img class="fp p3" src="Profile_pic.jpeg" alt="">
+<img class="fp p4" src="Background_Pic.png" alt="">
+<img class="fp p5" src="Cover_Pic.png" alt="">
+<i class="fq q1"></i><i class="fq q2"></i>
 </div></div>
 <div class="hin">
 <div class="who">
