@@ -76,6 +76,12 @@ h2::after{content:"";display:block;width:34px;height:3px;border-radius:3px;backg
 .card{background:rgba(255,255,255,.93);border:1px solid var(--line);border-radius:18px;padding:24px 26px;transition:transform .35s var(--ease),border-color .3s,box-shadow .35s}
 .hv:hover{transform:translateY(-3px);border-color:#c5d6e8;box-shadow:0 16px 32px -20px rgba(15,23,42,.3)}
 .about p{font-size:15px;line-height:1.8;margin-bottom:12px;max-width:80ch}
+
+/* In-text reference links (About me) */
+.about p a{color:var(--acc2);font-weight:500;border-bottom:1.5px dotted rgba(23,105,170,.6);transition:color .25s,border-color .25s,background .25s}
+.about p a:hover{color:var(--acc);border-bottom-style:solid;border-bottom-color:var(--acc);background:#eaf2fa;text-decoration:none}
+.about p a.x::after{content:" ↗";font-size:.78em;color:var(--mut)}
+
 .sub{margin-top:22px;padding-top:22px;border-top:1px solid var(--line)}
 h3{font-size:15px;font-weight:600;color:var(--ink);margin-bottom:10px}
 .chips{display:flex;flex-wrap:wrap;gap:7px}
@@ -196,9 +202,9 @@ html{scroll-behavior:auto}
 <section class="sec rv" id="about">
 <h2>About me</h2>
 <div class="card about">
-<p>I am a geospatial researcher and MSc student in Applied Geoinformatics at Paris Lodron University of Salzburg, Austria. My research specializes in multi-hazard risk assessment, vulnerability analysis, and disaster risk reduction using GIS, remote sensing, Python, and machine learning.</p>
-<p>I leverage high-resolution satellite imagery, spatial statistics, machine learning models, and hydro-climatic data to understand environmental risk dynamics, flood susceptibility, and seismic vulnerability to support resilient communities.</p>
-<p>I have authored and co-authored peer-reviewed research papers in Taylor &amp; Francis, Elsevier, and Springer Nature journals focusing on multi-hazard mapping, wetland dynamics, and flash flood prediction. I also bring hands-on professional industry experience as a GIS Analyst at the Institute of Water Modelling (IWM).</p>
+<p>I am a geospatial researcher and MSc student in <a href="#education">Applied Geoinformatics</a> at <a class="x" href="https://www.plus.ac.at/geoinformatik/" target="_blank" rel="noopener">Paris Lodron University of Salzburg</a>, Austria. My research specializes in <a class="x" href="https://doi.org/10.1080/19475705.2026.2729590" target="_blank" rel="noopener">multi-hazard risk assessment</a>, <a href="#projects">vulnerability analysis</a>, and disaster risk reduction using GIS, remote sensing, Python, and <a href="#themes">machine learning</a>.</p>
+<p>I leverage high-resolution satellite imagery, spatial statistics, machine learning models, and hydro-climatic data to understand environmental risk dynamics, <a class="x" href="https://doi.org/10.1080/19475705.2026.2717863" target="_blank" rel="noopener">flood susceptibility</a>, and <a class="x" href="https://link.springer.com/article/10.1007/s41324-025-00643-y" target="_blank" rel="noopener">seismic vulnerability</a> to support resilient communities.</p>
+<p>I have authored and co-authored <a href="#publications">peer-reviewed research papers</a> in <a class="x" href="https://doi.org/10.1080/19475705.2026.2729590" target="_blank" rel="noopener">Taylor &amp; Francis</a>, <a class="x" href="https://doi.org/10.1016/j.nexres.2026.101556" target="_blank" rel="noopener">Elsevier</a>, and <a class="x" href="https://link.springer.com/article/10.1007/s41748-025-00942-2" target="_blank" rel="noopener">Springer Nature</a> journals focusing on <a class="x" href="https://doi.org/10.1080/19475705.2026.2729590" target="_blank" rel="noopener">multi-hazard mapping</a>, <a class="x" href="https://doi.org/10.1016/j.nexres.2026.101556" target="_blank" rel="noopener">wetland dynamics</a>, and <a class="x" href="https://link.springer.com/article/10.1007/s41748-025-00942-2" target="_blank" rel="noopener">flash flood prediction</a>. I also bring hands-on professional industry experience as a <a href="#experience">GIS Analyst</a> at the <a class="x" href="https://www.iwmbd.org/" target="_blank" rel="noopener">Institute of Water Modelling (IWM)</a>.</p>
 <div class="sub"><h3>Interests</h3><div class="chips"><span>Flood Risk Assessment</span><span>Disaster Resilience</span><span>GIS &amp; Remote Sensing</span><span>Geospatial Analysis</span><span>Machine Learning (ML)</span><span>Deep Learning (DL)</span><span>Hydrological Modeling</span><span>Climate Change Impact</span><span>Urban &amp; Regional Planning</span></div></div>
 </div>
 </section>
