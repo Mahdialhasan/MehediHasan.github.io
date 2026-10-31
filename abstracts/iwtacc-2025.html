@@ -124,6 +124,39 @@
             color: var(--ink);
         }
 
+        /* Presentation Section */
+
+        .presentation {
+            margin-top: 25px;
+            padding: 30px;
+            background: #ffffff;
+            border: 1px solid var(--line);
+            border-radius: 18px;
+            box-shadow: 0 12px 35px rgba(15, 23, 42, 0.04);
+        }
+
+        .presentation p {
+            font-size: 14px;
+            color: var(--muted);
+        }
+
+        .view-presentation {
+            display: inline-block;
+            margin-top: 18px;
+            padding: 12px 24px;
+            background: var(--accent);
+            color: #ffffff;
+            text-decoration: none;
+            border-radius: 8px;
+            font-size: 14px;
+            font-weight: 600;
+            transition: background 0.3s ease;
+        }
+
+        .view-presentation:hover {
+            background: #0f4f85;
+        }
+
         footer {
             text-align: center;
             color: var(--muted);
@@ -138,6 +171,10 @@
 
             .paper {
                 padding: 25px 20px;
+            }
+
+            .presentation {
+                padding: 22px 20px;
             }
 
             h1 {
@@ -158,6 +195,8 @@
         <a class="back-link" href="../index.html#conferences">
             ← Back to Portfolio
         </a>
+
+        <!-- Research Abstract -->
 
         <article class="paper">
 
@@ -198,6 +237,25 @@
 
         </article>
 
+        <!-- Conference Presentation -->
+
+        <section class="presentation">
+
+            <h2>Conference Presentation Slides</h2>
+
+            <p>
+                View the presentation slides presented at IWTACC-2025.
+            </p>
+
+            <a href="../Thailand_conference.pdf"
+               target="_blank"
+               rel="noopener noreferrer"
+               class="view-presentation">
+                View Presentation →
+            </a>
+
+        </section>
+
         <footer>
             © 2026 Mehedi Hasan | Applied Geoinformatics
         </footer>
@@ -206,4 +264,3 @@
 
 </body>
 </html>
-
