@@ -84,15 +84,14 @@ h2::after{content:"";display:block;width:34px;height:3px;border-radius:3px;backg
 .about p a:hover{color:var(--acc);border-bottom-style:solid;border-bottom-color:var(--acc);background:#eaf2fa;text-decoration:none}
 .about p a.ext::after{content:" ↗";font-size:.78em;color:var(--mut)}
 
-.sub{margin-top:22px;padding-top:22px;border-top:1px solid var(--line)}
 h3{font-size:15px;font-weight:600;color:var(--ink);margin-bottom:10px}
 
-/* Interests list */
-.ilist{list-style:none;display:grid;grid-template-columns:repeat(auto-fit,minmax(230px,1fr));gap:6px 22px}
+/* Interests | Education two-column with divider */
+.duo{margin-top:22px;padding-top:22px;border-top:1px solid var(--line);display:grid;grid-template-columns:1fr 1px 1fr;gap:0 28px;align-items:start}
+.duo .vl{align-self:stretch;background:var(--line);width:1px}
+.ilist{list-style:none;display:grid;gap:6px}
 .ilist li{position:relative;padding-left:18px;font-size:14px;color:var(--body)}
 .ilist li::before{content:"";position:absolute;left:0;top:.62em;width:7px;height:7px;border-radius:50%;background:var(--acc)}
-
-/* Education compact list */
 .edu{list-style:none;display:grid;gap:14px}
 .edu li{display:flex;gap:12px;align-items:flex-start}
 .edu .em{font-size:20px;line-height:1.35;flex:none}
@@ -101,8 +100,6 @@ h3{font-size:15px;font-weight:600;color:var(--ink);margin-bottom:10px}
 .edu .s a{font-weight:500;border-bottom:1.5px dotted rgba(23,105,170,.6)}
 .edu .s a:hover{border-bottom-style:solid;text-decoration:none}
 
-.chips{display:flex;flex-wrap:wrap;gap:7px}
-.chips span{background:#eef4fa;color:var(--acc2);border-radius:999px;padding:4px 12px;font-size:12.5px;font-weight:500}
 .grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(240px,1fr));gap:16px}
 .ico{width:46px;height:46px;border-radius:14px;display:grid;place-items:center;font-size:19px;margin-bottom:14px;background:#eaf2fa;color:var(--acc)}
 .card h4{font-size:15px;font-weight:600;color:var(--ink);margin-bottom:5px;line-height:1.4;transition:color .25s}
@@ -171,6 +168,8 @@ footer{text-align:center;padding:36px 16px 40px;font-size:13px;color:var(--mut)}
 .brand{display:none}.sec{margin-top:44px}
 .pub{grid-template-columns:1fr;gap:8px}.yr{width:58px}
 .mentor{padding:28px 24px}
+.duo{grid-template-columns:1fr;gap:18px}
+.duo .vl{width:100%;height:1px;align-self:auto}
 }
 @media(prefers-reduced-motion:reduce){
 html{scroll-behavior:auto}
@@ -230,7 +229,8 @@ html{scroll-behavior:auto}
 <!-- Nijer hobby/interest thakle ekhane likho, jemon: Outside of academia, I ... -->
 </p>
 
-<div class="sub">
+<div class="duo">
+<div>
 <h3>Interests</h3>
 <ul class="ilist">
 <li>Flood Risk Assessment</li>
@@ -244,14 +244,15 @@ html{scroll-behavior:auto}
 <li>Urban &amp; Regional Planning</li>
 </ul>
 </div>
-
-<div class="sub">
+<div class="vl" aria-hidden="true"></div>
+<div>
 <h3>Education</h3>
 <ul class="edu">
 <li><span class="em">🎓</span><div><b>MSc, Applied Geoinformatics (Professional), 2026 – present</b><span class="s"><a href="https://www.plus.ac.at/geoinformatik/" target="_blank" rel="noopener">Paris Lodron University of Salzburg</a>, Austria</span></div></li>
 <li><span class="em">🎓</span><div><b>MSc, Geography and Environment (General), 2021</b><span class="s"><a href="https://jnu.ac.bd/department/portal/geography_environment" target="_blank" rel="noopener">Jagannath University</a>, Bangladesh</span></div></li>
 <li><span class="em">🎓</span><div><b>BSc, Geography and Environment, 2019</b><span class="s"><a href="https://jnu.ac.bd/department/portal/geography_environment" target="_blank" rel="noopener">Jagannath University</a>, Bangladesh</span></div></li>
 </ul>
+</div>
 </div>
 </div>
 </section>
