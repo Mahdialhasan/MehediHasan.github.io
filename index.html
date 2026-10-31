@@ -81,7 +81,7 @@ h2::after{content:"";display:block;width:34px;height:3px;border-radius:3px;backg
 /* In-text reference links (About me) */
 .about p a{color:var(--acc2);font-weight:500;border-bottom:1.5px dotted rgba(23,105,170,.6);transition:color .25s,border-color .25s,background .25s}
 .about p a:hover{color:var(--acc);border-bottom-style:solid;border-bottom-color:var(--acc);background:#eaf2fa;text-decoration:none}
-.about p a.x::after{content:" ↗";font-size:.78em;color:var(--mut)}
+.about p a.ext::after{content:" ↗";font-size:.78em;color:var(--mut)}
 
 .sub{margin-top:22px;padding-top:22px;border-top:1px solid var(--line)}
 h3{font-size:15px;font-weight:600;color:var(--ink);margin-bottom:10px}
@@ -130,12 +130,14 @@ h3{font-size:15px;font-weight:600;color:var(--ink);margin-bottom:10px}
 .btn{background:#fff;color:var(--ink);border:0;border-radius:999px;padding:12px 24px;font:600 14px Inter,sans-serif;cursor:pointer;transition:transform .3s var(--ease),background .3s;white-space:nowrap}
 .btn:hover{background:#dcecfa;transform:translateY(-2px)}
 footer{text-align:center;padding:36px 16px 40px;font-size:13px;color:var(--mut)}
+
+/* ===== MODAL ===== */
 .modal{position:fixed;inset:0;background:rgba(15,23,42,.55);-webkit-backdrop-filter:blur(5px);backdrop-filter:blur(5px);display:flex;align-items:center;justify-content:center;z-index:300;opacity:0;visibility:hidden;transition:opacity .3s var(--ease),visibility .3s}
 .modal.open{opacity:1;visibility:visible}
 .mc{background:#fff;border-radius:20px;width:90%;max-width:380px;padding:28px;text-align:center;position:relative;transform:translateY(14px) scale(.97);transition:transform .35s var(--ease)}
 .modal.open .mc{transform:none}
 .mc h3{font-size:18px;margin-bottom:4px}
-.x{position:absolute;top:12px;right:16px;border:0;background:none;font-size:22px;cursor:pointer;color:var(--mut)}
+.mclose{position:absolute;top:12px;right:16px;border:0;background:none;font-size:22px;cursor:pointer;color:var(--mut)}
 .opt{display:flex;align-items:center;justify-content:center;gap:10px;padding:12px;border-radius:12px;color:#fff;font-weight:600;margin-top:10px;transition:transform .25s var(--ease)}
 .opt:hover{transform:translateY(-2px);text-decoration:none}
 .js .rv{opacity:0;transform:translateY(16px);transition:opacity .8s var(--ease),transform .8s var(--ease)}
@@ -203,10 +205,10 @@ html{scroll-behavior:auto}
 <section class="sec rv" id="about">
 <h2>About me</h2>
 <div class="card about">
-<p>I am a geospatial researcher and MSc student in <a href="#education">Applied Geoinformatics</a> at <a class="x" href="https://www.plus.ac.at/geoinformatik/" target="_blank" rel="noopener">Paris Lodron University of Salzburg</a>, Austria. My <a href="#themes">research</a> examines <a class="x" href="https://doi.org/10.1080/19475705.2026.2729590" target="_blank" rel="noopener">multi-hazard risk</a>, <a class="x" href="https://link.springer.com/article/10.1007/s41324-025-00643-y" target="_blank" rel="noopener">seismic vulnerability</a>, and <a class="x" href="https://doi.org/10.1080/19475705.2026.2717863" target="_blank" rel="noopener">flood susceptibility</a> in coastal and riverine environments, with a focus on disaster risk reduction and resilient communities.</p>
-<p>I use <a href="#skills">GIS, remote sensing, and Python</a>, together with high-resolution satellite imagery, spatial statistics, <a href="#themes">machine learning</a>, hydro-climatic data, and <a class="x" href="https://link.springer.com/article/10.1007/s41748-025-00942-2" target="_blank" rel="noopener">spatial MCDA</a> to understand environmental risk dynamics and how they affect vulnerable populations.</p>
-<p>I have authored/co-authored <a href="#publications">5 peer-reviewed papers</a> in <a class="x" href="https://doi.org/10.1080/19475705.2026.2729590" target="_blank" rel="noopener">Taylor &amp; Francis</a>, <a class="x" href="https://doi.org/10.1016/j.nexres.2026.101556" target="_blank" rel="noopener">Elsevier</a>, and <a class="x" href="https://link.springer.com/article/10.1007/s41748-025-00942-2" target="_blank" rel="noopener">Springer Nature</a> journals on <a class="x" href="https://doi.org/10.1080/19475705.2026.2729590" target="_blank" rel="noopener">multi-hazard mapping</a>, <a class="x" href="https://doi.org/10.1016/j.nexres.2026.101556" target="_blank" rel="noopener">wetland dynamics</a>, and <a class="x" href="https://link.springer.com/article/10.1007/s41748-025-00942-2" target="_blank" rel="noopener">flash flood prediction</a>, with another <a href="#publications">paper under review</a> on flood susceptibility under hydro-climatic extremes.</p>
-<p>I bring <a href="#experience">four professional roles</a> in GIS and research, most recently as a GIS Analyst at the <a class="x" href="https://www.iwmbd.org/" target="_blank" rel="noopener">Institute of Water Modelling (IWM)</a>, and I have presented at <a href="#conferences">international conferences</a> in Bangladesh and Thailand, including ICLESSD-2025 and IWTACC-2025.</p>
+<p>I am a geospatial researcher and MSc student in <a href="#education">Applied Geoinformatics</a> at <a class="ext" href="https://www.plus.ac.at/geoinformatik/" target="_blank" rel="noopener">Paris Lodron University of Salzburg</a>, Austria. My <a href="#themes">research</a> examines <a class="ext" href="https://doi.org/10.1080/19475705.2026.2729590" target="_blank" rel="noopener">multi-hazard risk</a>, <a class="ext" href="https://link.springer.com/article/10.1007/s41324-025-00643-y" target="_blank" rel="noopener">seismic vulnerability</a>, and <a class="ext" href="https://doi.org/10.1080/19475705.2026.2717863" target="_blank" rel="noopener">flood susceptibility</a> in coastal and riverine environments, with a focus on disaster risk reduction and resilient communities.</p>
+<p>I use <a href="#skills">GIS, remote sensing, and Python</a>, together with high-resolution satellite imagery, spatial statistics, <a href="#themes">machine learning</a>, hydro-climatic data, and <a class="ext" href="https://link.springer.com/article/10.1007/s41748-025-00942-2" target="_blank" rel="noopener">spatial MCDA</a> to understand environmental risk dynamics and how they affect vulnerable populations.</p>
+<p>I have authored/co-authored <a href="#publications">5 peer-reviewed papers</a> in <a class="ext" href="https://doi.org/10.1080/19475705.2026.2729590" target="_blank" rel="noopener">Taylor &amp; Francis</a>, <a class="ext" href="https://doi.org/10.1016/j.nexres.2026.101556" target="_blank" rel="noopener">Elsevier</a>, and <a class="ext" href="https://link.springer.com/article/10.1007/s41748-025-00942-2" target="_blank" rel="noopener">Springer Nature</a> journals on <a class="ext" href="https://doi.org/10.1080/19475705.2026.2729590" target="_blank" rel="noopener">multi-hazard mapping</a>, <a class="ext" href="https://doi.org/10.1016/j.nexres.2026.101556" target="_blank" rel="noopener">wetland dynamics</a>, and <a class="ext" href="https://link.springer.com/article/10.1007/s41748-025-00942-2" target="_blank" rel="noopener">flash flood prediction</a>, with another <a href="#publications">paper under review</a> on flood susceptibility under hydro-climatic extremes.</p>
+<p>I bring <a href="#experience">four professional roles</a> in GIS and research, most recently as a GIS Analyst at the <a class="ext" href="https://www.iwmbd.org/" target="_blank" rel="noopener">Institute of Water Modelling (IWM)</a>, and I have presented at <a href="#conferences">international conferences</a> in Bangladesh and Thailand, including ICLESSD-2025 and IWTACC-2025.</p>
 <p>Having started my academic journey in Bangladesh, I enjoy <a href="#mentorship">mentoring students</a> who face academic or research challenges in GIScience and Remote Sensing.</p>
 <!-- Beyond research: nijer hobby/interest likhe nicher comment shoriye dao
 <p><strong>Beyond research:</strong> Outside of academia, I ... </p>
@@ -302,7 +304,7 @@ html{scroll-behavior:auto}
 
 <div class="modal" id="contactModal" role="dialog" aria-modal="true" aria-labelledby="mt" aria-hidden="true">
 <div class="mc">
-<button type="button" class="x" onclick="closeModal()" aria-label="Close">&times;</button>
+<button type="button" class="mclose" onclick="closeModal()" aria-label="Close">&times;</button>
 <h3 id="mt">Get in touch</h3>
 <p style="font-size:13px;color:var(--mut)">Select your preferred platform to reach out:</p>
 <a class="opt" style="background:#25D366" href="https://wa.me/436765979947" target="_blank" rel="noopener"><i class="fa-brands fa-whatsapp"></i> WhatsApp</a>
