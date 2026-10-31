@@ -119,10 +119,19 @@ h3{font-size:15px;font-weight:600;color:var(--ink);margin-bottom:10px}
 }
 
 
-/* ===== PROJECT CARDS ===== */
-.pjs{display:grid;gap:18px}
-.pj .rm{width:360px;min-height:260px}
-.pj .rb{padding:24px 28px}
+/* ===== PROJECT CARDS (2 blocks, 2:3, moving photo strip on top) ===== */
+.pjs{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:22px;align-items:stretch}
+.pj{padding:0;display:flex;flex-direction:column;aspect-ratio:2/3;border-radius:22px}
+.pm{position:relative;flex:1 1 auto;min-height:250px;overflow:hidden;border-radius:21px 21px 0 0;background:linear-gradient(120deg,#cfe0f1,#eaf2fa);-webkit-mask-image:linear-gradient(90deg,transparent 0,#000 7%,#000 93%,transparent 100%);mask-image:linear-gradient(90deg,transparent 0,#000 7%,#000 93%,transparent 100%)}
+.pm .track{position:absolute;left:0;top:0;bottom:0;display:flex;width:max-content;padding:14px 0;box-sizing:border-box;animation:pmL var(--dur,40s) linear infinite;will-change:transform}
+.pm[data-dir="right"] .track{animation-direction:reverse}
+.pm img{flex:none;height:100%;aspect-ratio:4/3;object-fit:cover;margin-right:12px;border-radius:14px;box-shadow:0 12px 24px -14px rgba(15,23,42,.55);background:#dbe6f2}
+.pm:hover .track,.pm.paused .track{animation-play-state:paused}
+@keyframes pmL{to{transform:translateX(-50%)}}
+.pmw{position:relative;display:flex;flex-direction:column;flex:1 1 auto}
+.pmw::before{content:"";position:absolute;left:0;right:0;top:0;height:3px;background:linear-gradient(90deg,var(--acc),#7cc0f0);z-index:3;border-radius:22px 22px 0 0}
+.pj .num{position:absolute;left:16px;top:16px;z-index:4;font-size:12px;font-weight:700;letter-spacing:.06em;color:#fff;background:rgba(15,23,42,.72);-webkit-backdrop-filter:blur(6px);backdrop-filter:blur(6px);padding:4px 11px;border-radius:999px}
+.pj .pb{padding:22px 26px 26px;display:flex;flex-direction:column;flex:none}
 .pj h4{font-size:17px;line-height:1.45;margin:8px 0 12px;padding-right:0}
 .pj .pt{display:flex;gap:8px;flex-wrap:wrap}
 .tag.bl{background:#dbeafe;color:#1e40af}
@@ -132,9 +141,10 @@ h3{font-size:15px;font-weight:600;color:var(--ink);margin-bottom:10px}
 .kv dt{color:var(--mut);font-weight:600}
 .kv dd{color:var(--ink);font-weight:500}
 .kv dd.mu{color:var(--mut);font-weight:500;font-style:italic}
-.b2{display:inline-flex;gap:8px;align-items:center;margin-top:12px;padding:9px 18px;border-radius:999px;background:var(--ink);color:#fff;font-weight:600;font-size:13px;transition:transform .3s var(--ease),background .3s}
+.b2{align-self:flex-start;display:inline-flex;gap:8px;align-items:center;margin-top:14px;padding:9px 18px;border-radius:999px;background:var(--ink);color:#fff;font-weight:600;font-size:13px;transition:transform .3s var(--ease),background .3s}
 .b2:hover{background:var(--acc);transform:translateY(-2px);text-decoration:none;color:#fff}
-@media(max-width:760px){.pj .rm{width:100%;min-height:0;height:200px}.pj .rb{padding:20px}.kv{grid-template-columns:1fr;gap:2px}.kv dd{margin-bottom:8px}}
+@media(max-width:860px){.pjs{grid-template-columns:1fr}.pj{aspect-ratio:auto}.pm{flex:none;height:230px;min-height:0}.pj .pb{padding:20px}.kv{grid-template-columns:1fr;gap:2px}.kv dd{margin-bottom:8px}}
+@media(prefers-reduced-motion:reduce){.pm{overflow-x:auto}.pm .track{animation:none!important}}
 
 .grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(240px,1fr));gap:16px}
 .ico{width:46px;height:46px;border-radius:14px;display:grid;place-items:center;font-size:19px;margin-bottom:14px;background:#eaf2fa;color:var(--acc)}
@@ -313,9 +323,11 @@ html{scroll-behavior:auto}
 <section class="sec rv" id="projects">
 <h2>Projects</h2>
 <div class="pjs">
-<article class="card hv ed pj">
-<div class="rm" data-imgs="Land_1.jpg|Land_2.jpg|Land__3.jpg|Land__4.jpg|Land__5.jpg|Land__6.jpg"></div>
-<div class="rb">
+<article class="card hv pj">
+<div class="pmw">
+<span class="num">01</span>
+<div class="pm" data-dir="left" data-imgs="Land_1.jpg|Land_2.jpg|Land__3.jpg|Land__4.jpg|Land__5.jpg|Land__6.jpg"></div>
+<div class="pb">
 <div class="pt"><span class="tag bl">Institutional Project</span></div>
 <h4>Mouza and Plot-Based Digital Cadastral Mapping and Land Zoning Project</h4>
 <dl class="kv">
@@ -326,10 +338,13 @@ html{scroll-behavior:auto}
 <p class="d">Mouza- and plot-level digital cadastral mapping and land zoning at national scale, with the project available online through its public web portal.</p>
 <a class="b2" href="https://map.land.gov.bd/" target="_blank" rel="noopener"><i class="fa-solid fa-globe"></i>Visit project website ↗</a>
 </div>
+</div>
 </article>
-<article class="card hv ed pj">
-<div class="rm" data-imgs="Pirojpur_Road_Network_Map.jpg|Pirojpur_Drainage_Pits_Waterbody_Boundary.jpg|Pirojpur_Integrated_Drainage_and_Urban_Features.jpg|Pirojpur_Road_and_Roadside_Drainage.jpg"></div>
-<div class="rb">
+<article class="card hv pj">
+<div class="pmw">
+<span class="num">02</span>
+<div class="pm" data-dir="right" data-imgs="Pirojpur_Road_Network_Map.jpg|Pirojpur_Drainage_Pits_Waterbody_Boundary.jpg|Pirojpur_Integrated_Drainage_and_Urban_Features.jpg|Pirojpur_Road_and_Roadside_Drainage.jpg"></div>
+<div class="pb">
 <div class="pt"><span class="tag ok">Completed</span><span class="tag gr">Freelance</span></div>
 <h4>Integrated Drainage Infrastructure Planning for Groundwater Recharge and Stormwater Management in Pirojpur Pourashava</h4>
 <dl class="kv">
@@ -339,6 +354,7 @@ html{scroll-behavior:auto}
 <dt>Web</dt><dd class="mu">Not yet published online</dd>
 </dl>
 <p class="d">Integrated drainage planning for Pirojpur Pourashava, covering the road network, roadside drainage, drainage pits and waterbody boundaries to support groundwater recharge and stormwater management.</p>
+</div>
 </div>
 </article>
 </div>
@@ -498,6 +514,25 @@ names.length||(box.style.display="none");
 dots.style.display="none";
 new IntersectionObserver(function(es){es.forEach(function(e){visible=e.isIntersecting;visible?start():stop()})},{threshold:.2}).observe(box);
 document.addEventListener("visibilitychange",function(){document.hidden?stop():(visible&&start())});
+});
+})();
+
+/* Project photo strips: random order, seamless loop, opposite directions */
+(function(){
+function shuf(a){for(var i=a.length-1;i>0;i--){var j=Math.floor(Math.random()*(i+1)),t=a[i];a[i]=a[j];a[j]=t}return a}
+document.querySelectorAll(".pm").forEach(function(box){
+ var names=(box.getAttribute("data-imgs")||"").split("|").filter(Boolean);
+ if(box.getAttribute("data-order")!=="serial")shuf(names);
+ if(!names.length){box.style.display="none";return}
+ var track=document.createElement("div");track.className="track";
+ function drop(n){Array.prototype.slice.call(track.children).forEach(function(c){if(c.getAttribute("data-n")===n)track.removeChild(c)});if(!track.children.length)box.style.display="none"}
+ for(var r=0;r<2;r++)names.forEach(function(n){
+  var im=new Image();im.alt="";im.decoding="async";im.setAttribute("data-n",n);
+  im.onerror=function(){drop(n)};im.src=encodeURI(n);track.appendChild(im);
+ });
+ box.style.setProperty("--dur",(names.length*5.5)+"s");
+ box.appendChild(track);
+ new IntersectionObserver(function(es){es.forEach(function(e){box.classList.toggle("paused",!e.isIntersecting)})},{threshold:.05}).observe(box);
 });
 })();
 
