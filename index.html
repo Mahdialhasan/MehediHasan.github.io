@@ -51,16 +51,16 @@ h2::after{content:"";display:block;width:34px;height:3px;border-radius:3px;backg
 .card{background:rgba(255,255,255,.93);border:1px solid var(--line);border-radius:18px;padding:24px 26px;transition:transform .35s var(--ease),border-color .3s,box-shadow .35s}
 .hv:hover{transform:translateY(-3px);border-color:#c5d6e8;box-shadow:0 16px 32px -20px rgba(15,23,42,.3)}
 .about p{font-size:15px;line-height:1.8;margin-bottom:12px;max-width:80ch}
-.two{display:grid;grid-template-columns:1.2fr 1fr;gap:34px;margin-top:22px;padding-top:22px;border-top:1px solid var(--line)}
+.sub{margin-top:22px;padding-top:22px;border-top:1px solid var(--line)}
 h3{font-size:15px;font-weight:600;color:var(--ink);margin-bottom:10px}
 .chips{display:flex;flex-wrap:wrap;gap:7px}
 .chips span{background:#eef4fa;color:var(--acc2);border-radius:999px;padding:4px 12px;font-size:12.5px;font-weight:500}
-.edu li{list-style:none;display:flex;gap:11px;margin-bottom:11px;color:var(--ink);font-weight:500;font-size:13.5px;line-height:1.45}
-.edu i{color:var(--acc);margin-top:3px}.edu small{display:block;color:var(--mut);font-weight:400;font-size:12.5px}
 .grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(240px,1fr));gap:16px}
 .ico{width:46px;height:46px;border-radius:14px;display:grid;place-items:center;font-size:19px;margin-bottom:14px;background:#eaf2fa;color:var(--acc)}
 .card h4{font-size:15px;font-weight:600;color:var(--ink);margin-bottom:5px;line-height:1.4}
 .card p.d{font-size:13px;color:var(--mut)}
+.card p.d b{color:var(--ink);font-weight:600;margin-right:6px}.card p.d+p.d{margin-top:4px}
+.ln{font-size:13px;font-weight:500;display:inline-block;margin-top:8px}
 .meta{font-size:12.5px;color:var(--acc);font-weight:500;margin:2px 0 6px}
 .tl{position:relative;padding-left:28px;display:grid;gap:14px}
 .tl::before{content:"";position:absolute;left:4.5px;top:28px;bottom:28px;width:2px;background:var(--line)}
@@ -99,7 +99,7 @@ footer{text-align:center;padding:36px 16px 40px;font-size:13px;color:var(--mut)}
 @media(max-width:760px){
 .cover{height:150px}.photo{width:104px;height:104px;margin-top:-52px}
 .hin{padding:0 18px 20px}.who{gap:16px;flex-wrap:wrap}.who h1{font-size:23px}
-.card{padding:20px}.two{grid-template-columns:1fr;gap:22px}
+.card{padding:20px}
 .brand{display:none}.sec{margin-top:44px}
 .pub{grid-template-columns:1fr;gap:8px}.yr{width:58px}
 .mentor{padding:28px 24px}
@@ -115,7 +115,7 @@ html{scroll-behavior:auto}
 <div class="prog" id="prog"></div>
 <nav><div class="nav" id="nav">
 <span class="brand">Mehedi Hasan</span>
-<a class="lk" href="#about">About me</a><a class="lk" href="#experience">Experience</a><a class="lk" href="#projects">Projects</a><a class="lk" href="#publications">Publications</a><a class="lk" href="#conferences">Conferences</a><a class="lk" href="#certifications">Certifications</a><a class="lk" href="#skills">Skills</a><a class="lk" href="#mentorship">Mentorship</a>
+<a class="lk" href="#about">About me</a><a class="lk" href="#education">Education</a><a class="lk" href="#experience">Experience</a><a class="lk" href="#projects">Projects</a><a class="lk" href="#publications">Publications</a><a class="lk" href="#conferences">Conferences</a><a class="lk" href="#certifications">Certifications</a><a class="lk" href="#skills">Skills</a><a class="lk" href="#mentorship">Mentorship</a>
 </div></nav>
 
 <div class="wrap">
@@ -146,13 +146,8 @@ html{scroll-behavior:auto}
 <p>I am a geospatial researcher and MSc student in Applied Geoinformatics at Paris Lodron University of Salzburg, Austria. My research specializes in multi-hazard risk assessment, vulnerability analysis, and disaster risk reduction using GIS, remote sensing, Python, and machine learning.</p>
 <p>I leverage high-resolution satellite imagery, spatial statistics, machine learning models, and hydro-climatic data to understand environmental risk dynamics, flood susceptibility, and seismic vulnerability to support resilient communities.</p>
 <p>I have authored and co-authored peer-reviewed research papers in Taylor &amp; Francis, Elsevier, and Springer Nature journals focusing on multi-hazard mapping, wetland dynamics, and flash flood prediction. I also bring hands-on professional industry experience as a GIS Analyst at the Institute of Water Modelling (IWM).</p>
-<div class="two">
-<div><h3>Interests</h3><div class="chips"><span>Flood Risk Assessment</span><span>Disaster Resilience</span><span>GIS &amp; Remote Sensing</span><span>Geospatial Analysis</span><span>Machine Learning (ML)</span><span>Deep Learning (DL)</span><span>Hydrological Modeling</span><span>Climate Change Impact</span><span>Urban &amp; Regional Planning</span></div></div>
-<div class="edu"><h3>Education</h3><ul>
-<li><i class="fa-solid fa-graduation-cap"></i><div>MSc, Applied Geoinformatics (Professional)<small>Paris Lodron University of Salzburg, Austria (Current)</small></div></li>
-<li><i class="fa-solid fa-graduation-cap"></i><div>MSc, Geography and Environment (General)<small>Jagannath University, Dhaka, Bangladesh</small></div></li>
-<li><i class="fa-solid fa-graduation-cap"></i><div>BSc, Geography and Environment<small>Jagannath University, Bangladesh</small></div></li></ul></div>
-</div></div>
+<div class="sub"><h3>Interests</h3><div class="chips"><span>Flood Risk Assessment</span><span>Disaster Resilience</span><span>GIS &amp; Remote Sensing</span><span>Geospatial Analysis</span><span>Machine Learning (ML)</span><span>Deep Learning (DL)</span><span>Hydrological Modeling</span><span>Climate Change Impact</span><span>Urban &amp; Regional Planning</span></div></div>
+</div>
 </section>
 
 <section class="sec rv" id="themes">
@@ -165,13 +160,22 @@ html{scroll-behavior:auto}
 </div>
 </section>
 
+<section class="sec rv" id="education">
+<h2>Education</h2>
+<div class="tl">
+<div class="card hv"><h4>MSc, Applied Geoinformatics (Professional)</h4><div class="meta">5 Oct 2026 – Current | Salzburg, Austria</div><p class="d"><b>University</b>Paris Lodron University of Salzburg</p><p class="d"><b>Field of study</b>Applied Geoinformatics</p><a class="ln" href="https://www.plus.ac.at/geoinformatik/" target="_blank" rel="noopener">Department website ↗</a></div>
+<div class="card hv"><h4>MSc, Geography and Environment (General)</h4><div class="meta">5 Feb 2020 – 16 Mar 2021 | Dhaka, Bangladesh</div><p class="d"><b>University</b>Jagannath University</p><p class="d"><b>Field of study</b>Geography and Environment</p><p class="d"><b>Thesis</b>Assessment of Moderate Seismic Vulnerability and Earthquake Preparedness in Rangpur Division, Bangladesh</p><a class="ln" href="https://jnu.ac.bd/department/portal/geography_environment" target="_blank" rel="noopener">Department website ↗</a></div>
+<div class="card hv"><h4>BSc, Geography and Environment</h4><div class="meta">5 Feb 2015 – 16 Sep 2019 | Dhaka, Bangladesh</div><p class="d"><b>University</b>Jagannath University</p><p class="d"><b>Field of study</b>Geography and Environment</p><p class="d"><b>Project</b>Urban Fire Hazard Risk and Preparedness in Crowded Settlements: The Case of Sadarghat, Dhaka, Bangladesh</p><a class="ln" href="https://jnu.ac.bd/department/portal/geography_environment" target="_blank" rel="noopener">Department website ↗</a></div>
+</div>
+</section>
+
 <section class="sec rv" id="experience">
 <h2>Work experience</h2>
 <div class="tl">
-<div class="card hv"><h4>GIS Analyst</h4><div class="meta">Institute of Water Modelling (IWM), Dhaka, Bangladesh | Apr 2024 – Sep 2026</div><p class="d">Worked in ICT, GIS &amp; Remote Sensing Division on water modeling and environmental spatial analysis.</p></div>
-<div class="card hv"><h4>Research Assistant</h4><div class="meta">Ovibashi Karmi Unnayan Program (OKUP), Dhaka | Feb 2023 – Mar 2024</div><p class="d">Spatial analysis and vulnerability mapping for climate change and migration projects.</p></div>
-<div class="card hv"><h4>GIS Operator</h4><div class="meta">GeoMark Limited, Dhaka | Aug 2022 – Oct 2022</div><p class="d">Digitization, spatial data quality assurance, and processing large geospatial datasets.</p></div>
-<div class="card hv"><h4>Research Assistant</h4><div class="meta">Prof. Dr. Muhammad Al-Amin Hoque, Jagannath University | Mar 2021 – Dec 2022</div><p class="d">Geospatial hazard modeling, Machine Learning applications, and spatial decision support systems.</p></div>
+<div class="card hv"><h4>GIS Analyst</h4><div class="meta"><a href="https://www.iwmbd.org/" target="_blank" rel="noopener">Institute of Water Modelling (IWM)</a>, Dhaka, Bangladesh | Apr 2024 – Sep 2026</div><p class="d"><b>Project</b>Mouza &amp; Plot Based National Digital Land Zoning Project</p><p class="d">Worked in ICT, GIS &amp; Remote Sensing Division on water modeling and environmental spatial analysis.</p><a class="ln" href="https://www.iwmbd.org/" target="_blank" rel="noopener">Visit IWM ↗</a></div>
+<div class="card hv"><h4>Research Assistant</h4><div class="meta"><a href="https://okup.org.bd/" target="_blank" rel="noopener">Ovibashi Karmi Unnayan Program (OKUP)</a>, Dhaka | Feb 2023 – Mar 2024</div><p class="d"><b>Project</b>Climate induced migration and modern slavery in the Sundarbans region of Bangladesh (CIMMS)</p><p class="d">Spatial analysis and vulnerability mapping for climate change and migration projects.</p><a class="ln" href="https://okup.org.bd/" target="_blank" rel="noopener">Visit OKUP ↗</a></div>
+<div class="card hv"><h4>GIS Operator</h4><div class="meta"><a href="https://geomark.com.bd/" target="_blank" rel="noopener">GeoMark Limited</a>, Dhaka | Aug 2022 – Oct 2022</div><p class="d"><b>Project</b>Mouza Map and Plot-Level Digitization and Geospatial Database Development</p><p class="d">Digitization, spatial data quality assurance, and processing large geospatial datasets.</p><a class="ln" href="https://geomark.com.bd/" target="_blank" rel="noopener">Visit GeoMark ↗</a></div>
+<div class="card hv"><h4>Research Assistant</h4><div class="meta"><a href="https://jnu.ac.bd/profile/portal/web/549" target="_blank" rel="noopener">Prof. Dr. Muhammad Al-Amin Hoque</a>, Jagannath University | Mar 2021 – Dec 2022</div><p class="d">Geospatial hazard modeling, Machine Learning applications, and spatial decision support systems.</p><a class="ln" href="https://jnu.ac.bd/profile/portal/web/549" target="_blank" rel="noopener">View faculty profile ↗</a></div>
 </div>
 </section>
 
@@ -262,7 +266,7 @@ document.querySelectorAll(".rv").forEach(function(el){io.observe(el)});
 var links=document.querySelectorAll(".lk"),map={};
 links.forEach(function(a){map[a.getAttribute("href").slice(1)]=a});
 var so=new IntersectionObserver(function(es){es.forEach(function(e){
-if(e.isIntersecting){links.forEach(function(a){a.classList.remove("act")});var a=map[e.target.id];if(a){a.classList.add("act");a.scrollIntoView({block:"nearest",inline:"center",behavior:"smooth"})}}
+if(e.isIntersecting){links.forEach(function(a){a.classList.remove("act")});var a=map[e.target.id];if(a){a.classList.add("act");var n=document.getElementById("nav");n.scrollTo({left:a.offsetLeft-n.clientWidth/2+a.clientWidth/2,behavior:"smooth"})}}
 })},{rootMargin:"-40% 0px -55% 0px"});
 Object.keys(map).forEach(function(id){var s=document.getElementById(id);if(s)so.observe(s)});
 })();
