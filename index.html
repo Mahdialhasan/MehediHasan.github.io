@@ -107,6 +107,17 @@ h3{font-size:15px;font-weight:600;color:var(--ink);margin-bottom:10px}
 .rt .ico{position:absolute;top:-24px;right:18px;margin:0;width:46px;height:46px;background:#fff;box-shadow:0 8px 18px -8px rgba(15,23,42,.4);z-index:3}
 .rt h4{padding-right:44px}
 
+
+/* ===== EDUCATION CARDS (image slideshow on the left) ===== */
+.ed{display:flex;padding:0;align-items:stretch}
+.ed .rm{width:290px;min-height:200px;height:auto;border-radius:18px 0 0 18px}
+.ed .rb{flex:1;padding:22px 26px;min-width:0}
+@media(max-width:760px){
+.ed{flex-direction:column}
+.ed .rm{width:100%;height:180px;min-height:0;border-radius:18px 18px 0 0}
+.ed .rb{padding:20px}
+}
+
 .grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(240px,1fr));gap:16px}
 .ico{width:46px;height:46px;border-radius:14px;display:grid;place-items:center;font-size:19px;margin-bottom:14px;background:#eaf2fa;color:var(--acc)}
 .card h4{font-size:15px;font-weight:600;color:var(--ink);margin-bottom:5px;line-height:1.4;transition:color .25s}
@@ -265,9 +276,9 @@ html{scroll-behavior:auto}
 <section class="sec rv" id="education">
 <h2>Education</h2>
 <div class="tl">
-<div class="card hv lc"><h4>MSc, Applied Geoinformatics (Professional)</h4><div class="meta">5 Oct 2026 – Current | Salzburg, Austria</div><p class="d"><b>University</b>Paris Lodron University of Salzburg</p><p class="d"><b>Field of study</b>Applied Geoinformatics</p><a class="ln stretch" href="https://www.plus.ac.at/geoinformatik/" target="_blank" rel="noopener">Department website ↗</a></div>
-<div class="card hv lc"><h4>MSc, Geography and Environment (General)</h4><div class="meta">5 Feb 2020 – 16 Mar 2021 | Dhaka, Bangladesh</div><p class="d"><b>University</b>Jagannath University</p><p class="d"><b>Field of study</b>Geography and Environment</p><p class="d"><b>Thesis</b>Assessment of Moderate Seismic Vulnerability and Earthquake Preparedness in Rangpur Division, Bangladesh</p><a class="ln stretch" href="https://jnu.ac.bd/department/portal/geography_environment" target="_blank" rel="noopener">Department website ↗</a></div>
-<div class="card hv lc"><h4>BSc, Geography and Environment</h4><div class="meta">5 Feb 2015 – 16 Sep 2019 | Dhaka, Bangladesh</div><p class="d"><b>University</b>Jagannath University</p><p class="d"><b>Field of study</b>Geography and Environment</p><p class="d"><b>Project</b>Urban Fire Hazard Risk and Preparedness in Crowded Settlements: The Case of Sadarghat, Dhaka, Bangladesh</p><a class="ln stretch" href="https://jnu.ac.bd/department/portal/geography_environment" target="_blank" rel="noopener">Department website ↗</a></div>
+<div class="card hv lc ed"><div class="rm" data-imgs="PLUS_7.jpg|Plus_1.jpg|PLUS_2.jpg|PLUS_3.jpg|PLUS_4.jpg|PLUS_5.jpg|PLUS_6.jpg"></div><div class="rb"><h4>MSc, Applied Geoinformatics (Professional)</h4><div class="meta">5 Oct 2026 – Current | Salzburg, Austria</div><p class="d"><b>University</b>Paris Lodron University of Salzburg</p><p class="d"><b>Field of study</b>Applied Geoinformatics</p><a class="ln stretch" href="https://www.plus.ac.at/geoinformatik/" target="_blank" rel="noopener">Department website ↗</a></div></div>
+<div class="card hv lc ed"><div class="rm" data-imgs="JnU_1.jpg|JnU_2.jpg"></div><div class="rb"><h4>MSc, Geography and Environment (General)</h4><div class="meta">5 Feb 2020 – 16 Mar 2021 | Dhaka, Bangladesh</div><p class="d"><b>University</b>Jagannath University</p><p class="d"><b>Field of study</b>Geography and Environment</p><p class="d"><b>Thesis</b>Assessment of Moderate Seismic Vulnerability and Earthquake Preparedness in Rangpur Division, Bangladesh</p><a class="ln stretch" href="https://jnu.ac.bd/department/portal/geography_environment" target="_blank" rel="noopener">Department website ↗</a></div></div>
+<div class="card hv lc ed"><div class="rm" data-imgs="JnU_1.jpg|JnU_2.jpg"></div><div class="rb"><h4>BSc, Geography and Environment</h4><div class="meta">5 Feb 2015 – 16 Sep 2019 | Dhaka, Bangladesh</div><p class="d"><b>University</b>Jagannath University</p><p class="d"><b>Field of study</b>Geography and Environment</p><p class="d"><b>Project</b>Urban Fire Hazard Risk and Preparedness in Crowded Settlements: The Case of Sadarghat, Dhaka, Bangladesh</p><a class="ln stretch" href="https://jnu.ac.bd/department/portal/geography_environment" target="_blank" rel="noopener">Department website ↗</a></div></div>
 </div>
 </section>
 
