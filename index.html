@@ -9,222 +9,267 @@
 <meta property="og:title" content="Mehedi Hasan | Academic Portfolio">
 <meta property="og:description" content="MSc Student and Researcher in Applied Geoinformatics, Paris Lodron University of Salzburg">
 <meta property="og:image" content="Cover_Pic.png">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap">
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+<script>document.documentElement.className="js"</script>
 <style>
-:root{--ink:#222;--mut:#666;--line:#555;--soft:#ddd;--acc:#1769aa;--card:rgba(255,255,255,.88)}
+:root{--ink:#0f172a;--body:#475569;--mut:#64748b;--acc:#1769aa;--acc2:#0f4c81;--bg:#f4f7fb;--line:#e2e8f0;--ease:cubic-bezier(.22,.61,.36,1)}
 *{margin:0;padding:0;box-sizing:border-box}
 html{scroll-behavior:smooth}
-body{font:13px/1.65 "Segoe UI",Roboto,Helvetica,Arial,sans-serif;color:var(--ink);background:#fff linear-gradient(rgba(255,255,255,.84),rgba(255,255,255,.84)),url("Background_Pic.png") center/cover fixed no-repeat}
+body{font:14px/1.65 Inter,system-ui,-apple-system,"Segoe UI",Roboto,sans-serif;color:var(--body);background-color:var(--bg);-webkit-font-smoothing:antialiased}
+body::before{content:"";position:fixed;inset:0;z-index:-1;background:url("Background_Pic.png") center/cover no-repeat;opacity:.13;pointer-events:none}
 a{color:var(--acc);text-decoration:none}a:hover{text-decoration:underline}
 :focus-visible{outline:2px solid var(--acc);outline-offset:2px}
-nav{position:sticky;top:0;z-index:50;background:rgba(255,255,255,.96);border-bottom:1px solid var(--soft)}
-.nav{max-width:1100px;margin:0 auto;padding:10px 24px;display:flex;justify-content:space-between;align-items:center;gap:16px;flex-wrap:wrap}
-.logo{font-weight:600;font-size:13px;color:var(--ink)}.logo i{margin-right:8px;color:var(--mut)}
-.nav ul{display:flex;gap:18px;list-style:none;flex-wrap:wrap;font-size:12px}
-.nav ul a{color:var(--ink)}.nav ul a:hover{color:var(--acc);text-decoration:none}
-.banner{height:120px;position:relative;overflow:hidden;background:#cbd5e1}
-.banner img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;opacity:0;transition:opacity 1s}
-.banner img.on{opacity:1}
-.wrap{max-width:1100px;margin:0 auto;padding:0 24px}
-.hero{display:grid;grid-template-columns:230px minmax(0,1fr);gap:28px;align-items:start}
-.side{margin-top:-62px;position:relative}
-.photo{width:124px;height:124px;border-radius:50%;object-fit:cover;background:#cbd5e1;display:block;box-shadow:0 0 0 4px #fff,0 0 0 5.5px #777}
-.side h1{font-size:23px;font-weight:500;margin-top:14px;line-height:1.2}
-.role{font-size:11px;font-weight:700;letter-spacing:.4px;color:#444;margin:4px 0 8px;text-transform:uppercase}
-.dept{font-size:11.5px;color:var(--mut);line-height:1.5;margin-bottom:14px}
-.links{border-top:1px solid var(--soft)}
-.links a{display:flex;align-items:center;gap:10px;padding:7px 0;border-bottom:1px solid #e8e8e8;color:var(--ink);font-size:12px}
-.links a:hover{text-decoration:none;color:var(--acc)}
-.links .ic{width:20px;height:20px;border:1px solid #444;border-radius:50%;display:grid;place-items:center;font-size:10px}
-.links .go{margin-left:auto;color:#999;font-size:11px}
-.box{border:1.2px solid var(--line);border-radius:20px;background:var(--card);padding:22px 26px}
-.hero .box{margin-top:24px}
-.lbl{font-size:10.5px;letter-spacing:1.2px;text-transform:uppercase;color:#777;font-weight:600;margin-bottom:12px}
-.box p{font-size:12.5px;color:#444;margin-bottom:9px}
-.two{display:grid;grid-template-columns:1fr 1fr;gap:30px;margin-top:18px;padding-top:16px;border-top:1px solid var(--soft)}
-.two h3{font-size:14.5px;font-weight:600;margin-bottom:8px}
-.two ul{list-style:none;font-size:12px;color:#444}.two li{padding:2px 0}
-.edu li{display:flex;gap:8px}.edu i{color:#333;margin-top:4px}.edu small{display:block;color:var(--mut);font-size:11px}
-.sec{margin-top:40px}
-.grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(250px,1fr));gap:18px}
-.theme{border:1.2px solid var(--line);border-radius:18px;background:var(--card);padding:18px 16px;text-align:center}
-.theme .ring{width:84px;height:84px;border-radius:50%;margin:0 auto 12px;display:grid;place-items:center;color:#fff;font-size:30px}
-.theme b{display:block;font-size:12.5px;margin-bottom:6px}.theme span{font-size:11.5px;color:var(--mut);line-height:1.5;display:block}
-.list{display:grid;gap:12px;grid-template-columns:repeat(auto-fit,minmax(320px,1fr))}
-.list.one{grid-template-columns:1fr}
-.it{border:1px solid #bbb;border-radius:14px;background:var(--card);padding:14px 18px}
-.it h3{font-size:14px;font-weight:600;margin-bottom:2px}
-.meta{font-size:11.5px;color:var(--acc);font-weight:500;margin-bottom:4px}
-.it p{font-size:12px;color:var(--mut)}
-.tag{display:inline-block;background:#fef3c7;color:#92400e;font-size:11px;font-weight:600;padding:2px 8px;border-radius:4px;margin-top:4px}
-.conf{padding:0;overflow:hidden;display:flex;flex-direction:column}
-.conf .pic{height:170px;background:#e2e8f0}.conf .pic img{width:100%;height:100%;object-fit:cover;display:block}
-.conf .in{padding:14px 18px}
-.skills{display:flex;flex-wrap:wrap;gap:8px}
-.skills span{border:1px solid #999;background:var(--card);border-radius:20px;padding:4px 13px;font-size:12px}
-.mentor{margin-top:50px;border-top:1px solid var(--soft);background:rgba(255,255,255,.75);padding:40px 24px;text-align:center}
-.mentor .in{max-width:760px;margin:0 auto}
-.mentor i.fa-seedling{font-size:26px;color:#3b6d11;margin-bottom:12px}
-.mentor p{font-size:13px;color:#444;margin-bottom:16px}
-.btn{background:var(--acc);color:#fff;border:0;border-radius:20px;padding:8px 20px;font:600 13px inherit;cursor:pointer}
-.btn:hover{background:#0f4c81}
-footer{text-align:center;padding:22px;font-size:12px;color:var(--mut);border-top:1px solid var(--soft);background:rgba(255,255,255,.9)}
-.modal{position:fixed;inset:0;background:rgba(15,23,42,.6);display:none;align-items:center;justify-content:center;z-index:100}
-.modal .card{background:#fff;border-radius:16px;width:90%;max-width:380px;padding:24px;text-align:center;position:relative}
-.modal h3{font-size:17px;margin-bottom:6px}
-.modal .x{position:absolute;top:12px;right:14px;border:0;background:none;font-size:20px;cursor:pointer;color:var(--mut)}
-.modal .opt{display:flex;align-items:center;justify-content:center;gap:10px;padding:11px;border-radius:10px;color:#fff;font-weight:600;margin-top:10px}
-.modal .opt:hover{text-decoration:none;opacity:.9}
-@media(max-width:860px){
-.hero{grid-template-columns:1fr;gap:0}
-.side{text-align:center}.photo{margin:0 auto}
-.hero .box{margin-top:20px}
-.two{grid-template-columns:1fr}
-.nav{justify-content:center}.nav ul{justify-content:center}
-.list{grid-template-columns:1fr}
+.prog{position:fixed;top:0;left:0;height:3px;width:100%;background:var(--acc);transform:scaleX(0);transform-origin:0 50%;z-index:200}
+nav{position:sticky;top:12px;z-index:100;max-width:1100px;margin:12px auto 0;padding:0 16px}
+.nav{display:flex;align-items:center;gap:4px;background:rgba(255,255,255,.78);-webkit-backdrop-filter:saturate(1.6) blur(14px);backdrop-filter:saturate(1.6) blur(14px);border:1px solid rgba(226,232,240,.95);border-radius:999px;padding:6px 8px 6px 16px;overflow-x:auto;scrollbar-width:none}
+.nav::-webkit-scrollbar{display:none}
+.brand{font-weight:700;color:var(--ink);margin-right:10px;white-space:nowrap}
+.lk{padding:7px 13px;border-radius:999px;color:var(--body);font-size:13px;font-weight:500;white-space:nowrap;transition:background .3s var(--ease),color .3s var(--ease)}
+.lk:hover{background:#eaf0f7;color:var(--ink);text-decoration:none}
+.lk.act{background:var(--ink);color:#fff}
+.wrap{max-width:1100px;margin:0 auto;padding:0 16px}
+.head{margin-top:16px;background:#fff;border:1px solid var(--line);border-radius:22px;overflow:hidden}
+.cover{height:230px;position:relative;overflow:hidden;background:#cbd5e1}
+.pl{position:absolute;inset:-30px 0;will-change:transform}
+.pl img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;opacity:0;transform:scale(1.1);transition:opacity 1.6s var(--ease),transform 9s linear}
+.pl img.on{opacity:1;transform:scale(1)}
+.hin{padding:0 30px 26px;display:flex;flex-wrap:wrap;gap:16px 26px;align-items:flex-end;justify-content:space-between}
+.who{display:flex;gap:24px;align-items:flex-end;flex:1;min-width:280px}
+.photo{width:128px;height:128px;border-radius:50%;object-fit:cover;margin-top:-64px;border:5px solid #fff;box-shadow:0 10px 26px -6px rgba(15,23,42,.35);background:#cbd5e1;flex:none}
+.who h1{font-size:28px;line-height:1.2;font-weight:700;color:var(--ink);letter-spacing:-.02em}
+.role{color:var(--acc);font-weight:600;margin:2px 0 6px}
+.dept{font-size:13px;color:var(--mut);line-height:1.55}
+.acts{display:flex;gap:8px;flex-wrap:wrap}
+.b{display:inline-flex;gap:8px;align-items:center;padding:9px 15px;border-radius:999px;background:#eef4fa;border:1px solid #dbe6f1;color:var(--acc2);font-weight:600;font-size:13px;transition:transform .3s var(--ease),background .3s,color .3s,border-color .3s}
+.b:hover{background:var(--acc);border-color:var(--acc);color:#fff;transform:translateY(-2px);text-decoration:none}
+.sec{margin-top:56px;scroll-margin-top:84px}
+h2{font-size:20px;font-weight:700;color:var(--ink);letter-spacing:-.01em;margin-bottom:18px}
+h2::after{content:"";display:block;width:34px;height:3px;border-radius:3px;background:var(--acc);margin-top:8px}
+.card{background:rgba(255,255,255,.93);border:1px solid var(--line);border-radius:18px;padding:24px 26px;transition:transform .35s var(--ease),border-color .3s,box-shadow .35s}
+.hv:hover{transform:translateY(-3px);border-color:#c5d6e8;box-shadow:0 16px 32px -20px rgba(15,23,42,.3)}
+.about p{font-size:15px;line-height:1.8;margin-bottom:12px;max-width:80ch}
+.two{display:grid;grid-template-columns:1.2fr 1fr;gap:34px;margin-top:22px;padding-top:22px;border-top:1px solid var(--line)}
+h3{font-size:15px;font-weight:600;color:var(--ink);margin-bottom:10px}
+.chips{display:flex;flex-wrap:wrap;gap:7px}
+.chips span{background:#eef4fa;color:var(--acc2);border-radius:999px;padding:4px 12px;font-size:12.5px;font-weight:500}
+.edu li{list-style:none;display:flex;gap:11px;margin-bottom:11px;color:var(--ink);font-weight:500;font-size:13.5px;line-height:1.45}
+.edu i{color:var(--acc);margin-top:3px}.edu small{display:block;color:var(--mut);font-weight:400;font-size:12.5px}
+.grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(240px,1fr));gap:16px}
+.ico{width:46px;height:46px;border-radius:14px;display:grid;place-items:center;font-size:19px;margin-bottom:14px;background:#eaf2fa;color:var(--acc)}
+.card h4{font-size:15px;font-weight:600;color:var(--ink);margin-bottom:5px;line-height:1.4}
+.card p.d{font-size:13px;color:var(--mut)}
+.meta{font-size:12.5px;color:var(--acc);font-weight:500;margin:2px 0 6px}
+.tl{position:relative;padding-left:28px;display:grid;gap:14px}
+.tl::before{content:"";position:absolute;left:4.5px;top:28px;bottom:28px;width:2px;background:var(--line)}
+.tl .card{position:relative}
+.tl .card::before{content:"";position:absolute;left:-28px;top:27px;width:11px;height:11px;border-radius:50%;background:#fff;border:3px solid var(--acc)}
+.pubs{display:grid;gap:12px}
+.pub{display:grid;grid-template-columns:58px 1fr;gap:16px;align-items:start}
+.yr{font-weight:700;font-size:13px;color:var(--acc);background:#eaf2fa;border-radius:10px;text-align:center;padding:6px 0}
+.pub a.ln{font-size:13px;font-weight:500}
+.tag{display:inline-block;background:#fef3c7;color:#92400e;font-size:12px;font-weight:600;padding:2px 10px;border-radius:999px}
+.conf{padding:0;overflow:hidden}
+.pic{height:200px;overflow:hidden;background:#e2e8f0}
+.pic img{width:100%;height:100%;object-fit:cover;display:block;transition:transform .8s var(--ease)}
+.conf:hover .pic img{transform:scale(1.045)}
+.conf .in{padding:20px 24px 24px}
+.cert{display:flex;gap:14px}.cert .ico{flex:none;margin:0;width:42px;height:42px;font-size:17px}
+.skills{display:flex;flex-wrap:wrap;gap:9px}
+.skills span{background:#fff;border:1px solid var(--line);border-radius:999px;padding:6px 15px;font-weight:500;color:var(--ink);transition:border-color .25s,color .25s,transform .3s var(--ease)}
+.skills span:hover{border-color:var(--acc);color:var(--acc);transform:translateY(-2px)}
+.mentor{background:var(--ink);border-radius:24px;padding:38px 40px;display:flex;gap:28px;align-items:center;justify-content:space-between;flex-wrap:wrap}
+.mentor h2{color:#fff}.mentor h2::after{background:#7cc0f0}
+.mentor p{color:#cbd5e1;font-size:15px;line-height:1.8;max-width:62ch}
+.btn{background:#fff;color:var(--ink);border:0;border-radius:999px;padding:12px 24px;font:600 14px Inter,sans-serif;cursor:pointer;transition:transform .3s var(--ease),background .3s;white-space:nowrap}
+.btn:hover{background:#dcecfa;transform:translateY(-2px)}
+footer{text-align:center;padding:36px 16px 40px;font-size:13px;color:var(--mut)}
+.modal{position:fixed;inset:0;background:rgba(15,23,42,.55);-webkit-backdrop-filter:blur(5px);backdrop-filter:blur(5px);display:flex;align-items:center;justify-content:center;z-index:300;opacity:0;visibility:hidden;transition:opacity .3s var(--ease),visibility .3s}
+.modal.open{opacity:1;visibility:visible}
+.mc{background:#fff;border-radius:20px;width:90%;max-width:380px;padding:28px;text-align:center;position:relative;transform:translateY(14px) scale(.97);transition:transform .35s var(--ease)}
+.modal.open .mc{transform:none}
+.mc h3{font-size:18px;margin-bottom:4px}
+.x{position:absolute;top:12px;right:16px;border:0;background:none;font-size:22px;cursor:pointer;color:var(--mut)}
+.opt{display:flex;align-items:center;justify-content:center;gap:10px;padding:12px;border-radius:12px;color:#fff;font-weight:600;margin-top:10px;transition:transform .25s var(--ease)}
+.opt:hover{transform:translateY(-2px);text-decoration:none}
+.js .rv{opacity:0;transform:translateY(16px);transition:opacity .8s var(--ease),transform .8s var(--ease)}
+.js .rv.in{opacity:1;transform:none}
+@media(max-width:760px){
+.cover{height:150px}.photo{width:104px;height:104px;margin-top:-52px}
+.hin{padding:0 18px 20px}.who{gap:16px;flex-wrap:wrap}.who h1{font-size:23px}
+.card{padding:20px}.two{grid-template-columns:1fr;gap:22px}
+.brand{display:none}.sec{margin-top:44px}
+.pub{grid-template-columns:1fr;gap:8px}.yr{width:58px}
+.mentor{padding:28px 24px}
 }
-@media(prefers-reduced-motion:reduce){html{scroll-behavior:auto}.banner img{transition:none}}
+@media(prefers-reduced-motion:reduce){
+html{scroll-behavior:auto}
+*,*::before,*::after{transition-duration:.01ms!important;animation:none!important}
+.js .rv{opacity:1;transform:none}.pl img{transform:none}
+}
 </style>
 </head>
 <body>
-<nav><div class="nav">
-<a class="logo" href="#about"><i class="fa-solid fa-earth-europe"></i>Mehedi Hasan</a>
-<ul>
-<li><a href="#about">About me</a></li><li><a href="#experience">Experience</a></li><li><a href="#projects">Projects</a></li><li><a href="#publications">Publications</a></li><li><a href="#conferences">Conferences &amp; Seminars</a></li><li><a href="#certifications">Certifications</a></li><li><a href="#skills">Skills</a></li><li><a href="#mentorship">Mentorship</a></li>
-</ul></div></nav>
-
-<div class="banner" id="slider">
-<img class="on" src="Cover_Pic.png" alt="">
-<img src="Background_Pic.png" alt="">
-</div>
+<div class="prog" id="prog"></div>
+<nav><div class="nav" id="nav">
+<span class="brand">Mehedi Hasan</span>
+<a class="lk" href="#about">About me</a><a class="lk" href="#experience">Experience</a><a class="lk" href="#projects">Projects</a><a class="lk" href="#publications">Publications</a><a class="lk" href="#conferences">Conferences</a><a class="lk" href="#certifications">Certifications</a><a class="lk" href="#skills">Skills</a><a class="lk" href="#mentorship">Mentorship</a>
+</div></nav>
 
 <div class="wrap">
-<div class="hero" id="about">
-<aside class="side">
+<header class="head rv">
+<div class="cover"><div class="pl" id="pl">
+<img src="Cover_Pic.png" alt="">
+<!-- Aro cover chhobi dile auto smooth cross-dissolve hobe: <img src="Cover_2.png" alt=""> -->
+</div></div>
+<div class="hin">
+<div class="who">
 <img class="photo" src="Profile_pic.jpeg" alt="Mehedi Hasan">
+<div>
 <h1>Mehedi Hasan</h1>
 <div class="role">MSc Student &amp; Researcher</div>
-<div class="dept">Applied Geoinformatics, Department of Z_GIS<br><a href="https://www.plus.ac.at/geoinformatik/" target="_blank" rel="noopener">Paris Lodron University of Salzburg</a><br>Salzburg-5020, Austria</div>
-<div class="links">
-<a href="mailto:mehedi.hasan@stud.plus.ac.at"><span class="ic"><i class="fa-solid fa-envelope"></i></span>Email<span class="go">↗</span></a>
-<a href="https://www.linkedin.com/in/mehedi-hasan-97a2b3217/" target="_blank" rel="noopener"><span class="ic"><i class="fa-brands fa-linkedin-in"></i></span>LinkedIn<span class="go">↗</span></a>
-<a href="https://www.facebook.com/abid.ahmad.1460" target="_blank" rel="noopener"><span class="ic"><i class="fa-brands fa-facebook-f"></i></span>Facebook<span class="go">↗</span></a>
-<a href="https://mahdialhasan.github.io/MehediHasan.github.io/" target="_blank" rel="noopener"><span class="ic"><i class="fa-solid fa-globe"></i></span>Website / Full CV<span class="go">↗</span></a>
-</div>
-</aside>
+<div class="dept">Applied Geoinformatics, Department of Z_GIS<br><a href="https://www.plus.ac.at/geoinformatik/" target="_blank" rel="noopener">Paris Lodron University of Salzburg</a><br>Salzburg-5020 · Austria</div>
+</div></div>
+<div class="acts">
+<a class="b" href="mailto:mehedi.hasan@stud.plus.ac.at"><i class="fa-solid fa-envelope"></i>Email</a>
+<a class="b" href="https://www.linkedin.com/in/mehedi-hasan-97a2b3217/" target="_blank" rel="noopener"><i class="fa-brands fa-linkedin"></i>LinkedIn</a>
+<a class="b" href="https://www.facebook.com/abid.ahmad.1460" target="_blank" rel="noopener"><i class="fa-brands fa-facebook"></i>Facebook</a>
+<a class="b" href="https://mahdialhasan.github.io/MehediHasan.github.io/" target="_blank" rel="noopener"><i class="fa-solid fa-globe"></i>Website / CV</a>
+</div></div>
+</header>
 
-<div class="box">
-<div class="lbl">About me</div>
+<section class="sec rv" id="about">
+<h2>About me</h2>
+<div class="card about">
 <p>I am a geospatial researcher and MSc student in Applied Geoinformatics at Paris Lodron University of Salzburg, Austria. My research specializes in multi-hazard risk assessment, vulnerability analysis, and disaster risk reduction using GIS, remote sensing, Python, and machine learning.</p>
 <p>I leverage high-resolution satellite imagery, spatial statistics, machine learning models, and hydro-climatic data to understand environmental risk dynamics, flood susceptibility, and seismic vulnerability to support resilient communities.</p>
 <p>I have authored and co-authored peer-reviewed research papers in Taylor &amp; Francis, Elsevier, and Springer Nature journals focusing on multi-hazard mapping, wetland dynamics, and flash flood prediction. I also bring hands-on professional industry experience as a GIS Analyst at the Institute of Water Modelling (IWM).</p>
 <div class="two">
-<div><h3>Interests</h3><ul>
-<li>Flood Risk Assessment</li><li>Disaster Resilience</li><li>GIS &amp; Remote Sensing</li><li>Geospatial Analysis</li><li>Machine Learning (ML)</li><li>Deep Learning (DL)</li><li>Hydrological Modeling</li><li>Climate Change Impact</li><li>Urban &amp; Regional Planning</li></ul></div>
+<div><h3>Interests</h3><div class="chips"><span>Flood Risk Assessment</span><span>Disaster Resilience</span><span>GIS &amp; Remote Sensing</span><span>Geospatial Analysis</span><span>Machine Learning (ML)</span><span>Deep Learning (DL)</span><span>Hydrological Modeling</span><span>Climate Change Impact</span><span>Urban &amp; Regional Planning</span></div></div>
 <div class="edu"><h3>Education</h3><ul>
 <li><i class="fa-solid fa-graduation-cap"></i><div>MSc, Applied Geoinformatics (Professional)<small>Paris Lodron University of Salzburg, Austria (Current)</small></div></li>
 <li><i class="fa-solid fa-graduation-cap"></i><div>MSc, Geography and Environment (General)<small>Jagannath University, Dhaka, Bangladesh</small></div></li>
 <li><i class="fa-solid fa-graduation-cap"></i><div>BSc, Geography and Environment<small>Jagannath University, Bangladesh</small></div></li></ul></div>
-</div>
-</div>
-</div>
+</div></div>
+</section>
 
-<section class="sec" id="themes">
-<div class="lbl">Research themes</div>
+<section class="sec rv" id="themes">
+<h2>Research themes</h2>
 <div class="grid">
-<div class="theme"><div class="ring" style="background:#185FA5"><i class="fa-solid fa-water"></i></div><b>Flood &amp; Hazard Risk</b><span>Multi-hazard risk assessment and spatial susceptibility modeling in coastal and riverine frontiers.</span></div>
-<div class="theme"><div class="ring" style="background:#0F6E56"><i class="fa-solid fa-brain"></i></div><b>GeoAI &amp; Machine Learning</b><span>Applying ensemble ML and deep learning frameworks for environmental vulnerability and groundwater zoning.</span></div>
-<div class="theme"><div class="ring" style="background:#993C1D"><i class="fa-solid fa-temperature-half"></i></div><b>Climate Resilience</b><span>Analyzing urban thermal comfort, land surface temperature, and wetland change dynamics.</span></div>
-<div class="theme"><div class="ring" style="background:#534AB7"><i class="fa-solid fa-droplet"></i></div><b>Hydrological Modeling</b><span>Spatial MCDA, HEC-RAS modeling, and integrated geospatial frameworks for flash flood risks.</span></div>
+<div class="card hv"><div class="ico"><i class="fa-solid fa-water"></i></div><h4>Flood &amp; Hazard Risk</h4><p class="d">Multi-hazard risk assessment and spatial susceptibility modeling in coastal and riverine frontiers.</p></div>
+<div class="card hv"><div class="ico"><i class="fa-solid fa-brain"></i></div><h4>GeoAI &amp; Machine Learning</h4><p class="d">Applying ensemble ML and deep learning frameworks for environmental vulnerability and groundwater zoning.</p></div>
+<div class="card hv"><div class="ico"><i class="fa-solid fa-temperature-half"></i></div><h4>Climate Resilience</h4><p class="d">Analyzing urban thermal comfort, land surface temperature, and wetland change dynamics.</p></div>
+<div class="card hv"><div class="ico"><i class="fa-solid fa-droplet"></i></div><h4>Hydrological Modeling</h4><p class="d">Spatial MCDA, HEC-RAS modeling, and integrated geospatial frameworks for flash flood risks.</p></div>
 </div>
 </section>
 
-<section class="sec" id="experience">
-<div class="lbl">Work experience</div>
-<div class="list">
-<div class="it"><h3>GIS Analyst</h3><div class="meta">Institute of Water Modelling (IWM), Dhaka, Bangladesh | Apr 2024 – Sep 2026</div><p>Worked in ICT, GIS &amp; Remote Sensing Division on water modeling and environmental spatial analysis.</p></div>
-<div class="it"><h3>Research Assistant</h3><div class="meta">Ovibashi Karmi Unnayan Program (OKUP), Dhaka | Feb 2023 – Mar 2024</div><p>Spatial analysis and vulnerability mapping for climate change and migration projects.</p></div>
-<div class="it"><h3>GIS Operator</h3><div class="meta">GeoMark Limited, Dhaka | Aug 2022 – Oct 2022</div><p>Digitization, spatial data quality assurance, and processing large geospatial datasets.</p></div>
-<div class="it"><h3>Research Assistant</h3><div class="meta">Prof. Dr. Muhammad Al-Amin Hoque, Jagannath University | Mar 2021 – Dec 2022</div><p>Geospatial hazard modeling, Machine Learning applications, and spatial decision support systems.</p></div>
+<section class="sec rv" id="experience">
+<h2>Work experience</h2>
+<div class="tl">
+<div class="card hv"><h4>GIS Analyst</h4><div class="meta">Institute of Water Modelling (IWM), Dhaka, Bangladesh | Apr 2024 – Sep 2026</div><p class="d">Worked in ICT, GIS &amp; Remote Sensing Division on water modeling and environmental spatial analysis.</p></div>
+<div class="card hv"><h4>Research Assistant</h4><div class="meta">Ovibashi Karmi Unnayan Program (OKUP), Dhaka | Feb 2023 – Mar 2024</div><p class="d">Spatial analysis and vulnerability mapping for climate change and migration projects.</p></div>
+<div class="card hv"><h4>GIS Operator</h4><div class="meta">GeoMark Limited, Dhaka | Aug 2022 – Oct 2022</div><p class="d">Digitization, spatial data quality assurance, and processing large geospatial datasets.</p></div>
+<div class="card hv"><h4>Research Assistant</h4><div class="meta">Prof. Dr. Muhammad Al-Amin Hoque, Jagannath University | Mar 2021 – Dec 2022</div><p class="d">Geospatial hazard modeling, Machine Learning applications, and spatial decision support systems.</p></div>
 </div>
 </section>
 
-<section class="sec" id="projects">
-<div class="lbl">Projects</div>
-<div class="list">
-<div class="it"><h3>Coastal Multi-Hazard Risk Assessment</h3><p>GIS-based assessment of flood, cyclone, salinity, and erosion risks with vulnerability analysis in coastal Bangladesh.</p></div>
-<div class="it"><h3>Machine Learning-Driven Flood Susceptibility Mapping</h3><p>Predictive flood susceptibility modeling using hydro-climatic extremes, land cover dynamics, and ensemble ML models.</p></div>
-<div class="it"><h3>Earthquake Vulnerability &amp; Risk Assessment</h3><p>Spatial evaluation of seismic risk and preparedness using Analytical Hierarchy Process (AHP) and geospatial integration.</p></div>
+<section class="sec rv" id="projects">
+<h2>Projects</h2>
+<div class="grid">
+<div class="card hv"><div class="ico"><i class="fa-solid fa-water"></i></div><h4>Coastal Multi-Hazard Risk Assessment</h4><p class="d">GIS-based assessment of flood, cyclone, salinity, and erosion risks with vulnerability analysis in coastal Bangladesh.</p></div>
+<div class="card hv"><div class="ico"><i class="fa-solid fa-brain"></i></div><h4>Machine Learning-Driven Flood Susceptibility Mapping</h4><p class="d">Predictive flood susceptibility modeling using hydro-climatic extremes, land cover dynamics, and ensemble ML models.</p></div>
+<div class="card hv"><div class="ico"><i class="fa-solid fa-house-crack"></i></div><h4>Earthquake Vulnerability &amp; Risk Assessment</h4><p class="d">Spatial evaluation of seismic risk and preparedness using Analytical Hierarchy Process (AHP) and geospatial integration.</p></div>
 </div>
 </section>
 
-<section class="sec" id="publications">
-<div class="lbl">Publications</div>
-<div class="list one">
-<div class="it"><h3>Multi-hazard risk mapping using geospatial techniques in coastal Bangladesh: implications for resilience</h3><div class="meta">Geomatics, Natural Hazards and Risk, Taylor &amp; Francis (2026)</div><a href="https://doi.org/10.1080/19475705.2026.2729590" target="_blank" rel="noopener">DOI: 10.1080/19475705.2026.2729590 ↗</a></div>
-<div class="it"><h3>Machine learning-driven flood susceptibility mapping in the coastal frontier of Feni District, Bangladesh</h3><div class="meta">Geomatics, Natural Hazards and Risk, Taylor &amp; Francis (2026)</div><a href="https://doi.org/10.1080/19475705.2026.2717863" target="_blank" rel="noopener">DOI: 10.1080/19475705.2026.2717863 ↗</a></div>
-<div class="it"><h3>Wetland change and its impacts on livelihood using machine learning algorithms in Chanda Beel, Gopalganj, Bangladesh</h3><div class="meta">Next Research, Elsevier (2025)</div><a href="https://doi.org/10.1016/j.nexres.2026.101556" target="_blank" rel="noopener">DOI: 10.1016/j.nexres.2026.101556 ↗</a></div>
-<div class="it"><h3>A Comparative Study of Spatial MCDM Techniques for Flash Flood Risk Mapping in Northeastern Bangladesh</h3><div class="meta">Earth Systems and Environment, Springer Nature (2025)</div><a href="https://link.springer.com/article/10.1007/s41748-025-00942-2" target="_blank" rel="noopener">Springer Link ↗</a></div>
-<div class="it"><h3>Mapping seismic risk in Rangpur Division, Bangladesh: An integrated geospatial approach</h3><div class="meta">Spatial Information Research, Springer Nature (2025)</div><a href="https://link.springer.com/article/10.1007/s41324-025-00643-y" target="_blank" rel="noopener">Springer Link ↗</a></div>
-<div class="it"><h3>Flood susceptibility prediction using machine learning under hydro-climatic extremes in Bangladesh</h3><div class="meta">Journal of Environmental Management, Elsevier</div><span class="tag">Under Review (2026)</span></div>
+<section class="sec rv" id="publications">
+<h2>Publications</h2>
+<div class="pubs">
+<div class="card hv pub"><div class="yr">2026</div><div><h4>Multi-hazard risk mapping using geospatial techniques in coastal Bangladesh: implications for resilience</h4><div class="meta">Geomatics, Natural Hazards and Risk, Taylor &amp; Francis (2026)</div><a class="ln" href="https://doi.org/10.1080/19475705.2026.2729590" target="_blank" rel="noopener">DOI: 10.1080/19475705.2026.2729590 ↗</a></div></div>
+<div class="card hv pub"><div class="yr">2026</div><div><h4>Machine learning-driven flood susceptibility mapping in the coastal frontier of Feni District, Bangladesh</h4><div class="meta">Geomatics, Natural Hazards and Risk, Taylor &amp; Francis (2026)</div><a class="ln" href="https://doi.org/10.1080/19475705.2026.2717863" target="_blank" rel="noopener">DOI: 10.1080/19475705.2026.2717863 ↗</a></div></div>
+<div class="card hv pub"><div class="yr">2025</div><div><h4>Wetland change and its impacts on livelihood using machine learning algorithms in Chanda Beel, Gopalganj, Bangladesh</h4><div class="meta">Next Research, Elsevier (2025)</div><a class="ln" href="https://doi.org/10.1016/j.nexres.2026.101556" target="_blank" rel="noopener">DOI: 10.1016/j.nexres.2026.101556 ↗</a></div></div>
+<div class="card hv pub"><div class="yr">2025</div><div><h4>A Comparative Study of Spatial MCDM Techniques for Flash Flood Risk Mapping in Northeastern Bangladesh</h4><div class="meta">Earth Systems and Environment, Springer Nature (2025)</div><a class="ln" href="https://link.springer.com/article/10.1007/s41748-025-00942-2" target="_blank" rel="noopener">Springer Link ↗</a></div></div>
+<div class="card hv pub"><div class="yr">2025</div><div><h4>Mapping seismic risk in Rangpur Division, Bangladesh: An integrated geospatial approach</h4><div class="meta">Spatial Information Research, Springer Nature (2025)</div><a class="ln" href="https://link.springer.com/article/10.1007/s41324-025-00643-y" target="_blank" rel="noopener">Springer Link ↗</a></div></div>
+<div class="card hv pub"><div class="yr">2026</div><div><h4>Flood susceptibility prediction using machine learning under hydro-climatic extremes in Bangladesh</h4><div class="meta">Journal of Environmental Management, Elsevier</div><span class="tag">Under Review (2026)</span></div></div>
 </div>
 </section>
 
-<section class="sec" id="conferences">
-<div class="lbl">Conferences and seminars</div>
-<div class="list">
-<div class="it conf"><div class="pic"><img src="JnU_Conference.jpg" alt="Presenting at ICLESSD-2025, Jagannath University"></div><div class="in"><h3>International Conference on Life, Earth and Science for Sustainable Development (ICLESSD-2025)</h3><div class="meta">Jagannath University, Dhaka | Dec 18 – Dec 19, 2025</div><p>Presented research on predicting thermal comfort impacts of urban water shrinkage in Dhaka using artificial learning models.</p></div></div>
-<div class="it conf"><div class="pic"><img src="Thailand_Conference_1.jpg" alt="Presenting at IWTACC-2025, AIT Bangkok"></div><div class="in"><h3>International Workshop on Technologies for Adaptation to Climate Change (IWTACC-2025)</h3><div class="meta">AIT, Bangkok, Thailand | Nov 21 – Nov 22, 2025</div><p>Presented assessing climate change adaptive capacity using geospatial techniques in coastal Bangladesh.</p></div></div>
+<section class="sec rv" id="conferences">
+<h2>Conferences and seminars</h2>
+<div class="grid" style="grid-template-columns:repeat(auto-fit,minmax(320px,1fr))">
+<div class="card hv conf"><div class="pic"><img src="JnU_Conference.jpg" loading="lazy" alt="Presenting at ICLESSD-2025, Jagannath University"></div><div class="in"><h4>International Conference on Life, Earth and Science for Sustainable Development (ICLESSD-2025)</h4><div class="meta">Jagannath University, Dhaka | Dec 18 – Dec 19, 2025</div><p class="d">Presented research on predicting thermal comfort impacts of urban water shrinkage in Dhaka using artificial learning models.</p></div></div>
+<div class="card hv conf"><div class="pic"><img src="Thailand_Conference_1.jpg" loading="lazy" alt="Presenting at IWTACC-2025, AIT Bangkok"></div><div class="in"><h4>International Workshop on Technologies for Adaptation to Climate Change (IWTACC-2025)</h4><div class="meta">AIT, Bangkok, Thailand | Nov 21 – Nov 22, 2025</div><p class="d">Presented assessing climate change adaptive capacity using geospatial techniques in coastal Bangladesh.</p></div></div>
 </div>
 </section>
 
-<section class="sec" id="certifications">
-<div class="lbl">Certifications</div>
-<div class="list">
-<div class="it"><h3>Practical GIS &amp; Remote Sensing with Python and ArcPy: Step-by-Step Learning</h3><div class="meta">KIM’s GIS | 5 Jun 2025</div><p>Mode of learning: Online</p></div>
-<div class="it"><h3>Machine Learning and Data Science</h3><div class="meta">National Academy for Computer Training and Research (NACTAR) | 1 Jan 2025</div><p>Mode of learning: Online</p><a href="https://nactar.gov.bd" target="_blank" rel="noopener">Link ↗</a></div>
-<div class="it"><h3>Computer Training Program</h3><div class="meta">Youth Development Program | 21 Jul 2022</div><p>Mode of learning: In-person</p><a href="https://dyd.gov.bd/" target="_blank" rel="noopener">Link ↗</a></div>
-<div class="it"><h3>Google Earth Engine (GEE)</h3><div class="meta">Institute of GIS, AI &amp; RS | 30 Jun 2022</div><p>Mode of learning: Online</p><a href="https://www.studyhacksgeospatial.com/" target="_blank" rel="noopener">Link ↗</a></div>
-<div class="it"><h3>Application of GIS</h3><div class="meta">Group Mappers | 10 Feb 2022</div><p>Mode of learning: In-person</p><a href="https://groupmappers.com" target="_blank" rel="noopener">Link ↗</a></div>
+<section class="sec rv" id="certifications">
+<h2>Certifications</h2>
+<div class="grid" style="grid-template-columns:repeat(auto-fit,minmax(320px,1fr))">
+<div class="card hv cert"><div class="ico"><i class="fa-solid fa-certificate"></i></div><div><h4>Practical GIS &amp; Remote Sensing with Python and ArcPy: Step-by-Step Learning</h4><div class="meta">KIM’s GIS | 5 Jun 2025</div><p class="d">Mode of learning: Online</p></div></div>
+<div class="card hv cert"><div class="ico"><i class="fa-solid fa-certificate"></i></div><div><h4>Machine Learning and Data Science</h4><div class="meta">National Academy for Computer Training and Research (NACTAR) | 1 Jan 2025</div><p class="d">Mode of learning: Online · <a href="https://nactar.gov.bd" target="_blank" rel="noopener">Link ↗</a></p></div></div>
+<div class="card hv cert"><div class="ico"><i class="fa-solid fa-certificate"></i></div><div><h4>Computer Training Program</h4><div class="meta">Youth Development Program | 21 Jul 2022</div><p class="d">Mode of learning: In-person · <a href="https://dyd.gov.bd/" target="_blank" rel="noopener">Link ↗</a></p></div></div>
+<div class="card hv cert"><div class="ico"><i class="fa-solid fa-certificate"></i></div><div><h4>Google Earth Engine (GEE)</h4><div class="meta">Institute of GIS, AI &amp; RS | 30 Jun 2022</div><p class="d">Mode of learning: Online · <a href="https://www.studyhacksgeospatial.com/" target="_blank" rel="noopener">Link ↗</a></p></div></div>
+<div class="card hv cert"><div class="ico"><i class="fa-solid fa-certificate"></i></div><div><h4>Application of GIS</h4><div class="meta">Group Mappers | 10 Feb 2022</div><p class="d">Mode of learning: In-person · <a href="https://groupmappers.com" target="_blank" rel="noopener">Link ↗</a></p></div></div>
 </div>
 </section>
 
-<section class="sec" id="skills">
-<div class="lbl">Skills</div>
+<section class="sec rv" id="skills">
+<h2>Skills</h2>
 <div class="skills"><span>ArcGIS Pro</span><span>QGIS</span><span>Google Earth Engine</span><span>Python</span><span>Machine Learning</span><span>Deep Learning</span><span>HEC-RAS</span><span>SQL</span><span>Power BI</span><span>MATLAB</span><span>Remote Sensing</span><span>Spatial MCDA</span></div>
 </section>
-</div>
 
-<section class="mentor" id="mentorship">
-<div class="in">
-<i class="fa-solid fa-seedling"></i>
-<div class="lbl">Mentorship</div>
-<p>Having started my academic journey in Bangladesh, I understand how challenging it can be to navigate geospatial research with limited access to resources. As a way of giving back, I dedicate time to support students facing academic or research challenges in GIScience and Remote Sensing.</p>
+<section class="sec rv" id="mentorship">
+<div class="mentor">
+<div><h2>Mentorship</h2>
+<p>Having started my academic journey in Bangladesh, I understand how challenging it can be to navigate geospatial research with limited access to resources. As a way of giving back, I dedicate time to support students facing academic or research challenges in GIScience and Remote Sensing.</p></div>
 <button type="button" class="btn" onclick="openModal()">Schedule a conversation ↗</button>
 </div>
 </section>
+</div>
 
 <footer>&copy; 2026 Mehedi Hasan · Applied Geoinformatics, Paris Lodron University of Salzburg</footer>
 
-<div class="modal" id="contactModal" role="dialog" aria-modal="true" aria-labelledby="mt">
-<div class="card">
+<div class="modal" id="contactModal" role="dialog" aria-modal="true" aria-labelledby="mt" aria-hidden="true">
+<div class="mc">
 <button type="button" class="x" onclick="closeModal()" aria-label="Close">&times;</button>
-<h3 id="mt">Get in Touch</h3>
-<p style="font-size:12.5px;color:var(--mut)">Select your preferred platform to reach out:</p>
+<h3 id="mt">Get in touch</h3>
+<p style="font-size:13px;color:var(--mut)">Select your preferred platform to reach out:</p>
 <a class="opt" style="background:#25D366" href="https://wa.me/436765979947" target="_blank" rel="noopener"><i class="fa-brands fa-whatsapp"></i> WhatsApp</a>
 <a class="opt" style="background:#1769aa" href="mailto:mehedi.hasan@stud.plus.ac.at"><i class="fa-solid fa-envelope"></i> Send Email</a>
 <a class="opt" style="background:#0A66C2" href="https://www.linkedin.com/in/mehedi-hasan-97a2b3217/" target="_blank" rel="noopener"><i class="fa-brands fa-linkedin"></i> LinkedIn Direct Message</a>
-</div>
-</div>
+</div></div>
 
 <script>
-document.addEventListener("DOMContentLoaded",function(){
-var s=document.querySelectorAll("#slider img"),i=0;
-if(s.length>1)setInterval(function(){s[i].classList.remove("on");i=(i+1)%s.length;s[i].classList.add("on")},4000);
-});
+(function(){
+var slides=document.querySelectorAll("#pl img"),idx=0;
+requestAnimationFrame(function(){requestAnimationFrame(function(){slides[0]&&slides[0].classList.add("on")})});
+if(slides.length>1)setInterval(function(){slides[idx].classList.remove("on");idx=(idx+1)%slides.length;slides[idx].classList.add("on")},7000);
+
+var pl=document.getElementById("pl"),prog=document.getElementById("prog"),tick=false;
+function onScroll(){
+var y=window.scrollY,max=document.documentElement.scrollHeight-window.innerHeight;
+prog.style.transform="scaleX("+(max>0?y/max:0)+")";
+if(y<500)pl.style.transform="translate3d(0,"+Math.min(y*.1,28)+"px,0)";
+tick=false;
+}
+window.addEventListener("scroll",function(){if(!tick){tick=true;requestAnimationFrame(onScroll)}},{passive:true});
+
+var io=new IntersectionObserver(function(es){es.forEach(function(e){if(e.isIntersecting){e.target.classList.add("in");io.unobserve(e.target)}})},{threshold:.08});
+document.querySelectorAll(".rv").forEach(function(el){io.observe(el)});
+
+var links=document.querySelectorAll(".lk"),map={};
+links.forEach(function(a){map[a.getAttribute("href").slice(1)]=a});
+var so=new IntersectionObserver(function(es){es.forEach(function(e){
+if(e.isIntersecting){links.forEach(function(a){a.classList.remove("act")});var a=map[e.target.id];if(a){a.classList.add("act");a.scrollIntoView({block:"nearest",inline:"center",behavior:"smooth"})}}
+})},{rootMargin:"-40% 0px -55% 0px"});
+Object.keys(map).forEach(function(id){var s=document.getElementById(id);if(s)so.observe(s)});
+})();
+
 var m=document.getElementById("contactModal");
-function openModal(){m.style.display="flex"}
-function closeModal(){m.style.display="none"}
+function openModal(){m.classList.add("open");m.setAttribute("aria-hidden","false")}
+function closeModal(){m.classList.remove("open");m.setAttribute("aria-hidden","true")}
 m.addEventListener("click",function(e){if(e.target===m)closeModal()});
 document.addEventListener("keydown",function(e){if(e.key==="Escape")closeModal()});
 </script>
