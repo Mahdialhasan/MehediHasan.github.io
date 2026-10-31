@@ -22,7 +22,7 @@
 *{margin:0;padding:0;box-sizing:border-box}
 html{scroll-behavior:smooth}
 body{font:14px/1.65 Inter,system-ui,-apple-system,"Segoe UI",Roboto,sans-serif;color:var(--body);background-color:var(--bg);-webkit-font-smoothing:antialiased}
-body::before{content:"";position:fixed;inset:0;z-index:-1;background:url("Background_Pic.png") center/cover no-repeat;opacity:.13;pointer-events:none}
+body::before{content:"";position:fixed;inset:0;z-index:-1;background:url("coverpic.jpg") center/cover no-repeat;opacity:.13;pointer-events:none}
 a{color:var(--acc);text-decoration:none}a:hover{text-decoration:underline}
 :focus-visible{outline:2px solid var(--acc);outline-offset:2px}
 .prog{position:fixed;top:0;left:0;height:3px;width:100%;background:var(--acc);transform:scaleX(0);transform-origin:0 50%;z-index:200}
@@ -86,19 +86,11 @@ h2::after{content:"";display:block;width:34px;height:3px;border-radius:3px;backg
 
 h3{font-size:15px;font-weight:600;color:var(--ink);margin-bottom:10px}
 
-/* Interests | Education two-column with divider */
-.duo{margin-top:22px;padding-top:22px;border-top:1px solid var(--line);display:grid;grid-template-columns:1fr 1px 1fr;gap:0 28px;align-items:start}
-.duo .vl{align-self:stretch;background:var(--line);width:1px}
-.ilist{list-style:none;display:grid;gap:6px}
+/* Interests block (full width) */
+.duo{margin-top:22px;padding-top:22px;border-top:1px solid var(--line)}
+.ilist{list-style:none;display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:6px 24px}
 .ilist li{position:relative;padding-left:18px;font-size:14px;color:var(--body)}
 .ilist li::before{content:"";position:absolute;left:0;top:.62em;width:7px;height:7px;border-radius:50%;background:var(--acc)}
-.edu{list-style:none;display:grid;gap:14px}
-.edu li{display:flex;gap:12px;align-items:flex-start}
-.edu .em{font-size:20px;line-height:1.35;flex:none}
-.edu b{display:block;color:var(--ink);font-weight:600;font-size:14.5px;line-height:1.45}
-.edu .s{font-size:13px;color:var(--mut)}
-.edu .s a{font-weight:500;border-bottom:1.5px dotted rgba(23,105,170,.6)}
-.edu .s a:hover{border-bottom-style:solid;text-decoration:none}
 
 .grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(240px,1fr));gap:16px}
 .ico{width:46px;height:46px;border-radius:14px;display:grid;place-items:center;font-size:19px;margin-bottom:14px;background:#eaf2fa;color:var(--acc)}
@@ -168,8 +160,6 @@ footer{text-align:center;padding:36px 16px 40px;font-size:13px;color:var(--mut)}
 .brand{display:none}.sec{margin-top:44px}
 .pub{grid-template-columns:1fr;gap:8px}.yr{width:58px}
 .mentor{padding:28px 24px}
-.duo{grid-template-columns:1fr;gap:18px}
-.duo .vl{width:100%;height:1px;align-self:auto}
 }
 @media(prefers-reduced-motion:reduce){
 html{scroll-behavior:auto}
@@ -195,7 +185,7 @@ html{scroll-behavior:auto}
 <div class="float" aria-hidden="true">
 <img class="fp p1" src="JnU_Conference.jpg" alt="">
 <img class="fp p2" src="Thailand_Conference_1.jpg" alt="">
-<img class="fp p4" src="Background_Pic.png" alt="">
+<img class="fp p4" src="coverpic.jpg" alt="">
 <img class="fp p5" src="Cover_Pic.png" alt="">
 <i class="fq q1"></i><i class="fq q2"></i>
 </div>
@@ -230,7 +220,6 @@ html{scroll-behavior:auto}
 </p>
 
 <div class="duo">
-<div>
 <h3>Interests</h3>
 <ul class="ilist">
 <li>Flood Risk Assessment</li>
@@ -243,16 +232,6 @@ html{scroll-behavior:auto}
 <li>Climate Change Impact</li>
 <li>Urban &amp; Regional Planning</li>
 </ul>
-</div>
-<div class="vl" aria-hidden="true"></div>
-<div>
-<h3>Education</h3>
-<ul class="edu">
-<li><span class="em">🎓</span><div><b>MSc, Applied Geoinformatics (Professional), 2026 – present</b><span class="s"><a href="https://www.plus.ac.at/geoinformatik/" target="_blank" rel="noopener">Paris Lodron University of Salzburg</a>, Austria</span></div></li>
-<li><span class="em">🎓</span><div><b>MSc, Geography and Environment (General), 2021</b><span class="s"><a href="https://jnu.ac.bd/department/portal/geography_environment" target="_blank" rel="noopener">Jagannath University</a>, Bangladesh</span></div></li>
-<li><span class="em">🎓</span><div><b>BSc, Geography and Environment, 2019</b><span class="s"><a href="https://jnu.ac.bd/department/portal/geography_environment" target="_blank" rel="noopener">Jagannath University</a>, Bangladesh</span></div></li>
-</ul>
-</div>
 </div>
 </div>
 </section>
