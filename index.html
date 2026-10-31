@@ -57,7 +57,7 @@ nav{position:sticky;top:12px;z-index:100;max-width:1100px;margin:12px auto 0;pad
 .q2{width:5%;aspect-ratio:1;left:93%;top:8%;animation-delay:-5s}
 @keyframes fl{0%{opacity:0;transform:scale(.5)}14%{opacity:.92;transform:scale(1)}55%{opacity:.92;transform:scale(1.1)}86%{opacity:.85;transform:scale(1.16)}100%{opacity:0;transform:scale(1.28)}}
 
-.hin{position:relative;z-index:2;flex:1;margin:18px;padding:20px 26px;display:flex;flex-wrap:wrap;gap:18px 26px;align-items:center;justify-content:space-between;background:var(--glass);border:1px solid rgba(255,255,255,.65);border-radius:18px;-webkit-backdrop-filter:blur(3px) saturate(1.2);backdrop-filter:blur(3px) saturate(1.2);box-shadow:0 18px 40px -24px rgba(15,23,42,.45)}
+.hin{position:relative;z-index:2;flex:1;margin:18px;padding:20px 26px;display:flex;flex-wrap:wrap;gap:18px 26px;align-items:center;justify-content:space-between;background:linear-gradient(120deg,rgba(255,255,255,.42),rgba(176,214,248,.30) 55%,rgba(196,240,222,.30));border:1px solid rgba(255,255,255,.65);border-radius:18px;-webkit-backdrop-filter:blur(3px) saturate(1.2);backdrop-filter:blur(3px) saturate(1.2);box-shadow:0 18px 40px -24px rgba(15,23,42,.45)}
 .who{display:flex;gap:24px;align-items:center;flex:1;min-width:280px}
 
 /* Profile photo frame */
@@ -80,7 +80,10 @@ h2{font-size:20px;font-weight:700;color:var(--ink);letter-spacing:-.01em;margin-
 h2::after{content:"";display:block;width:48px;height:3px;border-radius:3px;background:linear-gradient(90deg,var(--acc),#7cc0f0);margin-top:8px}
 .js .sec h2::after{width:0;transition:width .9s var(--ease) .35s}
 .js .sec.in h2::after{width:48px}
-.card{background:rgba(255,255,255,.38);-webkit-backdrop-filter:blur(8px) saturate(1.2);backdrop-filter:blur(8px) saturate(1.2);border:1px solid rgba(226,232,240,.9);border-radius:18px;padding:24px 26px;transition:transform .35s var(--ease),border-color .3s,box-shadow .35s}
+.card{--c1:rgba(255,255,255,.55);--c2:rgba(186,214,250,.42);background:linear-gradient(135deg,var(--c1),var(--c2));-webkit-backdrop-filter:blur(8px) saturate(1.2);backdrop-filter:blur(8px) saturate(1.2);border:1px solid rgba(226,232,240,.9);border-radius:18px;padding:24px 26px;transition:transform .35s var(--ease),border-color .3s,box-shadow .35s}
+.card:nth-child(4n+2){--c2:rgba(167,235,205,.40)}
+.card:nth-child(4n+3){--c2:rgba(205,196,250,.44)}
+.card:nth-child(4n+4){--c2:rgba(253,208,160,.38)}
 .hv:hover{transform:translateY(-3px);border-color:#c5d6e8;box-shadow:0 18px 38px -20px rgba(23,105,170,.45)}
 .about p{font-size:15px;line-height:1.8;margin-bottom:12px;max-width:80ch}
 .about p strong{color:var(--ink);font-weight:600}
@@ -200,8 +203,12 @@ h3{font-size:15px;font-weight:600;color:var(--ink);margin-bottom:10px}
 .cert{display:flex;gap:14px}.cert .ico{flex:none;margin:0;width:42px;height:42px;font-size:17px}
 .skills{display:flex;flex-wrap:wrap;gap:9px}
 .skills span{background:rgba(255,255,255,.6);border:1px solid var(--line);border-radius:999px;padding:6px 15px;font-weight:500;color:var(--ink);transition:border-color .25s,color .25s,transform .3s var(--ease)}
+.skills span:nth-child(4n+1){background:rgba(219,234,254,.75)}
+.skills span:nth-child(4n+2){background:rgba(209,250,229,.75)}
+.skills span:nth-child(4n+3){background:rgba(237,233,254,.8)}
+.skills span:nth-child(4n+4){background:rgba(254,236,214,.8)}
 .skills span:hover{border-color:var(--acc);color:var(--acc);transform:translateY(-2px)}
-.mentor{background:var(--ink);border-radius:24px;padding:38px 40px;display:flex;gap:28px;align-items:center;justify-content:space-between;flex-wrap:wrap}
+.mentor{background:linear-gradient(135deg,#0f172a 0%,#133a63 58%,#1769aa 135%);border-radius:24px;padding:38px 40px;display:flex;gap:28px;align-items:center;justify-content:space-between;flex-wrap:wrap}
 .mentor h2{color:#fff}.mentor h2::after{background:#7cc0f0}
 .mentor p{color:#cbd5e1;font-size:15px;line-height:1.8;max-width:62ch}
 .btn{background:#fff;color:var(--ink);border:0;border-radius:999px;padding:12px 24px;font:600 14px Inter,sans-serif;cursor:pointer;transition:transform .3s var(--ease),background .3s;white-space:nowrap}
@@ -283,7 +290,7 @@ footer{text-align:center;padding:36px 16px 40px;font-size:13px;color:var(--mut)}
 @keyframes flashRing{0%{box-shadow:0 0 0 0 rgba(23,105,170,.6)}70%{box-shadow:0 0 0 14px rgba(23,105,170,0)}100%{box-shadow:0 0 0 0 rgba(23,105,170,0)}}
 
 /* ===== PUBLICATION BRANCHES: tabs + compact lists ===== */
-.ptabs{position:relative;display:inline-flex;gap:2px;max-width:100%;overflow-x:auto;scrollbar-width:none;padding:4px;margin-bottom:16px;background:rgba(255,255,255,.4);-webkit-backdrop-filter:blur(8px);backdrop-filter:blur(8px);border:1px solid var(--line);border-radius:999px}
+.ptabs{position:relative;display:inline-flex;gap:2px;max-width:100%;overflow-x:auto;scrollbar-width:none;padding:4px;margin-bottom:16px;background:linear-gradient(120deg,rgba(255,255,255,.55),rgba(190,220,250,.4));-webkit-backdrop-filter:blur(8px);backdrop-filter:blur(8px);border:1px solid var(--line);border-radius:999px}
 .ptabs::-webkit-scrollbar{display:none}
 .ptind{position:absolute;top:4px;bottom:4px;left:0;width:0;border-radius:999px;background:var(--ink);transition:transform .45s var(--ease),width .45s var(--ease)}
 .ptb{position:relative;z-index:1;display:inline-flex;gap:8px;align-items:center;padding:8px 16px;border:0;background:none;border-radius:999px;font:600 13px Inter,sans-serif;color:var(--body);cursor:pointer;white-space:nowrap;transition:color .3s var(--ease)}
@@ -303,6 +310,8 @@ footer{text-align:center;padding:36px 16px 40px;font-size:13px;color:var(--mut)}
 .pill.ur{background:#fef3c7;color:#92400e}
 .pill.sm{background:#dbeafe;color:#1e40af}
 .pill.og{background:#dcfce7;color:#166534}
+.pill.dp{background:#ede9fe;color:#5b21b6}
+.pill.cs{background:#ccfbf1;color:#115e59}
 .pill.og::before{content:"";width:6px;height:6px;border-radius:50%;background:#16a34a;margin-right:7px;animation:pulseDot 1.6s ease-in-out infinite}
 @keyframes pulseDot{0%,100%{opacity:1;transform:scale(1)}50%{opacity:.35;transform:scale(.7)}}
 .pauth{font-size:12px;color:var(--mut);margin-top:2px}
@@ -494,12 +503,12 @@ html{scroll-behavior:auto}
 </div></div>
 <div class="ppanel" id="pp-submitted"><div class="card rows">
 <div class="prow"><span class="pn">1</span><div class="pbody"><h4>Flood Susceptibility Prediction Using Machine Learning under Hydro-Climatic Change Scenarios and Land Use Dynamics in North Western Region, Bangladesh</h4><div class="meta">Journal of Environmental Management, Elsevier</div></div><span class="pill ur">Under Review</span></div>
-<div class="prow"><span class="pn">2</span><div class="pbody"><h4>Forecasting Urban Thermal Comfort and Geo-Thermal Risk in Dhaka, Bangladesh Using Hybrid Deep Learning and Multi-Temporal Remote Sensing Data</h4><div class="meta">Urban Climate, Elsevier</div><details class="pabs"><summary>Abstract</summary><p>Rapid urbanization in Dhaka, Bangladesh, has intensified geo-thermal risk and deteriorated urban thermal comfort, necessitating advanced spatio-temporal assessment for sustainable urban planning and climate adaptation. This study analyzes and predicts thermal comfort zones (TCZs) and geo-thermal risk patterns in Dhaka from 2000 to 2040 using multi-temporal remote sensing data and hybrid artificial intelligence (AI) models. An integrated framework combining Long Short-Term Memory (LSTM), Temporal Convolutional Network (TCN), temperature rule-based Random Forest (LSTRF), and a Hybrid AI model (KNN + RNN + SGD) was employed to evaluate urban thermal dynamics. Multi-source geospatial datasets, including Land Surface Temperature (LST), Normalized Difference Vegetation Index (NDVI), Night-Time Lights (NTL), built-up density, and hydrological indicators, were processed within a GIS environment for zonal thermal assessment across 11 urban zones of Dhaka. The results reveal substantial spatio-temporal variation in thermal comfort conditions, with HTCZ and VHTCZ areas continuously expanding due to rapid land-use transformation and infrastructure growth. Zone 6, Zone 9, and Zone 10 consistently emerged as dominant geo-thermal hotspots, where VHTCZ coverage reached approximately 24.28 km² in the LSTRF model and 22.52 km² in the Hybrid model. Validation results indicate strong model performance, with the Hybrid model achieving up to 98% accuracy and maintaining over 90% temporal stability, while LSTM and TCN achieved R² values of approximately 0.91 and 0.72, respectively. The findings highlight increasing urban heat island intensity in Dhaka and emphasize the importance of urban greening, heat-resilient zoning, cool-roof implementation, and peri-urban vegetation conservation for sustainable urban climate adaptation.</p></details></div><span class="pill sm">Submitted</span></div>
-<div class="prow"><span class="pn">3</span><div class="pbody"><h4>Morphometric Analysis of Two Adjacent Transboundary River Basins in Southeastern Bangladesh: Feni and the Little Feni</h4><div class="meta">Journal of Hydro-environment Research</div><div class="pauth"><b>Corresponding author:</b> Nazim Uddin · <b>Co-authors:</b> Mehedi Hasan, Dr. Asib Ahmed, Maliha Sanzana Misty</div></div><span class="pill sm">Submitted</span></div>
-<div class="prow"><span class="pn">4</span><div class="pbody"><h4>Geospatial Assessment of Climate Change Adaptive Capacity in a Coastal Upazila of Bangladesh: An AHP-Based Approach in Kalapara Upazila</h4><div class="meta">Environmental Monitoring and Assessment, Springer Nature</div></div><span class="pill sm">Submitted</span></div>
-<div class="prow"><span class="pn">5</span><div class="pbody"><h4>Ensemble Machine Learning-Based Groundwater Risk Zonation to Support Sustainable Water Conservation Planning in Jashore District, Bangladesh</h4><div class="meta">Hydrological Sciences Journal, Taylor &amp; Francis</div></div><span class="pill sm">Submitted</span></div>
-<div class="prow"><span class="pn">6</span><div class="pbody"><h4>A Multi-Model Machine and Deep Learning Framework for Flood Risk Assessment in the Sunamganj Haor Basin, Bangladesh</h4><div class="meta">Earth Systems and Environment, Springer Nature</div></div><span class="pill sm">Submitted</span></div>
-<div class="prow"><span class="pn">7</span><div class="pbody"><h4>Understanding Vulnerability Against Lightning Hazards Using Geospatial Techniques in North-Eastern Bangladesh</h4><div class="meta">Geocarto International, Taylor &amp; Francis</div></div><span class="pill sm">Submitted</span></div>
+<div class="prow"><span class="pn">2</span><div class="pbody"><h4>Forecasting Urban Thermal Comfort and Geo-Thermal Risk in Dhaka, Bangladesh Using Hybrid Deep Learning and Multi-Temporal Remote Sensing Data</h4><div class="meta">Urban Climate, Elsevier</div></div><span class="pill dp">Decision Pending</span></div>
+<div class="prow"><span class="pn">3</span><div class="pbody"><h4>Morphometric Analysis of Two Adjacent Transboundary River Basins in Southeastern Bangladesh: Feni and the Little Feni</h4><div class="meta">Journal of Hydro-environment Research</div><div class="pauth"><b>Corresponding author:</b> Nazim Uddin · <b>Co-authors:</b> Mehedi Hasan, Dr. Asib Ahmed, Maliha Sanzana Misty</div></div><span class="pill dp">Decision Pending</span></div>
+<div class="prow"><span class="pn">4</span><div class="pbody"><h4>Geospatial Assessment of Climate Change Adaptive Capacity in a Coastal Upazila of Bangladesh: An AHP-Based Approach in Kalapara Upazila</h4><div class="meta">Environmental Monitoring and Assessment, Springer Nature</div></div><span class="pill dp">Decision Pending</span></div>
+<div class="prow"><span class="pn">5</span><div class="pbody"><h4>Ensemble Machine Learning-Based Groundwater Risk Zonation to Support Sustainable Water Conservation Planning in Jashore District, Bangladesh</h4><div class="meta">Hydrological Sciences Journal, Taylor &amp; Francis</div></div><span class="pill ur">Under Review</span></div>
+<div class="prow"><span class="pn">6</span><div class="pbody"><h4>A Multi-Model Machine and Deep Learning Framework for Flood Risk Assessment in the Sunamganj Haor Basin, Bangladesh</h4><div class="meta">Earth Systems and Environment, Springer Nature</div></div><span class="pill ur">Under Review</span></div>
+<div class="prow"><span class="pn">7</span><div class="pbody"><h4>Understanding Vulnerability Against Lightning Hazards Using Geospatial Techniques in North-Eastern Bangladesh</h4><div class="meta">Geocarto International, Taylor &amp; Francis</div></div><span class="pill cs">1st correction submitted</span></div>
 </div></div>
 <div class="ppanel" id="pp-ongoing"><div class="card rows">
 <div class="prow"><span class="pn">1</span><div class="pbody"><h4>Deciphering Compound Coastal Hazards and Risk Dynamics: An Integrated Machine Learning–Deep Learning Framework for Multi-Hazard Susceptibility, Vulnerability and Risk Assessment along the Central Coast of Bangladesh</h4></div><span class="pill og">Ongoing</span></div>
