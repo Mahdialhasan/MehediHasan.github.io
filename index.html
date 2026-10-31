@@ -121,7 +121,7 @@ h3{font-size:15px;font-weight:600;color:var(--ink);margin-bottom:10px}
 }
 
 
-/* ===== PROJECTS: top photo strip + compact cards ===== */
+/* ===== PROJECTS / CONFERENCES: top photo strip + compact cards ===== */
 .pstrip{position:relative;height:150px;margin-bottom:16px;border-radius:20px;overflow:hidden;background:rgba(255,255,255,.72);border:1px solid var(--line);-webkit-backdrop-filter:blur(8px);backdrop-filter:blur(8px);-webkit-mask-image:linear-gradient(90deg,transparent 0,#000 5%,#000 95%,transparent 100%);mask-image:linear-gradient(90deg,transparent 0,#000 5%,#000 95%,transparent 100%)}
 .pstrip .track{display:flex;width:max-content;height:100%;padding:9px 0;box-sizing:border-box;opacity:0;transition:opacity .8s var(--ease);will-change:transform}
 .pstrip.run .track{opacity:1;animation:pmL var(--dur,60s) linear infinite}
@@ -182,11 +182,15 @@ h3{font-size:15px;font-weight:600;color:var(--ink);margin-bottom:10px}
 .lc:has(a.stretch:focus-visible){outline:2px solid var(--acc);outline-offset:2px}
 .lc a.stretch:focus-visible{outline:none}
 
+/* ===== CONFERENCE CARDS (shuffled slideshow on top) ===== */
 .conf{padding:0;overflow:hidden}
-.pic{height:200px;overflow:hidden;background:#e2e8f0}
-.pic img{width:100%;height:100%;object-fit:cover;display:block;transition:transform .8s var(--ease)}
-.conf:hover .pic img{transform:scale(1.045)}
+.conf .rm{height:230px;width:100%;border-radius:0;background:#e2e8f0}
+.conf .rm img{transition:opacity 1.3s var(--ease),transform 8s linear}
+.conf:hover .rm img.on{transform:scale(1.04)}
+.conf .cbadge{position:absolute;left:12px;top:12px;z-index:4;font-size:11.5px;font-weight:700;letter-spacing:.05em;color:#fff;background:rgba(15,23,42,.72);padding:3px 11px;border-radius:999px;-webkit-backdrop-filter:blur(4px);backdrop-filter:blur(4px)}
 .conf .in{padding:20px 24px 24px}
+.cstrip{margin-bottom:16px}
+@media(max-width:760px){.conf .rm{height:200px}}
 .cert{display:flex;gap:14px}.cert .ico{flex:none;margin:0;width:42px;height:42px;font-size:17px}
 .skills{display:flex;flex-wrap:wrap;gap:9px}
 .skills span{background:#fff;border:1px solid var(--line);border-radius:999px;padding:6px 15px;font-weight:500;color:var(--ink);transition:border-color .25s,color .25s,transform .3s var(--ease)}
@@ -380,78 +384,36 @@ html{scroll-behavior:auto}
 
 
 <section class="sec rv" id="conferences">
-    <h2>Conferences and Seminars</h2>
+<h2>Conferences and Seminars</h2>
 
-    <div class="grid" style="grid-template-columns:repeat(auto-fit,minmax(320px,1fr))">
+<!-- Moving photo strip (all conference photos, shuffled) -->
+<div class="pstrip cstrip" data-dir="left" data-imgs="JnU_conf_1.jpg|JnU_conf_2.jpg|JnU_conf_3.jpg|JnU_conf_4.jpg|JnU_conf_5.jpg|JnU_conf_6.jpg|JnU_conf_7.jpg|JnU_conf_8.jpg|JnU_conf_9.jpg|Thai_conf_1.jpg|Thai_conf_2.jpg|Thai_conf_3.jpg|Thai_conf_4.jpg|Thai_conf_5.jpg|Thai_conf_6.jpg|Thai_conf_7.jpg|Thai_conf_8.jpg|Thai_conf_9.jpg"></div>
 
-        <!-- ICLESSD-2025 -->
-        <div class="card hv conf lc">
+<div class="grid" style="grid-template-columns:repeat(auto-fit,minmax(320px,1fr))">
 
-            <div class="pic">
-                <img src="JnU_Conference.jpg"
-                     loading="lazy"
-                     alt="ICLESSD-2025 Conference Presentation">
-            </div>
+<!-- ICLESSD-2025 (Jagannath University photos) -->
+<div class="card hv conf lc">
+<div class="rm" data-imgs="JnU_conf_1.jpg|JnU_conf_2.jpg|JnU_conf_3.jpg|JnU_conf_4.jpg|JnU_conf_5.jpg|JnU_conf_6.jpg|JnU_conf_7.jpg|JnU_conf_8.jpg|JnU_conf_9.jpg"><span class="cbadge">Dhaka, Bangladesh</span></div>
+<div class="in">
+<h4>International Conference on Life, Earth and Science for Sustainable Development (ICLESSD-2025)</h4>
+<div class="meta">Jagannath University, Dhaka, Bangladesh | Dec 18 – Dec 19, 2025</div>
+<p class="d">Presented research on predicting thermal comfort impacts of urban water shrinkage in Dhaka using Artificial Intelligence models.</p>
+<a class="ln stretch" href="abstracts/iclessd-2025.html">Read Full Abstract →</a>
+</div>
+</div>
 
-            <div class="in">
+<!-- IWTACC-2025 (Thailand photos) -->
+<div class="card hv conf lc">
+<div class="rm" data-imgs="Thai_conf_1.jpg|Thai_conf_2.jpg|Thai_conf_3.jpg|Thai_conf_4.jpg|Thai_conf_5.jpg|Thai_conf_6.jpg|Thai_conf_7.jpg|Thai_conf_8.jpg|Thai_conf_9.jpg"><span class="cbadge">Bangkok, Thailand</span></div>
+<div class="in">
+<h4>International Workshop on Technologies for Adaptation to Climate Change (IWTACC-2025)</h4>
+<div class="meta">Asian Institute of Technology (AIT), Bangkok, Thailand | Nov 21 – Nov 22, 2025</div>
+<p class="d">Presented research assessing climate change adaptive capacity using geospatial techniques in coastal Bangladesh.</p>
+<a class="ln stretch" href="abstracts/iwtacc-2025.html">Read Full Abstract →</a>
+</div>
+</div>
 
-                <h4>
-                    International Conference on Life, Earth and Science for Sustainable Development (ICLESSD-2025)
-                </h4>
-
-                <div class="meta">
-                    Jagannath University, Dhaka, Bangladesh |
-                    Dec 18 – Dec 19, 2025
-                </div>
-
-                <p class="d">
-                    Presented research on predicting thermal comfort impacts of urban water shrinkage in Dhaka using Artificial Intelligence models.
-                </p>
-
-                <a class="ln stretch"
-                   href="abstracts/iclessd-2025.html">
-                    Read Full Abstract →
-                </a>
-
-            </div>
-        </div>
-
-
-        <!-- IWTACC-2025 -->
-        <div class="card hv conf lc">
-
-            <div class="pic">
-                <img src="Thailand_Conference_1.jpg"
-                     loading="lazy"
-                     alt="IWTACC-2025 Conference Presentation">
-            </div>
-
-            <div class="in">
-
-                <h4>
-                    International Workshop on Technologies for Adaptation to Climate Change (IWTACC-2025)
-                </h4>
-
-                <div class="meta">
-                    Asian Institute of Technology (AIT), Bangkok, Thailand |
-                    Nov 21 – Nov 22, 2025
-                </div>
-
-                <p class="d">
-                    Presented research assessing climate change adaptive capacity using geospatial techniques in coastal Bangladesh.
-                </p>
-
-                <a class="ln stretch"
-                   href="abstracts/iwtacc-2025.html">
-                    Read Full Abstract →
-                </a>
-
-            </div>
-        </div>
-
-    </div>
-</section>
-
+</div>
 </section>
 
 <section class="sec rv" id="certifications">
@@ -494,7 +456,7 @@ html{scroll-behavior:auto}
 <script>
 (function(){
 /* Hero cover: every site image except the profile photo, shuffled + cross-dissolve */
-var HERO_POOL=["Background_Pic.png", "coverpic.jpg", "JnU_Conference.jpg", "Thailand_Conference_1.jpg", "Flood_Hazard.jpg", "LS_Hazard.webp", "Cyclone_Hazard.jpg", "Drought_Hazard.jfif", "Earthquake_Hazard.jpg", "GeoAI & Machine Learning_1.jfif", "GeoAI & Machine Learning_2.jfif", "GeoAI & Machine Learning_3.jfif", "GeoAI & Machine Learning_4.jfif", "GeoAI & Machine Learning_5.jfif", "GeoAI & Machine Learning_6.jfif", "Climate Resilience_1.png", "Climate Resilience_2.jfif", "Climate Resilience_3.jfif", "Climate Resilience_4.jfif", "Climate Resilience_5.jfif", "Hydrological Modeling_1.jfif", "Hydrological Modeling_2.jfif", "Hydrological Modeling_3.jfif", "Hydrological Modeling_4.jfif", "PLUS_7.jpg", "Plus_1.jpg", "PLUS_2.jpg", "PLUS_3.jpg", "PLUS_4.jpg", "PLUS_5.jpg", "PLUS_6.jpg", "JnU_1.jpg", "JnU_2.jpg", "Land_1.jpg", "Land_2.jpg", "Land__3.jpg", "Land__4.jpg", "Land__5.jpg", "Land__6.jpg", "Pirojpur_Road_Network_Map.jpg", "Pirojpur_Drainage_Pits_Waterbody_Boundary.jpg", "Pirojpur_Integrated_Drainage_and_Urban_Features.jpg", "Pirojpur_Road_and_Roadside_Drainage.jpg"];
+var HERO_POOL=["Background_Pic.png", "coverpic.jpg", "JnU_Conference.jpg", "Thailand_Conference_1.jpg", "Flood_Hazard.jpg", "LS_Hazard.webp", "Cyclone_Hazard.jpg", "Drought_Hazard.jfif", "Earthquake_Hazard.jpg", "GeoAI & Machine Learning_1.jfif", "GeoAI & Machine Learning_2.jfif", "GeoAI & Machine Learning_3.jfif", "GeoAI & Machine Learning_4.jfif", "GeoAI & Machine Learning_5.jfif", "GeoAI & Machine Learning_6.jfif", "Climate Resilience_1.png", "Climate Resilience_2.jfif", "Climate Resilience_3.jfif", "Climate Resilience_4.jfif", "Climate Resilience_5.jfif", "Hydrological Modeling_1.jfif", "Hydrological Modeling_2.jfif", "Hydrological Modeling_3.jfif", "Hydrological Modeling_4.jfif", "PLUS_7.jpg", "Plus_1.jpg", "PLUS_2.jpg", "PLUS_3.jpg", "PLUS_4.jpg", "PLUS_5.jpg", "PLUS_6.jpg", "JnU_1.jpg", "JnU_2.jpg", "Land_1.jpg", "Land_2.jpg", "Land__3.jpg", "Land__4.jpg", "Land__5.jpg", "Land__6.jpg", "Pirojpur_Road_Network_Map.jpg", "Pirojpur_Drainage_Pits_Waterbody_Boundary.jpg", "Pirojpur_Integrated_Drainage_and_Urban_Features.jpg", "Pirojpur_Road_and_Roadside_Drainage.jpg", "JnU_conf_1.jpg", "JnU_conf_2.jpg", "JnU_conf_3.jpg", "JnU_conf_4.jpg", "JnU_conf_5.jpg", "JnU_conf_6.jpg", "JnU_conf_7.jpg", "JnU_conf_8.jpg", "JnU_conf_9.jpg", "Thai_conf_1.jpg", "Thai_conf_2.jpg", "Thai_conf_3.jpg", "Thai_conf_4.jpg", "Thai_conf_5.jpg", "Thai_conf_6.jpg", "Thai_conf_7.jpg", "Thai_conf_8.jpg", "Thai_conf_9.jpg"];
 var plEl=document.getElementById("pl"),slides=[plEl.querySelector("img")],idx=0,qi=0;
 var heroReduce=window.matchMedia&&matchMedia("(prefers-reduced-motion:reduce)").matches;
 requestAnimationFrame(function(){requestAnimationFrame(function(){slides[0]&&slides[0].classList.add("on")})});
@@ -540,7 +502,7 @@ if(e.isIntersecting){links.forEach(function(a){a.classList.remove("act")});var a
 Object.keys(map).forEach(function(id){var s=document.getElementById(id);if(s)so.observe(s)});
 })();
 
-/* Research theme slideshows: shuffled, staggered, works with any number of images */
+/* Slideshows (.rm): shuffled, staggered, Ken Burns drift, works with any number of images */
 (function(){
 var reduce=window.matchMedia&&matchMedia("(prefers-reduced-motion:reduce)").matches;
 function shuffle(a){for(var i=a.length-1;i>0;i--){var j=Math.floor(Math.random()*(i+1)),t=a[i];a[i]=a[j];a[j]=t}return a}
@@ -591,7 +553,7 @@ document.addEventListener("visibilitychange",function(){document.hidden?stop():(
 });
 })();
 
-/* Top photo strips (Research themes + Projects): random order, natural size, constant speed */
+/* Top photo strips (Research, Projects, Conferences): random order, natural size, constant speed */
 (function(){
 document.querySelectorAll(".pstrip").forEach(function(box){
 var names=(box.getAttribute("data-imgs")||"").split("|").filter(Boolean);
