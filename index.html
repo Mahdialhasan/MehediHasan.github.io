@@ -73,6 +73,7 @@
         .conf-title { font-size: 16.5px; font-weight: 600; color: var(--primary-color); margin-bottom: 8px; }
         .conf-meta { font-size: 13px; color: var(--accent-color); margin-bottom: 10px; font-weight: 500; }
         .conf-desc { font-size: 13.5px; color: var(--text-muted); line-height: 1.5; }
+        
         .sidebar-card {
             background: var(--card-bg); border: 1px solid var(--border-color); border-radius: 12px;
             overflow: hidden; box-shadow: 0 4px 15px rgba(0,0,0,0.03);
@@ -80,8 +81,15 @@
             overflow-y: auto; -ms-overflow-style: none; scrollbar-width: none;
         }
         .sidebar-card::-webkit-scrollbar { display: none; }
-        .cover-photo-container { width: 100%; height: 100px; overflow: hidden; background-color: #cbd5e1; }
-        .cover-photo { width: 100%; height: 100%; object-fit: cover; object-position: center; }
+        
+        /* কভার ফটো স্লাইডার স্টাইল */
+        .cover-photo-container { width: 100%; height: 120px; overflow: hidden; background-color: #cbd5e1; position: relative; }
+        .cover-slide-img {
+            position: absolute; top: 0; left: 0; width: 100%; height: 100%;
+            object-fit: cover; object-position: center; opacity: 0; transition: opacity 1s ease-in-out;
+        }
+        .cover-slide-img.active { opacity: 1; }
+
         .sidebar-body { padding: 0 20px 20px; text-align: center; }
         .profile-img-box { width: 100px; height: 100px; margin: -50px auto 12px; position: relative; z-index: 2; }
         .profile-photo {
@@ -192,8 +200,11 @@
 
 <div class="container">
     <aside class="sidebar-card">
-        <div class="cover-photo-container">
-            <img class="cover-photo" src="Cover_Pic.png" alt="Cover Banner">
+        <!-- কভার ফটো স্লাইডার (প্রোফাইল পিকচার বাদে অন্যান্য কভার ইমেজগুলো শাফেল করবে) -->
+        <div class="cover-photo-container" id="coverSlider">
+            <img class="cover-slide-img active" src="Cover_Pic.png" alt="Cover Banner 1">
+            <img class="cover-slide-img" src="Background_Pic.png" alt="Cover Banner 2">
+            <!-- আপনার সংগ্রহে থাকা অতিরিক্ত কভার বা ব্যানার ইমেজ থাকলে এখানে img ট্যাগ বাড়িয়ে দিতে পারেন -->
         </div>
         <div class="sidebar-body">
             <div class="profile-img-box">
@@ -350,7 +361,6 @@
             </div>
             <div class="item-card">
                 <div class="item-title">Wetland change and its impacts on livelihood using machine learning algorithms in Chanda Beel, Gopalganj, Bangladesh</div>
-                <!-- TODO: check the year on the journal page (DOI contains 2026) -->
                 <div class="item-meta">Next Research, Elsevier (2025)</div>
                 <a href="https://doi.org/10.1016/j.nexres.2026.101556" target="_blank" rel="noopener">DOI: 10.1016/j.nexres.2026.101556 ↗</a>
             </div>
@@ -489,6 +499,19 @@
 </footer>
 
 <script>
+    // ----- Cover Photo Slider Animation (প্রোফাইল পিকচার বাদে কভার ইমেজগুলো স্লাইড/শাফেল করবে) -----
+    document.addEventListener("DOMContentLoaded", function() {
+        const coverSlides = document.querySelectorAll("#coverSlider .cover-slide-img");
+        if (coverSlides.length > 1) {
+            let currentCoverIndex = 0;
+            setInterval(() => {
+                coverSlides[currentCoverIndex].classList.remove("active");
+                currentCoverIndex = (currentCoverIndex + 1) % coverSlides.length;
+                coverSlides[currentCoverIndex].classList.add("active");
+            }, 4000); // প্রতি ৪ সেকেন্ড পর পর কভার ছবি পরিবর্তন হবে
+        }
+    });
+
     // ----- Contact modal -----
     const contactModal = document.getElementById('contactModal');
     function openModal() { contactModal.style.display = 'flex'; }
