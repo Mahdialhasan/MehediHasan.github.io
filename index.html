@@ -263,6 +263,68 @@ footer{text-align:center;padding:36px 16px 40px;font-size:13px;color:var(--mut)}
 .ci.mentor p{animation-delay:calc(var(--cd,0s) + .35s)}
 .ci.mentor .btn{animation-delay:calc(var(--cd,0s) + .5s)}
 
+/* ===== NAV DROPDOWNS (hover) ===== */
+.lk[data-dd]::after{content:"▾";font-size:9px;margin-left:6px;opacity:.55;display:inline-block;transition:transform .3s var(--ease)}
+.lk.dd-on{background:#eaf0f7;color:var(--ink)}
+.lk.act.dd-on{background:var(--ink);color:#fff}
+.lk.dd-on::after{transform:rotate(180deg)}
+.dd{position:fixed;z-index:150;min-width:230px;max-width:370px;padding:8px;background:rgba(236,241,247,.86);-webkit-backdrop-filter:blur(16px) saturate(1.5);backdrop-filter:blur(16px) saturate(1.5);border:1px solid rgba(255,255,255,.75);border-radius:16px;box-shadow:0 24px 46px -22px rgba(15,23,42,.55);opacity:0;visibility:hidden;transform:translateY(-8px) scale(.98);transform-origin:top left;transition:opacity .22s var(--ease),transform .26s var(--ease),visibility .22s,left .28s var(--ease)}
+.dd.open{opacity:1;visibility:visible;transform:none}
+.ddi{position:relative;display:block;padding:9px 14px;border-radius:10px;color:var(--acc2);font-weight:600;font-size:14px;line-height:1.35;cursor:pointer;transition:background .2s,color .2s,padding-left .25s var(--ease)}
+.ddi small{display:block;margin-top:1px;font-weight:500;font-size:11.5px;color:var(--mut)}
+.ddi:hover,.ddi:focus-visible{background:#fff;color:var(--ink);padding-left:19px;outline:none}
+.ddi.hs{padding-right:30px}
+.ddi.hs::after{content:"›";position:absolute;right:13px;top:50%;margin-top:-12px;font-size:20px;color:var(--mut)}
+.dsub{position:absolute;left:calc(100% - 2px);top:-9px;min-width:270px;padding:8px;background:rgba(244,247,251,.97);border:1px solid rgba(226,232,240,.95);border-radius:16px;box-shadow:0 24px 46px -22px rgba(15,23,42,.55);opacity:0;visibility:hidden;transform:translateX(-8px);transition:opacity .22s var(--ease),transform .26s var(--ease),visibility .22s}
+.ddi.hs:hover>.dsub,.ddi.hs:focus-within>.dsub{opacity:1;visibility:visible;transform:none}
+.dd.flip .dsub{left:auto;right:calc(100% - 2px)}
+.card[id],.ptabs[id]{scroll-margin-top:96px}
+.flash{animation:flashRing 1.3s ease-out 2}
+@keyframes flashRing{0%{box-shadow:0 0 0 0 rgba(23,105,170,.6)}70%{box-shadow:0 0 0 14px rgba(23,105,170,0)}100%{box-shadow:0 0 0 0 rgba(23,105,170,0)}}
+
+/* ===== PUBLICATION BRANCHES: tabs + compact lists ===== */
+.ptabs{position:relative;display:inline-flex;gap:2px;max-width:100%;overflow-x:auto;scrollbar-width:none;padding:4px;margin-bottom:16px;background:rgba(255,255,255,.4);-webkit-backdrop-filter:blur(8px);backdrop-filter:blur(8px);border:1px solid var(--line);border-radius:999px}
+.ptabs::-webkit-scrollbar{display:none}
+.ptind{position:absolute;top:4px;bottom:4px;left:0;width:0;border-radius:999px;background:var(--ink);transition:transform .45s var(--ease),width .45s var(--ease)}
+.ptb{position:relative;z-index:1;display:inline-flex;gap:8px;align-items:center;padding:8px 16px;border:0;background:none;border-radius:999px;font:600 13px Inter,sans-serif;color:var(--body);cursor:pointer;white-space:nowrap;transition:color .3s var(--ease)}
+.ptb b{background:rgba(15,23,42,.1);border-radius:999px;padding:0 8px;font-size:11px;line-height:18px;transition:background .3s}
+.ptb.on{color:#fff}
+.ptb.on b{background:rgba(255,255,255,.25)}
+.js .ppanel{display:none}
+.js .ppanel.on{display:block;animation:ppIn .55s var(--ease)}
+@keyframes ppIn{from{opacity:0;transform:translateY(10px)}to{opacity:1;transform:none}}
+.rows{padding:6px 10px}
+.prow{display:grid;grid-template-columns:30px 1fr auto;gap:6px 14px;align-items:start;padding:14px 12px;border-bottom:1px solid rgba(148,163,184,.3);border-radius:12px;transition:background .3s}
+.prow:last-child{border-bottom:0}
+.prow:hover{background:rgba(255,255,255,.55)}
+.prow h4{font-size:14px;margin-bottom:3px}
+.pn{display:grid;place-items:center;width:28px;height:28px;border-radius:50%;background:#eaf2fa;color:var(--acc);font-size:12px;font-weight:700}
+.pill{display:inline-flex;align-items:center;font-size:11.5px;font-weight:700;padding:3px 12px;border-radius:999px;white-space:nowrap}
+.pill.ur{background:#fef3c7;color:#92400e}
+.pill.sm{background:#dbeafe;color:#1e40af}
+.pill.og{background:#dcfce7;color:#166534}
+.pill.og::before{content:"";width:6px;height:6px;border-radius:50%;background:#16a34a;margin-right:7px;animation:pulseDot 1.6s ease-in-out infinite}
+@keyframes pulseDot{0%,100%{opacity:1;transform:scale(1)}50%{opacity:.35;transform:scale(.7)}}
+.pauth{font-size:12px;color:var(--mut);margin-top:2px}
+.pauth b{color:var(--ink);font-weight:600}
+.pabs{margin-top:6px}
+.pabs summary{cursor:pointer;list-style:none;display:inline-block;font-size:12.5px;font-weight:600;color:var(--acc)}
+.pabs summary::-webkit-details-marker{display:none}
+.pabs summary::after{content:" ▾"}
+.pabs[open] summary::after{content:" ▴"}
+.pabs p{margin-top:6px;font-size:12.5px;line-height:1.75;color:var(--mut);max-width:90ch}
+@media(max-width:760px){.prow{grid-template-columns:28px 1fr}.prow .pill{grid-column:2;justify-self:start}}
+
+/* ===== CV VIEWER ===== */
+.cvbox{max-width:1000px;width:94%;height:90vh;max-height:900px;padding:14px 16px 12px;text-align:left;display:flex;flex-direction:column;gap:10px}
+.cvbar{display:flex;align-items:center;justify-content:space-between;gap:10px;flex-wrap:wrap}
+.cvbar h3{margin:0;font-size:16px}
+.cvact{display:flex;gap:8px;align-items:center}
+.cvact .b2{margin-top:0;align-self:auto}
+.cvact .mclose{position:static;font-size:28px;line-height:1;padding:0 6px}
+#cvFrame{flex:1;width:100%;border:1px solid var(--line);border-radius:12px;background:#f1f5f9}
+.cvnote{font-size:12px;color:var(--mut)}
+
 @media(max-width:760px){
 .head{min-height:460px}
 .hin{margin:12px;padding:18px;gap:16px}
@@ -289,7 +351,7 @@ html{scroll-behavior:auto}
 <div class="prog" id="prog"></div>
 <nav><div class="nav" id="nav">
 <span class="brand">Mehedi Hasan</span>
-<a class="lk" href="#about">About me</a><a class="lk" href="#themes">Research</a><a class="lk" href="#education">Education</a><a class="lk" href="#experience">Experience</a><a class="lk" href="#projects">Projects</a><a class="lk" href="#publications">Publications</a><a class="lk" href="#conferences">Conferences</a><a class="lk" href="#certifications">Certifications</a><a class="lk" href="#skills">Skills</a><a class="lk" href="#mentorship">Mentorship</a>
+<a class="lk" href="#about">About me</a><a class="lk" href="#themes">Research</a><a class="lk" href="#education" data-dd="education">Education</a><a class="lk" href="#experience" data-dd="experience">Experience</a><a class="lk" href="#projects" data-dd="projects">Projects</a><a class="lk" href="#publications" data-dd="publications">Publications</a><a class="lk" href="#conferences" data-dd="conferences">Conferences</a><a class="lk" href="#certifications" data-dd="certifications">Certifications</a><a class="lk" href="#skills">Skills</a><a class="lk" href="#mentorship">Mentorship</a>
 </div></nav>
 
 <div class="wrap">
@@ -320,7 +382,7 @@ html{scroll-behavior:auto}
 <a class="b" href="mailto:mehedi.hasan@stud.plus.ac.at"><i class="fa-solid fa-envelope"></i>Email</a>
 <a class="b" href="https://www.linkedin.com/in/mehedi-hasan-97a2b3217/" target="_blank" rel="noopener"><i class="fa-brands fa-linkedin"></i>LinkedIn</a>
 <a class="b" href="https://www.facebook.com/abid.ahmad.1460" target="_blank" rel="noopener"><i class="fa-brands fa-facebook"></i>Facebook</a>
-<a class="b" href="https://mahdialhasan.github.io/MehediHasan.github.io/" target="_blank" rel="noopener"><i class="fa-solid fa-globe"></i>Website / CV</a>
+<a class="b" id="cvBtn" href="Hasan_M_EU_CV_01_11_26.pdf" target="_blank" rel="noopener"><i class="fa-solid fa-file-pdf"></i>Website / CV</a>
 </div></div>
 </header>
 
@@ -329,7 +391,7 @@ html{scroll-behavior:auto}
 <div class="card about">
 <p>I am a geospatial researcher and MSc student in <a href="#education">Applied Geoinformatics</a> at <a class="ext" href="https://www.plus.ac.at/?lang=en" target="_blank" rel="noopener">University of Salzburg</a>, Austria. My <a href="#themes">research</a> examines <a class="ext" href="https://doi.org/10.1080/19475705.2026.2729590" target="_blank" rel="noopener">multi-hazard risk</a>, <a class="ext" href="https://link.springer.com/article/10.1007/s41324-025-00643-y" target="_blank" rel="noopener">seismic vulnerability</a>, and <a class="ext" href="https://doi.org/10.1080/19475705.2026.2717863" target="_blank" rel="noopener">flood susceptibility</a> in coastal and riverine environments, with a focus on disaster risk reduction and resilient communities.</p>
 <p>I use <a href="#skills">GIS, remote sensing, and Python</a>, together with high-resolution satellite imagery, spatial statistics, <a href="#themes">machine learning</a>, hydro-climatic data, and <a class="ext" href="https://link.springer.com/article/10.1007/s41748-025-00942-2" target="_blank" rel="noopener">spatial MCDA</a> to understand environmental risk dynamics and how they affect vulnerable populations.</p>
-<p>I have authored/co-authored <a href="#publications">5 peer-reviewed papers</a> in <a class="ext" href="https://doi.org/10.1080/19475705.2026.2729590" target="_blank" rel="noopener">Taylor &amp; Francis</a>, <a class="ext" href="https://doi.org/10.1016/j.nexres.2026.101556" target="_blank" rel="noopener">Elsevier</a>, and <a class="ext" href="https://link.springer.com/article/10.1007/s41748-025-00942-2" target="_blank" rel="noopener">Springer Nature</a> journals on <a class="ext" href="https://doi.org/10.1080/19475705.2026.2729590" target="_blank" rel="noopener">multi-hazard mapping</a>, <a class="ext" href="https://doi.org/10.1016/j.nexres.2026.101556" target="_blank" rel="noopener">wetland dynamics</a>, and <a class="ext" href="https://link.springer.com/article/10.1007/s41748-025-00942-2" target="_blank" rel="noopener">flash flood prediction</a>, with another <a href="#publications">paper under review</a> on flood susceptibility under hydro-climatic extremes.</p>
+<p>I have authored/co-authored <a href="#publications">5 peer-reviewed papers</a> in <a class="ext" href="https://doi.org/10.1080/19475705.2026.2729590" target="_blank" rel="noopener">Taylor &amp; Francis</a>, <a class="ext" href="https://doi.org/10.1016/j.nexres.2026.101556" target="_blank" rel="noopener">Elsevier</a>, and <a class="ext" href="https://link.springer.com/article/10.1007/s41748-025-00942-2" target="_blank" rel="noopener">Springer Nature</a> journals on <a class="ext" href="https://doi.org/10.1080/19475705.2026.2729590" target="_blank" rel="noopener">multi-hazard mapping</a>, <a class="ext" href="https://doi.org/10.1016/j.nexres.2026.101556" target="_blank" rel="noopener">wetland dynamics</a>, and <a class="ext" href="https://link.springer.com/article/10.1007/s41748-025-00942-2" target="_blank" rel="noopener">flash flood prediction</a>, with <a href="#publications">more manuscripts under review</a> and several others in progress.</p>
 <p>I bring <a href="#experience">four professional roles</a> in GIS and research, most recently as a GIS Analyst at the <a class="ext" href="https://www.iwmbd.org/" target="_blank" rel="noopener">Institute of Water Modelling (IWM)</a>, and I have presented at <a href="#conferences">international conferences</a> in Bangladesh and Thailand, including ICLESSD-2025 and IWTACC-2025.</p>
 
 <p class="beyond"><strong>Beyond research:</strong> Having started my academic journey in Bangladesh, I enjoy <a href="#mentorship">mentoring students</a> who face academic or research challenges in GIScience and Remote Sensing.
@@ -367,19 +429,19 @@ html{scroll-behavior:auto}
 <section class="sec rv" id="education">
 <h2>Education</h2>
 <div class="tl">
-<div class="card hv lc ed"><div class="rm" data-imgs="PLUS_7.jpg|Plus_1.jpg|PLUS_2.jpg|PLUS_3.jpg|PLUS_4.jpg|PLUS_5.jpg|PLUS_6.jpg"></div><div class="rb"><h4>MSc, Applied Geoinformatics (Professional)</h4><div class="meta">5 Oct 2026 – Current | Salzburg, Austria</div><p class="d"><b>University</b>University of Salzburg</p><p class="d"><b>Field of study</b>Applied Geoinformatics</p><a class="ln stretch" href="https://www.plus.ac.at/geoinformatik/" target="_blank" rel="noopener">Department website ↗</a></div></div>
-<div class="card hv lc ed"><div class="rm" data-imgs="JnU_1.jpg|JnU_2.jpg"></div><div class="rb"><h4>MSc, Geography and Environment (General)</h4><div class="meta">5 Feb 2020 – 16 Mar 2021 | Dhaka, Bangladesh</div><p class="d"><b>University</b>Jagannath University</p><p class="d"><b>Field of study</b>Geography and Environment</p><p class="d"><b>Thesis</b>Assessment of Moderate Seismic Vulnerability and Earthquake Preparedness in Rangpur Division, Bangladesh</p><a class="ln stretch" href="https://jnu.ac.bd/department/portal/geography_environment" target="_blank" rel="noopener">Department website ↗</a></div></div>
-<div class="card hv lc ed"><div class="rm" data-imgs="JnU_1.jpg|JnU_2.jpg"></div><div class="rb"><h4>BSc, Geography and Environment</h4><div class="meta">5 Feb 2015 – 16 Sep 2019 | Dhaka, Bangladesh</div><p class="d"><b>University</b>Jagannath University</p><p class="d"><b>Field of study</b>Geography and Environment</p><p class="d"><b>Project</b>Urban Fire Hazard Risk and Preparedness in Crowded Settlements: The Case of Sadarghat, Dhaka, Bangladesh</p><a class="ln stretch" href="https://jnu.ac.bd/department/portal/geography_environment" target="_blank" rel="noopener">Department website ↗</a></div></div>
+<div class="card hv lc ed" id="edu-1"><div class="rm" data-imgs="PLUS_7.jpg|Plus_1.jpg|PLUS_2.jpg|PLUS_3.jpg|PLUS_4.jpg|PLUS_5.jpg|PLUS_6.jpg"></div><div class="rb"><h4>MSc, Applied Geoinformatics (Professional)</h4><div class="meta">5 Oct 2026 – Current | Salzburg, Austria</div><p class="d"><b>University</b>University of Salzburg</p><p class="d"><b>Field of study</b>Applied Geoinformatics</p><a class="ln stretch" href="https://www.plus.ac.at/geoinformatik/" target="_blank" rel="noopener">Department website ↗</a></div></div>
+<div class="card hv lc ed" id="edu-2"><div class="rm" data-imgs="JnU_1.jpg|JnU_2.jpg"></div><div class="rb"><h4>MSc, Geography and Environment (General)</h4><div class="meta">5 Feb 2020 – 16 Mar 2021 | Dhaka, Bangladesh</div><p class="d"><b>University</b>Jagannath University</p><p class="d"><b>Field of study</b>Geography and Environment</p><p class="d"><b>Thesis</b>Assessment of Moderate Seismic Vulnerability and Earthquake Preparedness in Rangpur Division, Bangladesh</p><a class="ln stretch" href="https://jnu.ac.bd/department/portal/geography_environment" target="_blank" rel="noopener">Department website ↗</a></div></div>
+<div class="card hv lc ed" id="edu-3"><div class="rm" data-imgs="JnU_1.jpg|JnU_2.jpg"></div><div class="rb"><h4>BSc, Geography and Environment</h4><div class="meta">5 Feb 2015 – 16 Sep 2019 | Dhaka, Bangladesh</div><p class="d"><b>University</b>Jagannath University</p><p class="d"><b>Field of study</b>Geography and Environment</p><p class="d"><b>Project</b>Urban Fire Hazard Risk and Preparedness in Crowded Settlements: The Case of Sadarghat, Dhaka, Bangladesh</p><a class="ln stretch" href="https://jnu.ac.bd/department/portal/geography_environment" target="_blank" rel="noopener">Department website ↗</a></div></div>
 </div>
 </section>
 
 <section class="sec rv" id="experience">
 <h2>Work experience</h2>
 <div class="tl">
-<div class="card hv lc"><h4>GIS Analyst</h4><div class="meta"><a class="in" href="https://www.iwmbd.org/" target="_blank" rel="noopener">Institute of Water Modelling (IWM)</a>, Dhaka, Bangladesh | Apr 2024 – Sep 2026</div><p class="d"><b>Project</b>Mouza &amp; Plot Based National Digital Land Zoning Project</p><p class="d">Worked in ICT, GIS &amp; Remote Sensing Division on water modeling and environmental spatial analysis.</p><a class="ln stretch" href="https://www.iwmbd.org/" target="_blank" rel="noopener">Visit IWM ↗</a></div>
-<div class="card hv lc"><h4>Research Assistant</h4><div class="meta"><a class="in" href="https://okup.org.bd/" target="_blank" rel="noopener">Ovibashi Karmi Unnayan Program (OKUP)</a>, Dhaka | Feb 2023 – Mar 2024</div><p class="d"><b>Project</b>Climate induced migration and modern slavery in the Sundarbans region of Bangladesh (CIMMS)</p><p class="d">Spatial analysis and vulnerability mapping for climate change and migration projects.</p><a class="ln stretch" href="https://okup.org.bd/" target="_blank" rel="noopener">Visit OKUP ↗</a></div>
-<div class="card hv lc"><h4>GIS Operator</h4><div class="meta"><a class="in" href="https://geomark.com.bd/" target="_blank" rel="noopener">GeoMark Limited</a>, Dhaka | Aug 2022 – Oct 2022</div><p class="d"><b>Project</b>Mouza Map and Plot-Level Digitization and Geospatial Database Development</p><p class="d">Digitization, spatial data quality assurance, and processing large geospatial datasets.</p><a class="ln stretch" href="https://geomark.com.bd/" target="_blank" rel="noopener">Visit GeoMark ↗</a></div>
-<div class="card hv lc"><h4>Research Assistant</h4><div class="meta"><a class="in" href="https://jnu.ac.bd/profile/portal/web/549" target="_blank" rel="noopener">Prof. Dr. Muhammad Al-Amin Hoque</a>, Jagannath University | Mar 2021 – Dec 2022</div><p class="d">Geospatial hazard modeling, Machine Learning applications, and spatial decision support systems.</p><a class="ln stretch" href="https://jnu.ac.bd/profile/portal/web/549" target="_blank" rel="noopener">View faculty profile ↗</a></div>
+<div class="card hv lc" id="exp-1"><h4>GIS Analyst</h4><div class="meta"><a class="in" href="https://www.iwmbd.org/" target="_blank" rel="noopener">Institute of Water Modelling (IWM)</a>, Dhaka, Bangladesh | Apr 2024 – Sep 2026</div><p class="d"><b>Project</b>Mouza &amp; Plot Based National Digital Land Zoning Project</p><p class="d">Worked in ICT, GIS &amp; Remote Sensing Division on water modeling and environmental spatial analysis.</p><a class="ln stretch" href="https://www.iwmbd.org/" target="_blank" rel="noopener">Visit IWM ↗</a></div>
+<div class="card hv lc" id="exp-2"><h4>Research Assistant</h4><div class="meta"><a class="in" href="https://okup.org.bd/" target="_blank" rel="noopener">Ovibashi Karmi Unnayan Program (OKUP)</a>, Dhaka | Feb 2023 – Mar 2024</div><p class="d"><b>Project</b>Climate induced migration and modern slavery in the Sundarbans region of Bangladesh (CIMMS)</p><p class="d">Spatial analysis and vulnerability mapping for climate change and migration projects.</p><a class="ln stretch" href="https://okup.org.bd/" target="_blank" rel="noopener">Visit OKUP ↗</a></div>
+<div class="card hv lc" id="exp-3"><h4>GIS Operator</h4><div class="meta"><a class="in" href="https://geomark.com.bd/" target="_blank" rel="noopener">GeoMark Limited</a>, Dhaka | Aug 2022 – Oct 2022</div><p class="d"><b>Project</b>Mouza Map and Plot-Level Digitization and Geospatial Database Development</p><p class="d">Digitization, spatial data quality assurance, and processing large geospatial datasets.</p><a class="ln stretch" href="https://geomark.com.bd/" target="_blank" rel="noopener">Visit GeoMark ↗</a></div>
+<div class="card hv lc" id="exp-4"><h4>Research Assistant</h4><div class="meta"><a class="in" href="https://jnu.ac.bd/profile/portal/web/549" target="_blank" rel="noopener">Prof. Dr. Muhammad Al-Amin Hoque</a>, Jagannath University | Mar 2021 – Dec 2022</div><p class="d">Geospatial hazard modeling, Machine Learning applications, and spatial decision support systems.</p><a class="ln stretch" href="https://jnu.ac.bd/profile/portal/web/549" target="_blank" rel="noopener">View faculty profile ↗</a></div>
 </div>
 </section>
 
@@ -387,7 +449,7 @@ html{scroll-behavior:auto}
 <h2>Projects</h2>
 <div class="pstrip" id="pstrip" data-dir="left" data-imgs="Land_1.jpg|Land_2.jpg|Land__3.jpg|Land__4.jpg|Land__5.jpg|Land__6.jpg|Pirojpur_Road_Network_Map.jpg|Pirojpur_Drainage_Pits_Waterbody_Boundary.jpg|Pirojpur_Integrated_Drainage_and_Urban_Features.jpg|Pirojpur_Road_and_Roadside_Drainage.jpg"></div>
 <div class="pjs">
-<article class="card hv pj">
+<article class="card hv pj" id="proj-1">
 <span class="num">01</span>
 <div class="rm" data-imgs="Land_1.jpg|Land_2.jpg|Land__3.jpg|Land__4.jpg|Land__5.jpg|Land__6.jpg"></div>
 <div class="pb">
@@ -402,7 +464,7 @@ html{scroll-behavior:auto}
 <a class="b2" href="https://map.land.gov.bd/" target="_blank" rel="noopener"><i class="fa-solid fa-globe"></i>Visit project website ↗</a>
 </div>
 </article>
-<article class="card hv pj">
+<article class="card hv pj" id="proj-2">
 <span class="num">02</span>
 <div class="rm" data-imgs="Pirojpur_Road_Network_Map.jpg|Pirojpur_Drainage_Pits_Waterbody_Boundary.jpg|Pirojpur_Integrated_Drainage_and_Urban_Features.jpg|Pirojpur_Road_and_Roadside_Drainage.jpg"></div>
 <div class="pb">
@@ -422,14 +484,31 @@ html{scroll-behavior:auto}
 
 <section class="sec rv" id="publications">
 <h2>Publications</h2>
-<div class="pubs">
-<div class="card hv pub lc"><div class="yr">2026</div><div><h4>Multi-hazard risk mapping using geospatial techniques in coastal Bangladesh: implications for resilience</h4><div class="meta">Geomatics, Natural Hazards and Risk, Taylor &amp; Francis (2026)</div><a class="ln stretch" href="https://doi.org/10.1080/19475705.2026.2729590" target="_blank" rel="noopener">DOI: 10.1080/19475705.2026.2729590 ↗</a></div></div>
-<div class="card hv pub lc"><div class="yr">2026</div><div><h4>Machine learning-driven flood susceptibility mapping in the coastal frontier of Feni District, Bangladesh</h4><div class="meta">Geomatics, Natural Hazards and Risk, Taylor &amp; Francis (2026)</div><a class="ln stretch" href="https://doi.org/10.1080/19475705.2026.2717863" target="_blank" rel="noopener">DOI: 10.1080/19475705.2026.2717863 ↗</a></div></div>
-<div class="card hv pub lc"><div class="yr">2025</div><div><h4>Wetland change and its impacts on livelihood using machine learning algorithms in Chanda Beel, Gopalganj, Bangladesh</h4><div class="meta">Next Research, Elsevier (2025)</div><a class="ln stretch" href="https://doi.org/10.1016/j.nexres.2026.101556" target="_blank" rel="noopener">DOI: 10.1016/j.nexres.2026.101556 ↗</a></div></div>
-<div class="card hv pub lc"><div class="yr">2025</div><div><h4>A Comparative Study of Spatial MCDM Techniques for Flash Flood Risk Mapping in Northeastern Bangladesh</h4><div class="meta">Earth Systems and Environment, Springer Nature (2025)</div><a class="ln stretch" href="https://link.springer.com/article/10.1007/s41748-025-00942-2" target="_blank" rel="noopener">Springer Link ↗</a></div></div>
-<div class="card hv pub lc"><div class="yr">2025</div><div><h4>Mapping seismic risk in Rangpur Division, Bangladesh: An integrated geospatial approach</h4><div class="meta">Spatial Information Research, Springer Nature (2025)</div><a class="ln stretch" href="https://link.springer.com/article/10.1007/s41324-025-00643-y" target="_blank" rel="noopener">Springer Link ↗</a></div></div>
-<div class="card hv pub"><div class="yr">2026</div><div><h4>Flood susceptibility prediction using machine learning under hydro-climatic extremes in Bangladesh</h4><div class="meta">Journal of Environmental Management, Elsevier</div><span class="tag">Under Review (2026)</span></div></div>
-</div>
+<div class="ptabs" id="ptabs" role="tablist"><span class="ptind"></span><button class="ptb on" type="button" role="tab" data-tab="published">Published <b>5</b></button><button class="ptb" type="button" role="tab" data-tab="submitted">Submitted / Under Review <b>7</b></button><button class="ptb" type="button" role="tab" data-tab="ongoing">Ongoing / Upcoming <b>6</b></button></div>
+<div class="ppanel on" id="pp-published"><div class="pubs">
+<div class="card hv pub lc" id="pub-1"><div class="yr">2026</div><div><h4>Multi-hazard risk mapping using geospatial techniques in coastal Bangladesh: implications for resilience</h4><div class="meta">Geomatics, Natural Hazards and Risk, Taylor &amp; Francis (2026)</div><a class="ln stretch" href="https://doi.org/10.1080/19475705.2026.2729590" target="_blank" rel="noopener">DOI: 10.1080/19475705.2026.2729590 ↗</a></div></div>
+<div class="card hv pub lc" id="pub-2"><div class="yr">2026</div><div><h4>Machine learning-driven flood susceptibility mapping in the coastal frontier of Feni District, Bangladesh</h4><div class="meta">Geomatics, Natural Hazards and Risk, Taylor &amp; Francis (2026)</div><a class="ln stretch" href="https://doi.org/10.1080/19475705.2026.2717863" target="_blank" rel="noopener">DOI: 10.1080/19475705.2026.2717863 ↗</a></div></div>
+<div class="card hv pub lc" id="pub-3"><div class="yr">2025</div><div><h4>Wetland change and its impacts on livelihood using machine learning algorithms in Chanda Beel, Gopalganj, Bangladesh</h4><div class="meta">Next Research, Elsevier (2025)</div><a class="ln stretch" href="https://doi.org/10.1016/j.nexres.2026.101556" target="_blank" rel="noopener">DOI: 10.1016/j.nexres.2026.101556 ↗</a></div></div>
+<div class="card hv pub lc" id="pub-4"><div class="yr">2025</div><div><h4>A Comparative Study of Spatial MCDM Techniques for Flash Flood Risk Mapping in Northeastern Bangladesh</h4><div class="meta">Earth Systems and Environment, Springer Nature (2025)</div><a class="ln stretch" href="https://link.springer.com/article/10.1007/s41748-025-00942-2" target="_blank" rel="noopener">Springer Link ↗</a></div></div>
+<div class="card hv pub lc" id="pub-5"><div class="yr">2025</div><div><h4>Mapping seismic risk in Rangpur Division, Bangladesh: An integrated geospatial approach</h4><div class="meta">Spatial Information Research, Springer Nature (2025)</div><a class="ln stretch" href="https://link.springer.com/article/10.1007/s41324-025-00643-y" target="_blank" rel="noopener">Springer Link ↗</a></div></div>
+</div></div>
+<div class="ppanel" id="pp-submitted"><div class="card rows">
+<div class="prow"><span class="pn">1</span><div class="pbody"><h4>Flood Susceptibility Prediction Using Machine Learning under Hydro-Climatic Change Scenarios and Land Use Dynamics in North Western Region, Bangladesh</h4><div class="meta">Journal of Environmental Management, Elsevier</div></div><span class="pill ur">Under Review</span></div>
+<div class="prow"><span class="pn">2</span><div class="pbody"><h4>Forecasting Urban Thermal Comfort and Geo-Thermal Risk in Dhaka, Bangladesh Using Hybrid Deep Learning and Multi-Temporal Remote Sensing Data</h4><div class="meta">Urban Climate, Elsevier</div><details class="pabs"><summary>Abstract</summary><p>Rapid urbanization in Dhaka, Bangladesh, has intensified geo-thermal risk and deteriorated urban thermal comfort, necessitating advanced spatio-temporal assessment for sustainable urban planning and climate adaptation. This study analyzes and predicts thermal comfort zones (TCZs) and geo-thermal risk patterns in Dhaka from 2000 to 2040 using multi-temporal remote sensing data and hybrid artificial intelligence (AI) models. An integrated framework combining Long Short-Term Memory (LSTM), Temporal Convolutional Network (TCN), temperature rule-based Random Forest (LSTRF), and a Hybrid AI model (KNN + RNN + SGD) was employed to evaluate urban thermal dynamics. Multi-source geospatial datasets, including Land Surface Temperature (LST), Normalized Difference Vegetation Index (NDVI), Night-Time Lights (NTL), built-up density, and hydrological indicators, were processed within a GIS environment for zonal thermal assessment across 11 urban zones of Dhaka. The results reveal substantial spatio-temporal variation in thermal comfort conditions, with HTCZ and VHTCZ areas continuously expanding due to rapid land-use transformation and infrastructure growth. Zone 6, Zone 9, and Zone 10 consistently emerged as dominant geo-thermal hotspots, where VHTCZ coverage reached approximately 24.28 km² in the LSTRF model and 22.52 km² in the Hybrid model. Validation results indicate strong model performance, with the Hybrid model achieving up to 98% accuracy and maintaining over 90% temporal stability, while LSTM and TCN achieved R² values of approximately 0.91 and 0.72, respectively. The findings highlight increasing urban heat island intensity in Dhaka and emphasize the importance of urban greening, heat-resilient zoning, cool-roof implementation, and peri-urban vegetation conservation for sustainable urban climate adaptation.</p></details></div><span class="pill sm">Submitted</span></div>
+<div class="prow"><span class="pn">3</span><div class="pbody"><h4>Morphometric Analysis of Two Adjacent Transboundary River Basins in Southeastern Bangladesh: Feni and the Little Feni</h4><div class="meta">Journal of Hydro-environment Research</div><div class="pauth"><b>Corresponding author:</b> Nazim Uddin · <b>Co-authors:</b> Mehedi Hasan, Dr. Asib Ahmed, Maliha Sanzana Misty</div></div><span class="pill sm">Submitted</span></div>
+<div class="prow"><span class="pn">4</span><div class="pbody"><h4>Geospatial Assessment of Climate Change Adaptive Capacity in a Coastal Upazila of Bangladesh: An AHP-Based Approach in Kalapara Upazila</h4><div class="meta">Environmental Monitoring and Assessment, Springer Nature</div></div><span class="pill sm">Submitted</span></div>
+<div class="prow"><span class="pn">5</span><div class="pbody"><h4>Ensemble Machine Learning-Based Groundwater Risk Zonation to Support Sustainable Water Conservation Planning in Jashore District, Bangladesh</h4><div class="meta">Hydrological Sciences Journal, Taylor &amp; Francis</div></div><span class="pill sm">Submitted</span></div>
+<div class="prow"><span class="pn">6</span><div class="pbody"><h4>A Multi-Model Machine and Deep Learning Framework for Flood Risk Assessment in the Sunamganj Haor Basin, Bangladesh</h4><div class="meta">Earth Systems and Environment, Springer Nature</div></div><span class="pill sm">Submitted</span></div>
+<div class="prow"><span class="pn">7</span><div class="pbody"><h4>Understanding Vulnerability Against Lightning Hazards Using Geospatial Techniques in North-Eastern Bangladesh</h4><div class="meta">Geocarto International, Taylor &amp; Francis</div></div><span class="pill sm">Submitted</span></div>
+</div></div>
+<div class="ppanel" id="pp-ongoing"><div class="card rows">
+<div class="prow"><span class="pn">1</span><div class="pbody"><h4>Deciphering Compound Coastal Hazards and Risk Dynamics: An Integrated Machine Learning–Deep Learning Framework for Multi-Hazard Susceptibility, Vulnerability and Risk Assessment along the Central Coast of Bangladesh</h4></div><span class="pill og">Ongoing</span></div>
+<div class="prow"><span class="pn">2</span><div class="pbody"><h4>Unravelling Multi-Hazard Complexity and Coastal Risk Patterns: A GeoAI-Driven Framework for Hazard Susceptibility, Socio-Environmental Vulnerability and Integrated Risk Assessment along the Eastern Coast of Bangladesh</h4></div><span class="pill og">Ongoing</span></div>
+<div class="prow"><span class="pn">3</span><div class="pbody"><h4>Spatio-Temporal Analysis of Atmospheric Cloud Water Storage and Rainfall Prediction over Bangladesh Using Remote Sensing, Geospatial Analytics, and Machine Learning</h4></div><span class="pill og">Ongoing</span></div>
+<div class="prow"><span class="pn">4</span><div class="pbody"><h4>Integrated Multi-Hazard Risk Modelling in the Hilly Regions of Chattogram, Bangladesh: A Machine Learning and GIS-Based Framework for Earthquake, Landslide and Flood Susceptibility Assessment and Socioeconomic Vulnerability Mapping</h4></div><span class="pill og">Ongoing</span></div>
+<div class="prow"><span class="pn">5</span><div class="pbody"><h4>Deep Learning–Based Road Disruption Prediction and Network-Aware Cyclone Evacuation Planning in Koyra, Coastal Bangladesh</h4></div><span class="pill og">Ongoing</span></div>
+<div class="prow"><span class="pn">6</span><div class="pbody"><h4>Monitoring and Predicting Landscape and Ecosystem Transformation around the Rooppur Nuclear Power Plant Using Multi-Temporal Remote Sensing and Machine Learning</h4></div><span class="pill og">Ongoing</span></div>
+</div></div>
 </section>
 
 
@@ -442,7 +521,7 @@ html{scroll-behavior:auto}
 <div class="grid" style="grid-template-columns:repeat(auto-fit,minmax(320px,1fr))">
 
 <!-- ICLESSD-2025 (Jagannath University photos) -->
-<div class="card hv conf lc">
+<div class="card hv conf lc" id="conf-1">
 <div class="rm" data-imgs="JnU_conf_1.jpg|JnU_conf_2.jpg|JnU_conf_3.jpg|JnU_conf_4.jpg|JnU_conf_5.jpg|JnU_conf_6.jpg|JnU_conf_7.jpg|JnU_conf_8.jpg|JnU_conf_9.jpg"><span class="cbadge">Dhaka, Bangladesh</span></div>
 <div class="in">
 <h4>International Conference on Life, Earth and Science for Sustainable Development (ICLESSD-2025)</h4>
@@ -453,7 +532,7 @@ html{scroll-behavior:auto}
 </div>
 
 <!-- IWTACC-2025 (Thailand photos) -->
-<div class="card hv conf lc">
+<div class="card hv conf lc" id="conf-2">
 <div class="rm" data-imgs="Thai_conf_1.jpg|Thai_conf_2.jpg|Thai_conf_3.jpg|Thai_conf_4.jpg|Thai_conf_5.jpg|Thai_conf_6.jpg|Thai_conf_7.jpg|Thai_conf_8.jpg|Thai_conf_9.jpg"><span class="cbadge">Bangkok, Thailand</span></div>
 <div class="in">
 <h4>International Workshop on Technologies for Adaptation to Climate Change (IWTACC-2025)</h4>
@@ -469,11 +548,11 @@ html{scroll-behavior:auto}
 <section class="sec rv" id="certifications">
 <h2>Certifications</h2>
 <div class="grid" style="grid-template-columns:repeat(auto-fit,minmax(320px,1fr))">
-<div class="card hv cert"><div class="ico"><i class="fa-solid fa-certificate"></i></div><div><h4>Practical GIS &amp; Remote Sensing with Python and ArcPy: Step-by-Step Learning</h4><div class="meta">KIM’s GIS | 5 Jun 2025</div><p class="d">Mode of learning: Online</p></div></div>
-<div class="card hv cert lc"><div class="ico"><i class="fa-solid fa-certificate"></i></div><div><h4>Machine Learning and Data Science</h4><div class="meta">National Academy for Computer Training and Research (NACTAR) | 1 Jan 2025</div><p class="d">Mode of learning: Online · <a class="stretch" href="https://nactar.gov.bd" target="_blank" rel="noopener">Link ↗</a></p></div></div>
-<div class="card hv cert lc"><div class="ico"><i class="fa-solid fa-certificate"></i></div><div><h4>Computer Training Program</h4><div class="meta">Youth Development Program | 21 Jul 2022</div><p class="d">Mode of learning: In-person · <a class="stretch" href="https://dyd.gov.bd/" target="_blank" rel="noopener">Link ↗</a></p></div></div>
-<div class="card hv cert lc"><div class="ico"><i class="fa-solid fa-certificate"></i></div><div><h4>Google Earth Engine (GEE)</h4><div class="meta">Institute of GIS, AI &amp; RS | 30 Jun 2022</div><p class="d">Mode of learning: Online · <a class="stretch" href="https://www.studyhacksgeospatial.com/" target="_blank" rel="noopener">Link ↗</a></p></div></div>
-<div class="card hv cert lc"><div class="ico"><i class="fa-solid fa-certificate"></i></div><div><h4>Application of GIS</h4><div class="meta">Group Mappers | 10 Feb 2022</div><p class="d">Mode of learning: In-person · <a class="stretch" href="https://groupmappers.com" target="_blank" rel="noopener">Link ↗</a></p></div></div>
+<div class="card hv cert" id="cert-1"><div class="ico"><i class="fa-solid fa-certificate"></i></div><div><h4>Practical GIS &amp; Remote Sensing with Python and ArcPy: Step-by-Step Learning</h4><div class="meta">KIM’s GIS | 5 Jun 2025</div><p class="d">Mode of learning: Online</p></div></div>
+<div class="card hv cert lc" id="cert-2"><div class="ico"><i class="fa-solid fa-certificate"></i></div><div><h4>Machine Learning and Data Science</h4><div class="meta">National Academy for Computer Training and Research (NACTAR) | 1 Jan 2025</div><p class="d">Mode of learning: Online · <a class="stretch" href="https://nactar.gov.bd" target="_blank" rel="noopener">Link ↗</a></p></div></div>
+<div class="card hv cert lc" id="cert-3"><div class="ico"><i class="fa-solid fa-certificate"></i></div><div><h4>Computer Training Program</h4><div class="meta">Youth Development Program | 21 Jul 2022</div><p class="d">Mode of learning: In-person · <a class="stretch" href="https://dyd.gov.bd/" target="_blank" rel="noopener">Link ↗</a></p></div></div>
+<div class="card hv cert lc" id="cert-4"><div class="ico"><i class="fa-solid fa-certificate"></i></div><div><h4>Google Earth Engine (GEE)</h4><div class="meta">Institute of GIS, AI &amp; RS | 30 Jun 2022</div><p class="d">Mode of learning: Online · <a class="stretch" href="https://www.studyhacksgeospatial.com/" target="_blank" rel="noopener">Link ↗</a></p></div></div>
+<div class="card hv cert lc" id="cert-5"><div class="ico"><i class="fa-solid fa-certificate"></i></div><div><h4>Application of GIS</h4><div class="meta">Group Mappers | 10 Feb 2022</div><p class="d">Mode of learning: In-person · <a class="stretch" href="https://groupmappers.com" target="_blank" rel="noopener">Link ↗</a></p></div></div>
 </div>
 </section>
 
@@ -492,6 +571,14 @@ html{scroll-behavior:auto}
 </div>
 
 <footer>&copy; 2026 Mehedi Hasan · Applied Geoinformatics, University of Salzburg</footer>
+
+<div class="modal" id="cvModal" role="dialog" aria-modal="true" aria-label="Curriculum Vitae" aria-hidden="true">
+<div class="mc cvbox">
+<div class="cvbar"><h3>Curriculum Vitae</h3>
+<div class="cvact"><a class="b2" href="Hasan_M_EU_CV_01_11_26.pdf" target="_blank" rel="noopener"><i class="fa-solid fa-up-right-from-square"></i>Open in new tab</a><a class="b2" href="Hasan_M_EU_CV_01_11_26.pdf" download><i class="fa-solid fa-download"></i>Download</a><button type="button" class="mclose" id="cvClose" aria-label="Close">&times;</button></div></div>
+<iframe id="cvFrame" title="Mehedi Hasan CV" data-src="Hasan_M_EU_CV_01_11_26.pdf#view=FitH"></iframe>
+<p class="cvnote">If the preview does not load in your browser, use <b>Open in new tab</b> or <b>Download</b>.</p>
+</div></div>
 
 <div class="modal" id="contactModal" role="dialog" aria-modal="true" aria-labelledby="mt" aria-hidden="true">
 <div class="mc">
@@ -655,10 +742,117 @@ function tag(list,mode,step){
 }
 document.querySelectorAll(".grid,.tl,.pubs,.pjs").forEach(function(p){tag(p.children,null,.09)});
 tag(document.querySelectorAll(".about"),"up",0);
+document.querySelectorAll(".rows").forEach(function(p){tag(p.children,"up",.07)});
 tag(document.querySelectorAll(".pstrip"),"zoom",0);
 tag(document.querySelectorAll(".ilist li"),"up",.05);
 tag(document.querySelectorAll(".skills span"),"zoom",.05);
 tag(document.querySelectorAll(".mentor"),"zoom",0);
+})();
+
+/* Nav dropdowns (hover), publication tabs, jump-to-block, CV viewer */
+(function(){
+function mk(tag,cls,txt){var e=document.createElement(tag);if(cls)e.className=cls;if(txt!=null)e.textContent=txt;return e}
+var DD={
+ projects:[{t:"Project 1",s:"Digital Cadastral Mapping & Land Zoning",to:"proj-1"},{t:"Project 2",s:"Pirojpur Drainage Infrastructure Planning",to:"proj-2"}],
+ education:[{t:"MSc Professional",s:"Applied Geoinformatics",to:"edu-1"},{t:"MSc General",s:"Geography and Environment",to:"edu-2"},{t:"BSc",s:"Geography and Environment",to:"edu-3"}],
+ experience:[{t:"GIS Analyst",s:"Institute of Water Modelling (IWM)",to:"exp-1"},{t:"Research Assistant",s:"OKUP",to:"exp-2"},{t:"GIS Operator",s:"GeoMark Limited",to:"exp-3"},{t:"Research Assistant",s:"Jagannath University",to:"exp-4"}],
+ publications:[
+  {t:"Published",s:"5 papers",to:"publications",tab:"published",sub:[
+   {t:"Geomatics, Natural Hazards and Risk",s:"Multi-hazard risk mapping · 2026",to:"pub-1"},
+   {t:"Geomatics, Natural Hazards and Risk",s:"Flood susceptibility, Feni · 2026",to:"pub-2"},
+   {t:"Next Research",s:"Wetland change, Chanda Beel · 2025",to:"pub-3"},
+   {t:"Earth Systems and Environment",s:"Flash flood MCDM · 2025",to:"pub-4"},
+   {t:"Spatial Information Research",s:"Seismic risk, Rangpur · 2025",to:"pub-5"}]},
+  {t:"Submitted / Under Review",s:"7 manuscripts",to:"publications",tab:"submitted"},
+  {t:"Ongoing / Upcoming",s:"6 in progress",to:"publications",tab:"ongoing"}],
+ conferences:[{t:"Conference 1",s:"ICLESSD-2025, Dhaka",to:"conf-1"},{t:"Conference 2",s:"IWTACC-2025, Bangkok",to:"conf-2"}],
+ certifications:[
+  {t:"Practical GIS & Remote Sensing with Python and ArcPy: Step-by-Step Learning",to:"cert-1"},
+  {t:"Machine Learning and Data Science",to:"cert-2"},
+  {t:"Computer Training Program",to:"cert-3"},
+  {t:"Google Earth Engine (GEE)",to:"cert-4"},
+  {t:"Application of GIS",to:"cert-5"}]
+};
+
+/* ---- publication tabs ---- */
+var tabs=document.getElementById("ptabs"),ind=tabs.querySelector(".ptind"),btns=[].slice.call(tabs.querySelectorAll(".ptb"));
+function moveInd(){var on=tabs.querySelector(".ptb.on");if(!on)return;ind.style.width=on.offsetWidth+"px";ind.style.transform="translateX("+on.offsetLeft+"px)"}
+function activateTab(name){
+ btns.forEach(function(b){var o=b.getAttribute("data-tab")===name;b.classList.toggle("on",o);b.setAttribute("aria-selected",o?"true":"false")});
+ [].forEach.call(document.querySelectorAll(".ppanel"),function(p){p.classList.toggle("on",p.id==="pp-"+name)});
+ moveInd();
+}
+btns.forEach(function(b){b.addEventListener("click",function(){activateTab(b.getAttribute("data-tab"))})});
+moveInd();window.addEventListener("resize",moveInd);window.addEventListener("load",moveInd);
+if(document.fonts&&document.fonts.ready)document.fonts.ready.then(moveInd);
+
+/* ---- jump to a block (opens the right tab first, then flashes the block) ---- */
+function flash(el){if(!el.classList.contains("card"))return;el.classList.remove("flash");void el.offsetWidth;el.classList.add("flash");setTimeout(function(){el.classList.remove("flash")},2700)}
+function goTo(id,tab){
+ var el=document.getElementById(id);if(!el)return;
+ var pn=el.closest?el.closest(".ppanel"):null;
+ if(tab)activateTab(tab);else if(pn)activateTab(pn.id.replace("pp-",""));
+ setTimeout(function(){el.scrollIntoView({behavior:"smooth",block:"start"});flash(el)},(tab||pn)?90:0);
+}
+
+/* ---- dropdown panel ---- */
+var links=[].slice.call(document.querySelectorAll(".lk[data-dd]"));
+var dd=mk("div","dd");dd.id="dd";dd.setAttribute("role","menu");document.body.appendChild(dd);
+var hideT=null,curKey=null;
+var canHover=window.matchMedia&&matchMedia("(hover:hover) and (pointer:fine)").matches;
+function item(d){
+ var it=mk("div","ddi");it.setAttribute("role","menuitem");it.tabIndex=0;
+ it.appendChild(mk("span","t",d.t));
+ if(d.s)it.appendChild(mk("small",null,d.s));
+ if(d.sub){it.classList.add("hs");var sb=mk("div","dsub");d.sub.forEach(function(x){sb.appendChild(item(x))});it.appendChild(sb)}
+ it.addEventListener("click",function(e){e.stopPropagation();closeDD();goTo(d.to,d.tab)});
+ it.addEventListener("keydown",function(e){if(e.key==="Enter"||e.key===" "){e.preventDefault();e.stopPropagation();it.click()}});
+ return it;
+}
+function closeDD(){dd.classList.remove("open");links.forEach(function(l){l.classList.remove("dd-on")})}
+function schedHide(){clearTimeout(hideT);hideT=setTimeout(closeDD,220)}
+function openDD(a){
+ var key=a.getAttribute("data-dd"),data=DD[key];if(!data)return;
+ clearTimeout(hideT);
+ if(curKey!==key){dd.innerHTML="";data.forEach(function(d){dd.appendChild(item(d))});curKey=key}
+ var was=dd.classList.contains("open");
+ var nr=document.getElementById("nav").getBoundingClientRect(),ar=a.getBoundingClientRect();
+ dd.style.top=(nr.bottom+8)+"px";
+ if(!was){dd.style.transition="none";dd.style.left="0px"}
+ var w=dd.offsetWidth,l=Math.max(12,Math.min(ar.left,window.innerWidth-w-12));
+ dd.style.left=l+"px";
+ if(!was){void dd.offsetWidth;dd.style.transition=""}
+ dd.classList.toggle("flip",l+w+290>window.innerWidth);
+ dd.classList.add("open");
+ links.forEach(function(x){x.classList.toggle("dd-on",x===a)});
+}
+if(canHover){
+ links.forEach(function(a){
+  a.addEventListener("mouseenter",function(){openDD(a)});
+  a.addEventListener("focus",function(){openDD(a)});
+  a.addEventListener("mouseleave",schedHide);
+  a.addEventListener("blur",schedHide);
+ });
+ dd.addEventListener("mouseenter",function(){clearTimeout(hideT)});
+ dd.addEventListener("mouseleave",schedHide);
+ dd.addEventListener("focusin",function(){clearTimeout(hideT)});
+ dd.addEventListener("focusout",schedHide);
+ window.addEventListener("scroll",closeDD,{passive:true});
+ window.addEventListener("resize",closeDD);
+}
+document.addEventListener("keydown",function(e){if(e.key==="Escape")closeDD()});
+
+/* ---- CV viewer (Website / CV button) ---- */
+var cvm=document.getElementById("cvModal"),frame=document.getElementById("cvFrame"),cvBtn=document.getElementById("cvBtn");
+function openCV(){if(!frame.getAttribute("src"))frame.setAttribute("src",frame.getAttribute("data-src"));cvm.classList.add("open");cvm.setAttribute("aria-hidden","false");document.body.style.overflow="hidden"}
+function closeCV(){cvm.classList.remove("open");cvm.setAttribute("aria-hidden","true");document.body.style.overflow=""}
+cvBtn.addEventListener("click",function(e){
+ if(window.matchMedia&&matchMedia("(max-width:760px)").matches)return; /* phones: open the PDF directly in a new tab */
+ e.preventDefault();openCV();
+});
+document.getElementById("cvClose").addEventListener("click",closeCV);
+cvm.addEventListener("click",function(e){if(e.target===cvm)closeCV()});
+document.addEventListener("keydown",function(e){if(e.key==="Escape")closeCV()});
 })();
 
 /* Background GIFs: cross-fade one after another (random start, skips broken files) */
