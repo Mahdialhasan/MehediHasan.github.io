@@ -23,7 +23,10 @@
 html{scroll-behavior:smooth}
 body{font:14px/1.65 Inter,system-ui,-apple-system,"Segoe UI",Roboto,sans-serif;color:var(--body);background-color:var(--bg);-webkit-font-smoothing:antialiased}
 /* Fixed background image (scroll korleo nore na). Opacity barate/komate: .bgop */
-body::before{content:"";position:fixed;top:0;left:0;width:100%;height:100vh;height:100lvh;z-index:-1;background:url("coverpic.jpg") center center/contain no-repeat,url("https://raw.githubusercontent.com/Mahdialhasan/MehediHasan.github.io/main/coverpic.jpg") center center/contain no-repeat;opacity:.42;pointer-events:none;transform:translateZ(0)}
+/* GIF background: fit (contain), semi-transparent. Transparency barate/komate: .bg img.on{opacity} */
+.bg{position:fixed;top:0;left:0;width:100%;height:100vh;height:100lvh;z-index:-1;overflow:hidden;pointer-events:none;transform:translateZ(0)}
+.bg img{position:absolute;inset:0;width:100%;height:100%;object-fit:contain;object-position:center center;opacity:0;transition:opacity 2s var(--ease)}
+.bg img.on{opacity:.3}
 a{color:var(--acc);text-decoration:none}a:hover{text-decoration:underline}
 :focus-visible{outline:2px solid var(--acc);outline-offset:2px}
 .prog{position:fixed;top:0;left:0;height:3px;width:100%;background:var(--acc);transform:scaleX(0);transform-origin:0 50%;z-index:200}
@@ -236,6 +239,7 @@ html{scroll-behavior:auto}
 </style>
 </head>
 <body>
+<div class="bg" id="bg" aria-hidden="true"><img src="BG.gif" alt=""><img src="BG_1.gif" alt=""><img src="BG_3.gif" alt=""></div>
 <div class="prog" id="prog"></div>
 <nav><div class="nav" id="nav">
 <span class="brand">Mehedi Hasan</span>
@@ -579,6 +583,28 @@ names.forEach(function(n,k){
  im.onerror=function(){done()};
  im.src=encodeURI(n);
 });
+});
+})();
+
+/* Background GIFs: cross-fade one after another (random start, skips broken files) */
+(function(){
+var imgs=Array.prototype.slice.call(document.querySelectorAll("#bg img")),ok=[],cur=-1;
+if(!imgs.length)return;
+var reduce=window.matchMedia&&matchMedia("(prefers-reduced-motion:reduce)").matches;
+function show(i){if(cur>-1)ok[cur].classList.remove("on");cur=i;ok[cur].classList.add("on")}
+function next(){if(ok.length<2)return;show((cur+1)%ok.length)}
+var pending=imgs.length;
+function ready(){
+ if(--pending>0)return;
+ if(!ok.length)return;
+ show(Math.floor(Math.random()*ok.length));
+ if(!reduce&&ok.length>1)setInterval(next,12000);
+}
+imgs.forEach(function(im){
+ var t=new Image();
+ t.onload=function(){ok.push(im);ready()};
+ t.onerror=function(){im.remove();ready()};
+ t.src=im.getAttribute("src");
 });
 })();
 
