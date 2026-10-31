@@ -93,6 +93,20 @@ h3{font-size:15px;font-weight:600;color:var(--ink);margin-bottom:10px}
 .ilist li{position:relative;padding-left:18px;font-size:14px;color:var(--body)}
 .ilist li::before{content:"";position:absolute;left:0;top:.62em;width:7px;height:7px;border-radius:50%;background:var(--acc)}
 
+
+/* ===== RESEARCH THEME CARDS (shuffled image slideshow) ===== */
+.rt{padding:0;overflow:hidden;display:flex;flex-direction:column}
+.rm{position:relative;height:170px;flex:none;overflow:hidden;background:linear-gradient(120deg,#cfe0f1,#eaf2fa)}
+.rm img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;opacity:0;transform:scale(1.14) translate(var(--tx,0),var(--ty,0));transition:opacity 1.2s var(--ease),transform 7s linear;will-change:opacity,transform}
+.rm img.on{opacity:1;transform:scale(1) translate(0,0)}
+.rm::after{content:"";position:absolute;inset:auto 0 0 0;height:46%;background:linear-gradient(to top,rgba(15,23,42,.38),transparent);pointer-events:none}
+.rm .dots{position:absolute;left:14px;bottom:10px;display:flex;gap:5px;z-index:2}
+.rm .dots i{width:6px;height:6px;border-radius:50%;background:rgba(255,255,255,.55);transition:background .4s,transform .4s var(--ease)}
+.rm .dots i.on{background:#fff;transform:scale(1.35)}
+.rt .rb{padding:20px 22px 22px;position:relative}
+.rt .ico{position:absolute;top:-24px;right:18px;margin:0;width:46px;height:46px;background:#fff;box-shadow:0 8px 18px -8px rgba(15,23,42,.4);z-index:3}
+.rt h4{padding-right:44px}
+
 .grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(240px,1fr));gap:16px}
 .ico{width:46px;height:46px;border-radius:14px;display:grid;place-items:center;font-size:19px;margin-bottom:14px;background:#eaf2fa;color:var(--acc)}
 .card h4{font-size:15px;font-weight:600;color:var(--ink);margin-bottom:5px;line-height:1.4;transition:color .25s}
@@ -163,6 +177,7 @@ footer{text-align:center;padding:36px 16px 40px;font-size:13px;color:var(--mut)}
 .mentor{padding:28px 24px}
 }
 @media(prefers-reduced-motion:reduce){
+.rm img{transition:opacity .01ms!important;transform:none!important}
 html{scroll-behavior:auto}
 *,*::before,*::after{transition-duration:.01ms!important;animation:none!important}
 .js .rv{opacity:1;transform:none}.pl img{transform:none}.fp,.fq{opacity:.85}
@@ -240,10 +255,10 @@ html{scroll-behavior:auto}
 <section class="sec rv" id="themes">
 <h2>Research themes</h2>
 <div class="grid">
-<div class="card hv"><div class="ico"><i class="fa-solid fa-water"></i></div><h4>Flood &amp; Hazard Risk</h4><p class="d">Multi-hazard risk assessment and spatial susceptibility modeling in coastal and riverine frontiers.</p></div>
-<div class="card hv"><div class="ico"><i class="fa-solid fa-brain"></i></div><h4>GeoAI &amp; Machine Learning</h4><p class="d">Applying ensemble ML and deep learning frameworks for environmental vulnerability and groundwater zoning.</p></div>
-<div class="card hv"><div class="ico"><i class="fa-solid fa-temperature-half"></i></div><h4>Climate Resilience</h4><p class="d">Analyzing urban thermal comfort, land surface temperature, and wetland change dynamics.</p></div>
-<div class="card hv"><div class="ico"><i class="fa-solid fa-droplet"></i></div><h4>Hydrological Modeling</h4><p class="d">Spatial MCDA, HEC-RAS modeling, and integrated geospatial frameworks for flash flood risks.</p></div>
+<div class="card hv rt"><div class="rm" data-imgs="Flood_Hazard.jpg|LS_Hazard.webp|Cyclone_Hazard.jpg|Drought_Hazard.jfif|Earthquake_Hazard.jpg"></div><div class="rb"><div class="ico"><i class="fa-solid fa-water"></i></div><h4>Flood &amp; Hazard Risk</h4><p class="d">Multi-hazard risk assessment and spatial susceptibility modeling in coastal and riverine frontiers.</p></div></div>
+<div class="card hv rt"><div class="rm" data-imgs="GeoAI &amp; Machine Learning_1.jfif|GeoAI &amp; Machine Learning_2.jfif|GeoAI &amp; Machine Learning_3.jfif|GeoAI &amp; Machine Learning_4.jfif|GeoAI &amp; Machine Learning_5.jfif|GeoAI &amp; Machine Learning_6.jfif"></div><div class="rb"><div class="ico"><i class="fa-solid fa-brain"></i></div><h4>GeoAI &amp; Machine Learning</h4><p class="d">Applying ensemble ML and deep learning frameworks for environmental vulnerability and groundwater zoning.</p></div></div>
+<div class="card hv rt"><div class="rm" data-imgs="Climate Resilience_1.png|Climate Resilience_2.jfif|Climate Resilience_3.jfif|Climate Resilience_4.jfif|Climate Resilience_5.jfif"></div><div class="rb"><div class="ico"><i class="fa-solid fa-temperature-half"></i></div><h4>Climate Resilience</h4><p class="d">Analyzing urban thermal comfort, land surface temperature, and wetland change dynamics.</p></div></div>
+<div class="card hv rt"><div class="rm" data-imgs="Hydrological Modeling_1.jfif|Hydrological Modeling_2.jfif|Hydrological Modeling_3.jfif|Hydrological Modeling_4.jfif"></div><div class="rb"><div class="ico"><i class="fa-solid fa-droplet"></i></div><h4>Hydrological Modeling</h4><p class="d">Spatial MCDA, HEC-RAS modeling, and integrated geospatial frameworks for flash flood risks.</p></div></div>
 </div>
 </section>
 
@@ -356,6 +371,57 @@ var so=new IntersectionObserver(function(es){es.forEach(function(e){
 if(e.isIntersecting){links.forEach(function(a){a.classList.remove("act")});var a=map[e.target.id];if(a){a.classList.add("act");var n=document.getElementById("nav");n.scrollTo({left:a.offsetLeft-n.clientWidth/2+a.clientWidth/2,behavior:"smooth"})}}
 })},{rootMargin:"-40% 0px -55% 0px"});
 Object.keys(map).forEach(function(id){var s=document.getElementById(id);if(s)so.observe(s)});
+})();
+
+/* Research theme slideshows: shuffled, staggered, works with any number of images */
+(function(){
+var reduce=window.matchMedia&&matchMedia("(prefers-reduced-motion:reduce)").matches;
+function shuffle(a){for(var i=a.length-1;i>0;i--){var j=Math.floor(Math.random()*(i+1)),t=a[i];a[i]=a[j];a[j]=t}return a}
+function rnd(n){return (Math.random()*n*2-n).toFixed(1)+"%"}
+document.querySelectorAll(".rm").forEach(function(box){
+var names=shuffle((box.getAttribute("data-imgs")||"").split("|").filter(Boolean));
+var imgs=[],cur=-1,timer=null,visible=false,dots=document.createElement("div");
+dots.className="dots";box.appendChild(dots);
+function sync(){
+ Array.prototype.forEach.call(dots.children,function(d,i){d.classList.toggle("on",i===cur)});
+}
+function show(i){
+ if(!imgs.length)return;
+ if(cur>-1&&imgs[cur])imgs[cur].classList.remove("on");
+ cur=i;var im=imgs[cur];
+ im.style.setProperty("--tx",rnd(4));im.style.setProperty("--ty",rnd(4));
+ void im.offsetWidth;im.classList.add("on");sync();
+}
+function next(){
+ if(imgs.length<2)return;
+ var n=cur+1;
+ if(n>=imgs.length){ // cycle finished: reshuffle, avoid repeating the current one first
+  var last=imgs[cur];shuffle(imgs);
+  if(imgs[0]===last){var k=1+Math.floor(Math.random()*(imgs.length-1));imgs[0]=imgs[k];imgs[k]=last}
+  n=0;
+ }
+ show(n);
+}
+function start(){if(reduce||timer||imgs.length<2)return;timer=setInterval(next,4200+Math.floor(Math.random()*1800))}
+function stop(){clearInterval(timer);timer=null}
+names.forEach(function(n){
+ var im=new Image();im.alt="";im.decoding="async";
+ im.onload=function(){
+  imgs.push(im);box.insertBefore(im,dots);
+  var d=document.createElement("i");dots.appendChild(d);
+  if(imgs.length===1){show(0)}
+  if(imgs.length===2&&visible)start();
+  if(imgs.length>1)dots.style.display="flex";else dots.style.display="none";
+ };
+ im.onerror=function(){if(!imgs.length&&--pending===0)box.style.display="none"};
+ im.src=encodeURI(n);
+});
+var pending=names.length;
+names.length||(box.style.display="none");
+dots.style.display="none";
+new IntersectionObserver(function(es){es.forEach(function(e){visible=e.isIntersecting;visible?start():stop()})},{threshold:.2}).observe(box);
+document.addEventListener("visibilitychange",function(){document.hidden?stop():(visible&&start())});
+});
 })();
 
 var m=document.getElementById("contactModal");
