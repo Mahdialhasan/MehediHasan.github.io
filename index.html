@@ -103,9 +103,11 @@ h3{font-size:15px;font-weight:600;color:var(--ink);margin-bottom:10px}
 .rm .dots{position:absolute;left:14px;bottom:10px;display:flex;gap:5px;z-index:2}
 .rm .dots i{width:6px;height:6px;border-radius:50%;background:rgba(255,255,255,.55);transition:background .4s,transform .4s var(--ease)}
 .rm .dots i.on{background:#fff;transform:scale(1.35)}
-.rt .rb{padding:20px 22px 22px;position:relative}
-.rt .ico{position:absolute;top:-24px;right:18px;margin:0;width:46px;height:46px;background:#fff;box-shadow:0 8px 18px -8px rgba(15,23,42,.4);z-index:3}
-.rt h4{padding-right:44px}
+.rt .rm{height:120px}
+.rt .rb{padding:16px 18px 18px;position:relative}
+.rt .ico{position:absolute;top:-20px;right:16px;margin:0;width:40px;height:40px;font-size:16px;background:#fff;box-shadow:0 8px 18px -8px rgba(15,23,42,.4);z-index:3}
+.rt h4{padding-right:44px;font-size:14.5px}
+.rt p.d{font-size:12.5px}
 
 
 /* ===== EDUCATION CARDS (image slideshow on the left) ===== */
@@ -120,36 +122,36 @@ h3{font-size:15px;font-weight:600;color:var(--ink);margin-bottom:10px}
 
 
 /* ===== PROJECTS: top photo strip + compact cards ===== */
-.pstrip{position:relative;height:200px;margin-bottom:20px;border-radius:20px;overflow:hidden;background:rgba(255,255,255,.72);border:1px solid var(--line);-webkit-backdrop-filter:blur(8px);backdrop-filter:blur(8px);-webkit-mask-image:linear-gradient(90deg,transparent 0,#000 5%,#000 95%,transparent 100%);mask-image:linear-gradient(90deg,transparent 0,#000 5%,#000 95%,transparent 100%)}
-.pstrip .track{display:flex;width:max-content;height:100%;padding:12px 0;box-sizing:border-box;opacity:0;transition:opacity .8s var(--ease);will-change:transform}
+.pstrip{position:relative;height:150px;margin-bottom:16px;border-radius:20px;overflow:hidden;background:rgba(255,255,255,.72);border:1px solid var(--line);-webkit-backdrop-filter:blur(8px);backdrop-filter:blur(8px);-webkit-mask-image:linear-gradient(90deg,transparent 0,#000 5%,#000 95%,transparent 100%);mask-image:linear-gradient(90deg,transparent 0,#000 5%,#000 95%,transparent 100%)}
+.pstrip .track{display:flex;width:max-content;height:100%;padding:9px 0;box-sizing:border-box;opacity:0;transition:opacity .8s var(--ease);will-change:transform}
 .pstrip.run .track{opacity:1;animation:pmL var(--dur,60s) linear infinite}
 .pstrip[data-dir="right"].run .track{animation-direction:reverse}
-.pstrip img{flex:none;height:100%;width:auto;margin-right:12px;border-radius:10px;border:1px solid var(--line);background:#fff;box-shadow:0 10px 22px -16px rgba(15,23,42,.5)}
+.pstrip img{flex:none;height:100%;width:auto;margin-right:10px;border-radius:10px;border:1px solid var(--line);background:#fff;box-shadow:0 10px 22px -16px rgba(15,23,42,.5)}
 .pstrip:hover .track,.pstrip.paused .track{animation-play-state:paused}
 @keyframes pmL{to{transform:translateX(-50%)}}
 .pjs{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:18px;align-items:stretch}
 .pj{position:relative;padding:0;display:flex;flex-direction:column;overflow:hidden}
-.pj .rm{width:100%;height:170px;background:#fff;border-bottom:1px solid var(--line)}
+.pj .rm{width:100%;height:120px;background:#fff;border-bottom:1px solid var(--line)}
 .pj .rm img{object-fit:contain;background:#fff}
 .pj .rm::after{display:none}
 .pj .rm .dots i{background:rgba(15,23,42,.22)}
 .pj .rm .dots i.on{background:var(--acc)}
-.pj .num{position:absolute;left:14px;top:14px;z-index:4;font-size:11.5px;font-weight:700;letter-spacing:.06em;color:#fff;background:rgba(15,23,42,.75);padding:3px 10px;border-radius:999px}
-.pj .pb{padding:16px 22px 20px;display:flex;flex-direction:column;flex:1}
-.pj h4{font-size:15.5px;line-height:1.45;margin:8px 0 10px;padding-right:0}
+.pj .num{position:absolute;left:12px;top:12px;z-index:4;font-size:11.5px;font-weight:700;letter-spacing:.06em;color:#fff;background:rgba(15,23,42,.75);padding:3px 10px;border-radius:999px}
+.pj .pb{padding:12px 18px 16px;display:flex;flex-direction:column;flex:1}
+.pj h4{font-size:14.5px;line-height:1.4;margin:6px 0 8px;padding-right:0}
 .pj .pt{display:flex;gap:8px;flex-wrap:wrap}
-.pj .pb p.d{font-size:12.5px;line-height:1.6}
+.pj .pb p.d{font-size:12px;line-height:1.55}
 .tag.bl{background:#dbeafe;color:#1e40af}
 .tag.ok{background:#dcfce7;color:#166534}
 .tag.gr{background:#e2e8f0;color:#334155}
-.kv{display:grid;grid-template-columns:max-content 1fr;gap:5px 14px;font-size:12.5px;margin:0 0 10px;padding:10px 0;border-top:1px solid var(--line);border-bottom:1px solid var(--line)}
+.kv{display:grid;grid-template-columns:max-content 1fr;gap:4px 12px;font-size:12px;margin:0 0 8px;padding:8px 0;border-top:1px solid var(--line);border-bottom:1px solid var(--line)}
 .kv dt{color:var(--mut);font-weight:600}
 .kv dd{color:var(--ink);font-weight:500}
 .kv dd.mu{color:var(--mut);font-weight:500;font-style:italic}
-.b2{align-self:flex-start;display:inline-flex;gap:8px;align-items:center;margin-top:auto;padding:8px 16px;border-radius:999px;background:var(--ink);color:#fff;font-weight:600;font-size:12.5px;transition:transform .3s var(--ease),background .3s}
-.pj .pb p.d+.b2{margin-top:14px}
+.b2{align-self:flex-start;display:inline-flex;gap:8px;align-items:center;margin-top:auto;padding:7px 14px;border-radius:999px;background:var(--ink);color:#fff;font-weight:600;font-size:12px;transition:transform .3s var(--ease),background .3s}
+.pj .pb p.d+.b2{margin-top:10px}
 .b2:hover{background:var(--acc);transform:translateY(-2px);text-decoration:none;color:#fff}
-@media(max-width:860px){.pjs{grid-template-columns:1fr}.pstrip{height:150px}.pj .pb{padding:16px 18px 18px}.kv{grid-template-columns:1fr;gap:2px}.kv dd{margin-bottom:6px}}
+@media(max-width:860px){.pjs{grid-template-columns:1fr}.pstrip{height:120px}.pj .pb{padding:14px 16px 16px}.kv{grid-template-columns:1fr;gap:2px}.kv dd{margin-bottom:6px}}
 @media(prefers-reduced-motion:reduce){.pstrip{overflow-x:auto}.pstrip .track{animation:none!important;opacity:1}}
 
 .grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(240px,1fr));gap:16px}
@@ -299,6 +301,7 @@ html{scroll-behavior:auto}
 
 <section class="sec rv" id="themes">
 <h2>Research themes</h2>
+<div class="pstrip" data-dir="right" data-imgs="Flood_Hazard.jpg|LS_Hazard.webp|Cyclone_Hazard.jpg|Drought_Hazard.jfif|Earthquake_Hazard.jpg|GeoAI &amp; Machine Learning_1.jfif|GeoAI &amp; Machine Learning_2.jfif|GeoAI &amp; Machine Learning_3.jfif|GeoAI &amp; Machine Learning_4.jfif|GeoAI &amp; Machine Learning_5.jfif|GeoAI &amp; Machine Learning_6.jfif|Climate Resilience_1.png|Climate Resilience_2.jfif|Climate Resilience_3.jfif|Climate Resilience_4.jfif|Climate Resilience_5.jfif|Hydrological Modeling_1.jfif|Hydrological Modeling_2.jfif|Hydrological Modeling_3.jfif|Hydrological Modeling_4.jfif"></div>
 <div class="grid">
 <div class="card hv rt"><div class="rm" data-imgs="Flood_Hazard.jpg|LS_Hazard.webp|Cyclone_Hazard.jpg|Drought_Hazard.jfif|Earthquake_Hazard.jpg"></div><div class="rb"><div class="ico"><i class="fa-solid fa-water"></i></div><h4>Flood &amp; Hazard Risk</h4><p class="d">Multi-hazard risk assessment and spatial susceptibility modeling in coastal and riverine frontiers.</p></div></div>
 <div class="card hv rt"><div class="rm" data-imgs="GeoAI &amp; Machine Learning_1.jfif|GeoAI &amp; Machine Learning_2.jfif|GeoAI &amp; Machine Learning_3.jfif|GeoAI &amp; Machine Learning_4.jfif|GeoAI &amp; Machine Learning_5.jfif|GeoAI &amp; Machine Learning_6.jfif"></div><div class="rb"><div class="ico"><i class="fa-solid fa-brain"></i></div><h4>GeoAI &amp; Machine Learning</h4><p class="d">Applying ensemble ML and deep learning frameworks for environmental vulnerability and groundwater zoning.</p></div></div>
@@ -520,9 +523,9 @@ document.addEventListener("visibilitychange",function(){document.hidden?stop():(
 });
 })();
 
-/* Projects top strip: all project photos, random order, natural size, constant speed */
+/* Top photo strips (Research themes + Projects): random order, natural size, constant speed */
 (function(){
-var box=document.getElementById("pstrip");if(!box)return;
+document.querySelectorAll(".pstrip").forEach(function(box){
 var names=(box.getAttribute("data-imgs")||"").split("|").filter(Boolean);
 for(var i=names.length-1;i>0;i--){var j=Math.floor(Math.random()*(i+1)),t=names[i];names[i]=names[j];names[j]=t}
 var res=new Array(names.length),pending=names.length;
@@ -545,6 +548,7 @@ names.forEach(function(n,k){
  im.onload=function(){res[k]=im;done()};
  im.onerror=function(){done()};
  im.src=encodeURI(n);
+});
 });
 })();
 
