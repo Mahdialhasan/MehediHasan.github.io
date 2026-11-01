@@ -16,7 +16,7 @@
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
 <script>document.documentElement.className="js"</script>
 <style>
-:root{--ink:#0f172a;--body:#3b4658;--mut:#526074;--acc:#1769aa;--acc2:#0f4c81;--bg:#f4f7fb;--line:#e2e8f0;--ease:cubic-bezier(.22,.61,.36,1);
+:root{--ink:#0f172a;--body:#3b4658;--mut:#526074;--acc:#1769aa;--acc2:#0f4c81;--bg:#d6e2f0;--line:#e2e8f0;--ease:cubic-bezier(.22,.61,.36,1);
 /* Hero glass transparency: .25 = beshi transparent, .5 = beshi readable */
 --glass:rgba(255,255,255,.3)}
 *{margin:0;padding:0;box-sizing:border-box}
@@ -32,7 +32,7 @@ a{color:var(--acc);text-decoration:none}a:hover{text-decoration:underline}
 :focus-visible{outline:2px solid var(--acc);outline-offset:2px}
 .prog{position:fixed;top:0;left:0;height:3px;width:100%;background:linear-gradient(90deg,#0f4c81,#1769aa,#7cc0f0);transform:scaleX(0);transform-origin:0 50%;z-index:200}
 nav{position:sticky;top:12px;z-index:100;max-width:1100px;margin:12px auto 0;padding:0 16px}
-.nav{display:flex;align-items:center;gap:4px;background:rgba(255,255,255,.6);-webkit-backdrop-filter:saturate(1.6) blur(14px);backdrop-filter:saturate(1.6) blur(14px);border:1px solid rgba(226,232,240,.95);border-radius:999px;padding:6px 8px 6px 16px;overflow-x:auto;scrollbar-width:none}
+.nav{display:flex;align-items:center;gap:4px;background:rgba(255,255,255,.78);-webkit-backdrop-filter:saturate(1.6) blur(14px);backdrop-filter:saturate(1.6) blur(14px);border:1px solid rgba(255,255,255,.95);border-radius:999px;padding:6px 8px 6px 16px;overflow-x:auto;scrollbar-width:none}
 .nav::-webkit-scrollbar{display:none}
 .brand{font-weight:700;color:var(--ink);margin-right:10px;white-space:nowrap}
 .lk{padding:7px 13px;border-radius:999px;color:var(--body);font-size:13px;font-weight:500;white-space:nowrap;transition:background .3s var(--ease),color .3s var(--ease)}
@@ -57,7 +57,7 @@ nav{position:sticky;top:12px;z-index:100;max-width:1100px;margin:12px auto 0;pad
 .q2{width:5%;aspect-ratio:1;left:93%;top:8%;animation-delay:-5s}
 @keyframes fl{0%{opacity:0;transform:scale(.5)}14%{opacity:.92;transform:scale(1)}55%{opacity:.92;transform:scale(1.1)}86%{opacity:.85;transform:scale(1.16)}100%{opacity:0;transform:scale(1.28)}}
 
-.hin{position:relative;z-index:2;flex:1;margin:18px;padding:20px 26px;display:flex;flex-wrap:wrap;gap:18px 26px;align-items:center;justify-content:space-between;background:linear-gradient(120deg,rgba(255,255,255,.42),rgba(176,214,248,.30) 55%,rgba(196,240,222,.30));border:1px solid rgba(255,255,255,.65);border-radius:18px;-webkit-backdrop-filter:blur(3px) saturate(1.2);backdrop-filter:blur(3px) saturate(1.2);box-shadow:0 18px 40px -24px rgba(15,23,42,.45)}
+.hin{position:relative;z-index:2;flex:1;margin:18px;padding:20px 26px;display:flex;flex-wrap:wrap;gap:18px 26px;align-items:center;justify-content:space-between;background:linear-gradient(120deg,rgba(255,255,255,.62),rgba(255,236,196,.38) 55%,rgba(196,240,222,.38));border:1px solid rgba(255,255,255,.85);border-radius:18px;-webkit-backdrop-filter:blur(3px) saturate(1.2);backdrop-filter:blur(3px) saturate(1.2);box-shadow:0 18px 40px -24px rgba(15,23,42,.45)}
 .who{display:flex;gap:24px;align-items:center;flex:1;min-width:280px}
 
 /* Profile photo frame */
@@ -80,10 +80,10 @@ h2{font-size:20px;font-weight:700;color:var(--ink);letter-spacing:-.01em;margin-
 h2::after{content:"";display:block;width:48px;height:3px;border-radius:3px;background:linear-gradient(90deg,var(--acc),#7cc0f0);margin-top:8px}
 .js .sec h2::after{width:0;transition:width .9s var(--ease) .35s}
 .js .sec.in h2::after{width:48px}
-.card{--c1:rgba(255,255,255,.55);--c2:rgba(186,214,250,.42);background:linear-gradient(135deg,var(--c1),var(--c2));-webkit-backdrop-filter:blur(8px) saturate(1.2);backdrop-filter:blur(8px) saturate(1.2);border:1px solid rgba(226,232,240,.9);border-radius:18px;padding:24px 26px;transition:transform .35s var(--ease),border-color .3s,box-shadow .35s}
-.card:nth-child(4n+2){--c2:rgba(167,235,205,.40)}
-.card:nth-child(4n+3){--c2:rgba(205,196,250,.44)}
-.card:nth-child(4n+4){--c2:rgba(253,208,160,.38)}
+.card{--c1:rgba(255,255,255,.82);--c2:rgba(255,243,208,.70);background:linear-gradient(135deg,var(--c1),var(--c2));-webkit-backdrop-filter:blur(8px) saturate(1.2);backdrop-filter:blur(8px) saturate(1.2);border:1px solid rgba(255,255,255,.95);box-shadow:0 10px 28px -20px rgba(15,23,42,.35);border-radius:18px;padding:24px 26px;transition:transform .35s var(--ease),border-color .3s,box-shadow .35s}
+.card:nth-child(4n+2){--c2:rgba(182,238,210,.68)}
+.card:nth-child(4n+3){--c2:rgba(218,205,255,.70)}
+.card:nth-child(4n+4){--c2:rgba(255,212,175,.66)}
 .hv:hover{transform:translateY(-3px);border-color:#c5d6e8;box-shadow:0 18px 38px -20px rgba(23,105,170,.45)}
 .about p{font-size:15px;line-height:1.8;margin-bottom:12px;max-width:80ch}
 .about p strong{color:var(--ink);font-weight:600}
@@ -275,7 +275,7 @@ footer{text-align:center;padding:36px 16px 40px;font-size:13px;color:var(--mut)}
 .lk.dd-on{background:#eaf0f7;color:var(--ink)}
 .lk.act.dd-on{background:var(--ink);color:#fff}
 .lk.dd-on::after{transform:rotate(180deg)}
-.dd{position:fixed;z-index:150;min-width:230px;max-width:370px;padding:8px;background:rgba(236,241,247,.86);-webkit-backdrop-filter:blur(16px) saturate(1.5);backdrop-filter:blur(16px) saturate(1.5);border:1px solid rgba(255,255,255,.75);border-radius:16px;box-shadow:0 24px 46px -22px rgba(15,23,42,.55);opacity:0;visibility:hidden;transform:translateY(-8px) scale(.98);transform-origin:top left;transition:opacity .22s var(--ease),transform .26s var(--ease),visibility .22s,left .28s var(--ease)}
+.dd{position:fixed;z-index:150;min-width:230px;max-width:370px;padding:8px;background:rgba(255,252,244,.92);-webkit-backdrop-filter:blur(16px) saturate(1.5);backdrop-filter:blur(16px) saturate(1.5);border:1px solid rgba(255,255,255,.75);border-radius:16px;box-shadow:0 24px 46px -22px rgba(15,23,42,.55);opacity:0;visibility:hidden;transform:translateY(-8px) scale(.98);transform-origin:top left;transition:opacity .22s var(--ease),transform .26s var(--ease),visibility .22s,left .28s var(--ease)}
 .dd.open{opacity:1;visibility:visible;transform:none}
 .ddi{position:relative;display:block;padding:9px 14px;border-radius:10px;color:var(--acc2);font-weight:600;font-size:14px;line-height:1.35;cursor:pointer;transition:background .2s,color .2s,padding-left .25s var(--ease)}
 .ddi small{display:block;margin-top:1px;font-weight:500;font-size:11.5px;color:var(--mut)}
@@ -290,7 +290,7 @@ footer{text-align:center;padding:36px 16px 40px;font-size:13px;color:var(--mut)}
 @keyframes flashRing{0%{box-shadow:0 0 0 0 rgba(23,105,170,.6)}70%{box-shadow:0 0 0 14px rgba(23,105,170,0)}100%{box-shadow:0 0 0 0 rgba(23,105,170,0)}}
 
 /* ===== PUBLICATION BRANCHES: tabs + compact lists ===== */
-.ptabs{position:relative;display:inline-flex;gap:2px;max-width:100%;overflow-x:auto;scrollbar-width:none;padding:4px;margin-bottom:16px;background:linear-gradient(120deg,rgba(255,255,255,.55),rgba(190,220,250,.4));-webkit-backdrop-filter:blur(8px);backdrop-filter:blur(8px);border:1px solid var(--line);border-radius:999px}
+.ptabs{position:relative;display:inline-flex;gap:2px;max-width:100%;overflow-x:auto;scrollbar-width:none;padding:4px;margin-bottom:16px;background:linear-gradient(120deg,rgba(255,255,255,.75),rgba(255,236,200,.55));-webkit-backdrop-filter:blur(8px);backdrop-filter:blur(8px);border:1px solid var(--line);border-radius:999px}
 .ptabs::-webkit-scrollbar{display:none}
 .ptind{position:absolute;top:4px;bottom:4px;left:0;width:0;border-radius:999px;background:var(--ink);transition:transform .45s var(--ease),width .45s var(--ease)}
 .ptb{position:relative;z-index:1;display:inline-flex;gap:8px;align-items:center;padding:8px 16px;border:0;background:none;border-radius:999px;font:600 13px Inter,sans-serif;color:var(--body);cursor:pointer;white-space:nowrap;transition:color .3s var(--ease)}
@@ -504,7 +504,7 @@ html{scroll-behavior:auto}
 <div class="ppanel" id="pp-submitted"><div class="card rows">
 <div class="prow"><span class="pn">1</span><div class="pbody"><h4>Flood Susceptibility Prediction Using Machine Learning under Hydro-Climatic Change Scenarios and Land Use Dynamics in North Western Region, Bangladesh</h4><div class="meta">Journal of Environmental Management, Elsevier</div></div><span class="pill ur">Under Review</span></div>
 <div class="prow"><span class="pn">2</span><div class="pbody"><h4>Forecasting Urban Thermal Comfort and Geo-Thermal Risk in Dhaka, Bangladesh Using Hybrid Deep Learning and Multi-Temporal Remote Sensing Data</h4><div class="meta">Urban Climate, Elsevier</div></div><span class="pill dp">Decision Pending</span></div>
-<div class="prow"><span class="pn">3</span><div class="pbody"><h4>Morphometric Analysis of Two Adjacent Transboundary River Basins in Southeastern Bangladesh: Feni and the Little Feni</h4><div class="meta">Journal of Hydro-environment Research</div><div class="pauth"><b>Corresponding author:</b> Nazim Uddin · <b>Co-authors:</b> Mehedi Hasan, Dr. Asib Ahmed, Maliha Sanzana Misty</div></div><span class="pill dp">Decision Pending</span></div>
+<div class="prow"><span class="pn">3</span><div class="pbody"><h4>Morphometric Analysis of Two Adjacent Transboundary River Basins in Southeastern Bangladesh: Feni and the Little Feni</h4><div class="meta">Journal of Hydro-environment Research, Elsevier</div></div><span class="pill dp">Decision Pending</span></div>
 <div class="prow"><span class="pn">4</span><div class="pbody"><h4>Geospatial Assessment of Climate Change Adaptive Capacity in a Coastal Upazila of Bangladesh: An AHP-Based Approach in Kalapara Upazila</h4><div class="meta">Environmental Monitoring and Assessment, Springer Nature</div></div><span class="pill dp">Decision Pending</span></div>
 <div class="prow"><span class="pn">5</span><div class="pbody"><h4>Ensemble Machine Learning-Based Groundwater Risk Zonation to Support Sustainable Water Conservation Planning in Jashore District, Bangladesh</h4><div class="meta">Hydrological Sciences Journal, Taylor &amp; Francis</div></div><span class="pill ur">Under Review</span></div>
 <div class="prow"><span class="pn">6</span><div class="pbody"><h4>A Multi-Model Machine and Deep Learning Framework for Flood Risk Assessment in the Sunamganj Haor Basin, Bangladesh</h4><div class="meta">Earth Systems and Environment, Springer Nature</div></div><span class="pill ur">Under Review</span></div>
